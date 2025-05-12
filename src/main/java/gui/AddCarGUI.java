@@ -93,7 +93,7 @@ public class AddCarGUI extends JFrame {
         	public void actionPerformed(ActionEvent e) {
         		jLabelMsg.setText("");
         		BLFacade facade = MainGUI.getBusinessLogic();
-        		if(!licensePlate.getText().isBlank() && !places.getText().isBlank() && !model.getText().isBlank() && !color.getText().isBlank()) {
+        		if(!licensePlate.getText().equals("") && !places.getText().equals("") && !model.getText().equals("") && !color.getText().equals("")) {
 					int placeNum = Integer.parseInt(places.getText());
         			boolean ondo = facade.addCar(licensePlate.getText(), placeNum, model.getText(), color.getText(), driver.getEmail());
         			if(!ondo) {

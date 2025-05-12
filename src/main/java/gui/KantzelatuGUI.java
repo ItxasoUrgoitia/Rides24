@@ -59,7 +59,6 @@ public class KantzelatuGUI extends JFrame {
 		BLFacade facade = MainGUI.getBusinessLogic();
 		List<Ride> rideList = facade.getDriverRides(driver);
 		rides.removeAllItems();
-		rides.addItem(null);
 		for (Ride ride : rideList) {
 			rides.addItem(ride);
 		}
@@ -107,7 +106,6 @@ public class KantzelatuGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Ride rideSelect = (Ride) rides.getSelectedItem();
 				facade.amaituRide(rideSelect);
-				
 			}
 		});
 		btnFinished.setBounds(21, 182, 190, 23);

@@ -787,22 +787,42 @@ public class DataAccess {
 			System.out.println("Data Acces-eko addAlert metodora iritsi da");
 			usr.addAlert(alert);
 	}
+	/*public void addB(Balorazio b) {
+		User usr = b.getUserJaso();
+		System.out.println("Data Acces-eko addAlert metodora iritsi da");
+		usr.addBalorazioa(b);
+	}*/
 	
 	public void addBalorazioa(Balorazio balorazio) {
 		try {
+			System.out.println("Data accesen addBalorazioa-ren barruan");
+			System.out.println(balorazio);
 			db.getTransaction().begin();
-			User existingUser = db.find(User.class, balorazio.getUserJaso().getEmail());
-			Balorazio balorazioGehitutakoa = existingUser.addBalorazioa(balorazio);
+			System.out.println(balorazio);
+			System.out.println("Trantsakzioa hasi ondoren");
+			System.out.println(balorazio);
+			Balorazio bDB = db.find(Balorazio.class, balorazio.getID());
+			System.out.println(bDB.getUserJaso());//null
+			System.out.println("-------------");
+			System.out.println(bDB.getUserJaso().getEmail());
+			User existingUser = db.find(User.class, bDB.getUserJaso().getEmail());
+			System.out.println("userreko metodoa baino lehen");
+			Balorazio balorazioGehitutakoa = existingUser.addBalorazioa(bDB);
 			db.persist(balorazioGehitutakoa);
+			System.out.println("egin dau persist");
 			Eskaera eskDB = db.find(Eskaera.class, balorazioGehitutakoa.getEskaera());
 			eskDB.setEgoera(EskaeraEgoera.VALUED);
+			System.out.println("eskaera valued jarri");
 			Alerta alert = new Alerta(existingUser, AlertMota.BALORATUTA);
 			addAlert(alert);
 			db.persist(alert);
 			db.getTransaction().commit();
 		} catch (NullPointerException e) {
 			db.getTransaction().rollback();
-		}
+		} catch (Exception e) {
+	        e.printStackTrace();
+	        db.getTransaction().rollback();
+	    }
 	}
 	
 	public List<Balorazio> getUserBalorazioa(User user){
@@ -1019,5 +1039,12 @@ public class DataAccess {
 				// TODO Auto-generated catch block
 				db.getTransaction().rollback();
 			}
+	 }
+	 
+	 public Driver getDriverOfRide(Ride ride) {
+		 db.getTransaction().begin();
+		 Ride rDB = db.find(Ride.class, ride.getRideNumber());
+		 db.getTransaction().commit();
+		 return rDB.getDriver();
 	 }
 }

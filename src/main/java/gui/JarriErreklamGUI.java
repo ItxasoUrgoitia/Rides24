@@ -74,7 +74,7 @@ public class JarriErreklamGUI extends JFrame {
 		comboBox.setBounds(29, 58, 390, 22);
 		contentPane.add(comboBox);
 		
-		Eskaera eskSelect = (Eskaera) comboBox.getSelectedItem();
+		
 		
 		if (userJarri instanceof Bidaiari) {
 			leve.setVisible(false);
@@ -86,8 +86,8 @@ public class JarriErreklamGUI extends JFrame {
 					comboBox.addItem(esk); 
 				}	
 			}
-			
-			 errekJarri = new Erreklamazioa(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez());
+			Eskaera eskSelect = (Eskaera) comboBox.getSelectedItem();
+			errekJarri = new Erreklamazioa(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez());
 		}else {
 			leve.setVisible(true);
 			intermedio.setVisible(true);
@@ -101,6 +101,7 @@ public class JarriErreklamGUI extends JFrame {
 					}	
 				}
 			}
+			Eskaera eskSelect = (Eskaera) comboBox.getSelectedItem();
 			if(leve.isSelected()) {
 				 errekJarri = new Erreklamazioa(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez(), ErrekLarri.TXIKIA);
 			}else if(intermedio.isSelected()) {

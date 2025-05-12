@@ -167,6 +167,7 @@ public abstract class User implements Serializable {
 	}
 
 	public Balorazio addBalorazioa(Balorazio balorazio) {
+		System.out.println("userreko metodoan");
 		balorazioak.add(balorazio);
 		return balorazio;
 	}

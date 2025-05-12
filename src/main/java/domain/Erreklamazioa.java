@@ -13,8 +13,17 @@ public class Erreklamazioa implements Serializable{
 	@Id 
 	@GeneratedValue
 	private Integer id;
+	
+	//@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+	//@XmlIDREF
 	private User errekJarri;
+	
+	//@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+		//@XmlIDREF
 	private User errekJaso;
+	
+	//@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+		//@XmlIDREF
 	private Eskaera eskaera;
 	private String deskribapena;
 	private ErrekMota mota;

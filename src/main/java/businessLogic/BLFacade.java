@@ -121,6 +121,7 @@ public interface BLFacade  {
 	@WebMethod public List<Alerta> getUserAlertak(User user);
 	@WebMethod public void ezabatuAlertakUser(User user);
 	@WebMethod public void addBalorazioa(Balorazio balorazio);
+	//@WebMethod public void addB(Balorazio balorazio);
 	@WebMethod public List<Balorazio> getUserBalorazioa(User user);
 	@WebMethod public List<Erreklamazioa> getUserErrek(User user);
 	@WebMethod public List<Erreklamazioa> getAllErrek();
@@ -129,6 +130,8 @@ public interface BLFacade  {
 	@WebMethod public void rejectErrekAdmin(Erreklamazioa selectRk);
 	@WebMethod public void AcceptWithChange(Erreklamazioa erreklamazio, int num);
 	@WebMethod public void addErreklamazio(Erreklamazioa errekJarri);
+	
+	@WebMethod public Driver getDriverOfRide(Ride ride);
 	
 	
 }

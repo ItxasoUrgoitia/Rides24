@@ -329,6 +329,11 @@ public class BLFacadeImplementation implements BLFacade {
 	    dbManager.addBalorazioa(balorazio);
 		dbManager.close();
 	}
+	/*@WebMethod public void addB(Balorazio balorazio) {
+		dbManager.open();
+	    dbManager.addB(balorazio);
+		dbManager.close();
+	}*/
 	
 	@WebMethod public List<Balorazio> getUserBalorazioa(User user){
 		dbManager.open();
@@ -378,5 +383,13 @@ public class BLFacadeImplementation implements BLFacade {
 	    dbManager.addErreklamazio(errekJarri);
 		dbManager.close();
 	}
+	
+	@WebMethod public Driver getDriverOfRide(Ride ride) {
+		dbManager.open();
+	    Driver d =dbManager.getDriverOfRide(ride);
+		dbManager.close();
+		return d;
+	}
+	
 
 }

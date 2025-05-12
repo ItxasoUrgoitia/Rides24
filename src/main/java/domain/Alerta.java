@@ -2,12 +2,16 @@ package domain;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlAccessorType(XmlAccessType.FIELD)
 @Entity
@@ -35,13 +39,16 @@ public class Alerta implements Serializable{
 	@GeneratedValue
 	private Integer ID;	
 	private AlertMota mota; 
+	
+	@XmlIDREF
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	private User user;
 	
 	public Alerta(User user, AlertMota mota ) {	
 		this.user=user;
 		this.mota=mota;
 	}
-	public Alerta( ) {	
+	public Alerta() {	
 		
 	}
 	public int getID() {
@@ -70,7 +77,7 @@ public class Alerta implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "Alerta [ID=" + ID + ", mota=" + mota + ", user=" + user + "]";
+		return "Alerta [ID=" + ID + ", mota=" + mota + "]";
 	}
 
 
