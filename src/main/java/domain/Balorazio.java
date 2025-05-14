@@ -8,6 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlID;
@@ -16,29 +17,25 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlAccessorType(XmlAccessType.FIELD)
 @Entity
 public class Balorazio implements Serializable {
-	@Id @XmlID
-	@XmlJavaTypeAdapter(IntegerAdapter.class)
+	@Id 
 	@GeneratedValue
 	private Integer ID;
-	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-	@XmlIDREF
+	//@XmlIDREF
+	@ManyToOne
 	private User userJarri;
-	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	@XmlIDREF
+	@ManyToOne
 	private User userJaso;
 	
 	private String deskribapena;
 	private int nota;
 	
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-	@XmlIDREF
+	@OneToOne
 	private Eskaera eskaera;
 	
 	public Balorazio(User userJarri, User userJaso, String deskribapena, int nota, Eskaera eskaera) {
 		super();
-		this.userJarri = userJarri;
+		//this.userJarri = userJarri;
 		this.userJaso = userJaso;
 		this.deskribapena = deskribapena;
 		this.nota = nota;
@@ -53,8 +50,7 @@ public class Balorazio implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Balorazio [userJarri=" + userJarri + ", userJaso=" + userJaso + ", deskribapena=" + deskribapena
-				+ ", nota=" + nota + "]";
+		return "Balorazio [ Deskribapena=" + deskribapena+ ", nota=" + nota + "esk" + eskaera + "]";
 	}
 	public int getID() {
 		return ID;
@@ -62,12 +58,12 @@ public class Balorazio implements Serializable {
 	public void setID(int iD) {
 		ID = iD;
 	}
-	public User getUserJarri() {
+	/*public User getUserJarri() {
 		return userJarri;
 	}
 	public void setUserJarri(User userJarri) {
 		this.userJarri = userJarri;
-	}
+	}*/
 	public User getUserJaso() {
 		return userJaso;
 	}

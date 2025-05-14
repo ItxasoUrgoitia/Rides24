@@ -14,6 +14,7 @@ import configuration.ConfigXML;
 import dataAccess.DataAccess;
 import domain.Ride;
 import domain.User;
+import domain.Erreklamazioa.ErrekLarri;
 import domain.Eskaera.EskaeraEgoera;
 import domain.Alerta;
 import domain.Balorazio;
@@ -324,9 +325,9 @@ public class BLFacadeImplementation implements BLFacade {
 		dbManager.close();
 	}
 	
-	@WebMethod public void addBalorazioa(Balorazio balorazio) {
+	@WebMethod public void addBalorazioa(User userJaso, User userJarri, String deskribapena, Integer nota, Eskaera eskaera) {
 		dbManager.open();
-	    dbManager.addBalorazioa(balorazio);
+	    dbManager.addBalorazioa( userJaso,  userJarri,  deskribapena,  nota,  eskaera);
 		dbManager.close();
 	}
 	/*@WebMethod public void addB(Balorazio balorazio) {
@@ -378,9 +379,9 @@ public class BLFacadeImplementation implements BLFacade {
 		dbManager.close();
 	}
 	
-	@WebMethod public void addErreklamazio(Erreklamazioa errekJarri) {
+	@WebMethod public void addErreklamazio(User userJarri, User userJaso, Eskaera eskSelect, String sartutakoTxt, float prez, ErrekLarri lar) {
 		dbManager.open();
-	    dbManager.addErreklamazio(errekJarri);
+	    dbManager.addErreklamazio( userJarri,  userJaso,  eskSelect,  sartutakoTxt,  prez,  lar);
 		dbManager.close();
 	}
 	

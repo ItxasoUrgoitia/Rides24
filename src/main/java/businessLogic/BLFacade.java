@@ -8,6 +8,7 @@ import java.util.List;
 //import domain.Booking;
 import domain.Ride;
 import domain.User;
+import domain.Erreklamazioa.ErrekLarri;
 import domain.Eskaera.EskaeraEgoera;
 import domain.Alerta;
 import domain.Balorazio;
@@ -120,7 +121,7 @@ public interface BLFacade  {
 	@WebMethod public User bilatuUserEmail(String email);
 	@WebMethod public List<Alerta> getUserAlertak(User user);
 	@WebMethod public void ezabatuAlertakUser(User user);
-	@WebMethod public void addBalorazioa(Balorazio balorazio);
+	@WebMethod public void addBalorazioa(User userJaso, User userJarri, String deskribapena, Integer nota, Eskaera eskaera);
 	//@WebMethod public void addB(Balorazio balorazio);
 	@WebMethod public List<Balorazio> getUserBalorazioa(User user);
 	@WebMethod public List<Erreklamazioa> getUserErrek(User user);
@@ -129,7 +130,7 @@ public interface BLFacade  {
 	@WebMethod public void rejectErrekUser(Erreklamazioa selectRk);
 	@WebMethod public void rejectErrekAdmin(Erreklamazioa selectRk);
 	@WebMethod public void AcceptWithChange(Erreklamazioa erreklamazio, int num);
-	@WebMethod public void addErreklamazio(Erreklamazioa errekJarri);
+	@WebMethod public void addErreklamazio(User userJarri, User userJaso, Eskaera eskSelect, String sartutakoTxt, float prez, ErrekLarri lar);
 	
 	@WebMethod public Driver getDriverOfRide(Ride ride);
 	

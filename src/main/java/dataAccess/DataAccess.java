@@ -742,7 +742,22 @@ public class DataAccess {
 			Driver ezabDriverDB = (Driver) ezabUserDB;
 			List<Ride> rideList = ezabDriverDB.getRides();
 			for(Ride ride : rideList) {
-				kantzelatuRide(ride);
+				//kantzelatuRide(ride);
+				Ride rideDB = db.find(Ride.class, ride.getRideNumber());
+				rideDB.setEgoera(RideEgoera.CANCELLED);
+				for(Eskaera esk: rideDB.getEskaerenList()) {
+					if (esk.getEgoera()==EskaeraEgoera.ACCEPTED) {
+						esk.getBidaiari().setDirua(esk.getBidaiari().getDirua()+esk.getPrez());
+						Movement mov = new Movement(esk.getBidaiari(),esk.getPrez(), "+");
+						addMovement(mov);
+						db.persist(mov);
+						Alerta alert = new Alerta(esk.getBidaiari(), AlertMota.BIDAIA_KANTZELATU);
+						
+						addAlert(alert);
+						db.persist(alert);
+						esk.setEgoera(EskaeraEgoera.CANCELLED);
+					}
+				}
 			}
 		}else {
 			Bidaiari ezabBidDB = (Bidaiari) ezabUserDB;
@@ -751,7 +766,24 @@ public class DataAccess {
 				if(esk.getEgoera() == EskaeraEgoera.FINISHED) {
 					return false;
 				}else {
-					kantzelatuEskaera(esk);
+					//kantzelatuEskaera(esk);
+					Eskaera eskaeraDB = db.find(Eskaera.class, esk.getEskaeraNumber());
+					if (eskaeraDB.getEgoera() == EskaeraEgoera.PENDING) {
+						eskaeraDB.setEgoera(EskaeraEgoera.CANCELLED);
+					}else if (eskaeraDB.getEgoera() == EskaeraEgoera.ACCEPTED) {
+						eskaeraDB.getBidaiari().diruSartuBid(eskaeraDB.getPrez());
+						Movement mov = new Movement( eskaeraDB.getBidaiari(),eskaeraDB.getPrez(), "+");
+						addMovement(mov);
+						db.persist(mov);
+						int lekuLibre = eskaeraDB.getRide().getnPlaces();
+						int eskatutakoak = eskaeraDB.getNPlaces();
+						eskaeraDB.getRide().setnPlaces(lekuLibre+eskatutakoak);
+						eskaeraDB.setEgoera(EskaeraEgoera.CANCELLED);	
+					}
+					Alerta alert = new Alerta(eskaeraDB.getRide().getDriver(), AlertMota.ESKAERA_KANTZELATU);
+					
+					addAlert(alert);
+					db.persist(alert);
 				}
 			}
 		}
@@ -793,19 +825,42 @@ public class DataAccess {
 		usr.addBalorazioa(b);
 	}*/
 	
-	public void addBalorazioa(Balorazio balorazio) {
-		try {
+	public void addBalorazioa(User userJaso, User userJarri, String deskribapena, Integer nota, Eskaera eskaera) {
+		
+		db.getTransaction().begin();
+		Balorazio balorazio = new Balorazio(userJarri, userJaso, deskribapena, nota, eskaera);
+		System.out.println("Hau addBalorazioa egin baino lehen");
+		System.out.println(balorazio);
+		System.out.println("BALORAZIOA:");
+		//System.out.println("Jarri: " + balorazio.getUserJarri());
+		System.out.println("Jaso: " + balorazio.getUserJaso());
+		System.out.println("Deskribapena: " + balorazio.getDeskribapena());
+		System.out.println("Nota: " + balorazio.getNota());
+		System.out.println("Eskaera: " + balorazio.getEskaera());
+		db.persist(balorazio);
+		Balorazio balorazioGehitutakoa = balorazio.getUserJaso().addBalorazioa(balorazio);
+		//Alerta alert = new Alerta(balorazio.getUserJaso(), AlertMota.BALORATUTA);
+		//addAlert(alert);
+		//db.persist(alert);
+		//balorazio.getEskaera().setEgoera(EskaeraEgoera.VALUED);
+		db.getTransaction().commit();
+		/*try {
+			System.out.println("DAO BALORAZIOA:");
+			System.out.println("Jarri: " + balorazio.getUserJarri());
+			System.out.println("Jaso: " + balorazio.getUserJaso());
 			System.out.println("Data accesen addBalorazioa-ren barruan");
 			System.out.println(balorazio);
+			
 			db.getTransaction().begin();
 			System.out.println(balorazio);
 			System.out.println("Trantsakzioa hasi ondoren");
 			System.out.println(balorazio);
-			Balorazio bDB = db.find(Balorazio.class, balorazio.getID());
-			System.out.println(bDB.getUserJaso());//null
-			System.out.println("-------------");
-			System.out.println(bDB.getUserJaso().getEmail());
-			User existingUser = db.find(User.class, bDB.getUserJaso().getEmail());
+			//db.persist(balorazio);
+			//Balorazio bDB = db.find(Balorazio.class, balorazio.getID());
+			//System.out.println(bDB.getUserJaso());//null
+			//System.out.println("-------------");
+			//System.out.println(bDB.getUserJaso().getEmail());
+			//User existingUser = db.find(User.class, bDB.getUserJaso().getEmail());
 			System.out.println("userreko metodoa baino lehen");
 			Balorazio balorazioGehitutakoa = existingUser.addBalorazioa(bDB);
 			db.persist(balorazioGehitutakoa);
@@ -822,7 +877,7 @@ public class DataAccess {
 		} catch (Exception e) {
 	        e.printStackTrace();
 	        db.getTransaction().rollback();
-	    }
+	    }*/
 	}
 	
 	public List<Balorazio> getUserBalorazioa(User user){
@@ -838,7 +893,7 @@ public class DataAccess {
 		}
 	}
 	
-	public ArrayList<Erreklamazioa> getUserErrek(User user){
+	public List<Erreklamazioa> getUserErrek(User user){
 		try {
 			db.getTransaction().begin();
 			User existingUser = db.find(User.class, user.getEmail());
@@ -1024,13 +1079,25 @@ public class DataAccess {
 		 
 	 }
 	 
-	 public void addErreklamazio(Erreklamazioa jarritakoErrek) {
+	 public void addErreklamazio(User userJarri, User userJaso, Eskaera eskSelect, String sartutakoTxt, float prez, ErrekLarri lar ) {
 		 try {
 				db.getTransaction().begin();
-				User existingUser = db.find(User.class, jarritakoErrek.getErrekJaso().getEmail());
-				Erreklamazioa errek = existingUser.addErrek(jarritakoErrek);
-				db.persist(errek);
-				Alerta alert = new Alerta(errek.getErrekJaso(), AlertMota.ERREKLAMATUTA);
+				Erreklamazioa errekJarri;
+			 if (userJarri instanceof Bidaiari) {
+				  errekJarri = new Erreklamazioa(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez());
+			 }else {
+				 if(lar.equals(ErrekLarri.TXIKIA)) {
+					  errekJarri = new Erreklamazioa(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez(), ErrekLarri.TXIKIA);
+				}else if(lar.equals(ErrekLarri.ERTAINA)) {
+					 errekJarri = new Erreklamazioa(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez(), ErrekLarri.ERTAINA);
+				}else {
+					 errekJarri = new Erreklamazioa(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez(), ErrekLarri.HANDIA);
+				}
+			 }
+			 db.persist(errekJarri);
+			 System.out.println(errekJarri);
+			 Erreklamazioa errek = errekJarri.getErrekJaso().addErrek(errekJarri);
+			 Alerta alert = new Alerta(errek.getErrekJaso(), AlertMota.ERREKLAMATUTA);
 				
 				addAlert(alert);
 				db.persist(alert);

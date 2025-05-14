@@ -2,11 +2,16 @@ package domain;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlIDREF;
 @XmlAccessorType(XmlAccessType.FIELD)
 @Entity
 public class Erreklamazioa implements Serializable{
@@ -14,16 +19,23 @@ public class Erreklamazioa implements Serializable{
 	@GeneratedValue
 	private Integer id;
 	
-	//@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+	@ManyToOne//(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	//@XmlIDREF
 	private User errekJarri;
 	
-	//@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-		//@XmlIDREF
+	@Override
+	public String toString() {
+		return "Erreklamazioa [id=" + id + ", errekJarri=" + errekJarri + ", errekJaso=" + errekJaso + ", eskaera="
+				+ eskaera + ", deskribapena=" + deskribapena + ", mota=" + mota + ", diru=" + diru + ", larri=" + larri
+				+ "]";
+	}
+	@ManyToOne//(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+	@XmlIDREF
 	private User errekJaso;
 	
-	//@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-		//@XmlIDREF
+	//@ManyToOne//(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+	//@XmlIDREF
+	@OneToOne
 	private Eskaera eskaera;
 	private String deskribapena;
 	private ErrekMota mota;

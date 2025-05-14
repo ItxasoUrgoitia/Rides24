@@ -51,7 +51,12 @@ public class DeleteUserGUI extends JFrame {
 		yes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				BLFacade facade = MainGUI.getBusinessLogic();
-				facade.ezabatuUser(user);
+				boolean ondo=facade.ezabatuUser(user);
+				if(ondo) {
+					jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("ReviewGUI.BtnClose"));
+				}else {
+					jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("Error"));
+				}
 			}
 		});
 		yes.setBounds(289, 167, 89, 23);

@@ -139,15 +139,7 @@ public class MainBidaiariGUI extends JFrame {
 		kontsultatuErrek.setBounds(241, 428, 240, 60);
 		contentPane.add(kontsultatuErrek);
 		
-		JButton nireBalor = new JButton(ResourceBundle.getBundle("Etiquetas").getString("OnartuGUI.See"));
-		nireBalor.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JFrame a = new ProfilaGUI(bidaiari);
-				a.setVisible(true);
-			}
-		});
-		nireBalor.setBounds(0, 488, 481, 60);
-		contentPane.add(nireBalor);
+		
 		
 		addWindowListener(new WindowAdapter() {
 			@Override

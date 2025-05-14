@@ -31,18 +31,21 @@ public abstract class User implements Serializable {
 
 	@XmlIDREF
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private ArrayList<Movement> mugimenduak = new ArrayList<Movement>();
+	private List<Movement> mugimenduak = new ArrayList<Movement>();
 
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private ArrayList<Alerta> alertak = new ArrayList<Alerta>();
+	private List<Alerta> alertak = new ArrayList<Alerta>();
 
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private ArrayList<Balorazio> balorazioak = new ArrayList<Balorazio>();
+	
+	@OneToMany(mappedBy = "userJaso", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	//@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private List<Balorazio> balorazioak = new ArrayList<Balorazio>();
 	
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private ArrayList<Erreklamazioa> errek = new ArrayList<Erreklamazioa>();
+	//@OneToMany(mappedBy = "userJaso", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private List<Erreklamazioa> errek = new ArrayList<Erreklamazioa>();
 
-	public ArrayList<Erreklamazioa> getErrek() {
+	public List<Erreklamazioa> getErrek() {
 		return errek;
 	}
 
@@ -65,7 +68,7 @@ public abstract class User implements Serializable {
 
 	}
 
-	public ArrayList<Movement> getMugimenduak() {
+	public List<Movement> getMugimenduak() {
 		return mugimenduak;
 	}
 
@@ -82,7 +85,7 @@ public abstract class User implements Serializable {
 	}
 
 
-	public ArrayList<Alerta> getAlertak() {
+	public List<Alerta> getAlertak() {
 		return alertak;
 	}
 
@@ -172,7 +175,7 @@ public abstract class User implements Serializable {
 		return balorazio;
 	}
 
-	public ArrayList<Balorazio> getBalorazioak() {
+	public List<Balorazio> getBalorazioak() {
 		return balorazioak;
 	}
 

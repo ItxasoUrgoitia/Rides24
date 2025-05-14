@@ -110,10 +110,11 @@ public class BalorazioaGUI extends JFrame {
 				if(!a1.isSelected() && !a2.isSelected() && !a3.isSelected() && !a4.isSelected() && !a5.isSelected()) {                         
 					jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("Error"));
 				}else {
-					Balorazio balorazio = new Balorazio(userJarri, userJaso, deskribapena, nota, eskaera);
-					System.out.println("Hau addBalorazioa egin baino lehen");
-					System.out.println(balorazio);
-					facade.addBalorazioa(balorazio);
+					
+					
+
+					
+					facade.addBalorazioa(userJaso, userJarri, deskribapena, nota, eskaera);
 					JFrame a = new MainBidaiariGUI((Bidaiari) userJarri);
 					a.setVisible(true);
 				}	

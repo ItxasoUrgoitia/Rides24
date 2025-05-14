@@ -82,12 +82,11 @@ public class JarriErreklamGUI extends JFrame {
 			grave.setVisible(false);
 			List<Eskaera> eskList = facade.getEskaerakBidaiari((Bidaiari) userJarri);
 			for (Eskaera esk : eskList) {
-				if(esk.getEgoera().equals(EskaeraEgoera.FINISHED)) {
+				if(esk.getEgoera().equals(EskaeraEgoera.CONFIRMED)) {
 					comboBox.addItem(esk); 
 				}	
 			}
-			Eskaera eskSelect = (Eskaera) comboBox.getSelectedItem();
-			errekJarri = new Erreklamazioa(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez());
+			
 		}else {
 			leve.setVisible(true);
 			intermedio.setVisible(true);
@@ -101,20 +100,31 @@ public class JarriErreklamGUI extends JFrame {
 					}	
 				}
 			}
-			Eskaera eskSelect = (Eskaera) comboBox.getSelectedItem();
-			if(leve.isSelected()) {
-				 errekJarri = new Erreklamazioa(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez(), ErrekLarri.TXIKIA);
-			}else if(intermedio.isSelected()) {
-				 errekJarri = new Erreklamazioa(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez(), ErrekLarri.ERTAINA);
-			}else {
-				 errekJarri = new Erreklamazioa(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez(), ErrekLarri.HANDIA);
-			}
 			
 		}
 		JButton btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Accept"));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				facade.addErreklamazio(errekJarri);
+				Eskaera eskSelect = (Eskaera) comboBox.getSelectedItem();
+				 Erreklamazioa errekJarri;
+				if (userJarri instanceof Bidaiari) {
+					facade.addErreklamazio(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez(), null);
+					
+
+				}else {
+					if(leve.isSelected()) {
+						facade.addErreklamazio(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez(), ErrekLarri.TXIKIA);
+					}else if(intermedio.isSelected()) {
+						facade.addErreklamazio(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez(), ErrekLarri.ERTAINA);
+						
+					}else {
+						facade.addErreklamazio(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez(), ErrekLarri.HANDIA);
+						
+					}
+					
+				}
+				
+				dispose();
 			}
 		});
 		btnNewButton.setBounds(169, 216, 89, 23);

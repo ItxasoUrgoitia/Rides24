@@ -41,7 +41,7 @@ public class MainGidariGUI extends JFrame {
 		setTitle(ResourceBundle.getBundle("Etiquetas").getString("MainGidariGUI.Title"));
 	    setBounds(100, 100, 495, 290);
 	    setTitle(driver.getEmail());
-		this.setSize(495, 599);
+		this.setSize(495, 663);
 		jLabelSelectOption = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("MainGidariGUI.Title"));
 		jLabelSelectOption.setBounds(0, 11, 481, 60);
 		jLabelSelectOption.setFont(new Font("Tahoma", Font.BOLD, 13));
@@ -150,6 +150,16 @@ public class MainGidariGUI extends JFrame {
 		});
 		kontsultatuErrek.setBounds(241, 488, 240, 60);
 		contentPane.add(kontsultatuErrek);
+		
+		JButton nireBalor = new JButton(ResourceBundle.getBundle("Etiquetas").getString("OnartuGUI.See"));
+		nireBalor.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame a = new ProfilaGUI(driver);
+				a.setVisible(true);
+			}
+		});
+		nireBalor.setBounds(0, 548, 481, 60);
+		contentPane.add(nireBalor);
 		
 		jButtonMugimenduak.setBounds(0, 308, 481, 60);
 		contentPane.add(jButtonMugimenduak);
