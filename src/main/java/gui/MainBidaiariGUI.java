@@ -119,7 +119,7 @@ public class MainBidaiariGUI extends JFrame {
 		notifikazioak.setBounds(0, 368, 481, 60);
 		contentPane.add(notifikazioak);
 		
-		JButton jarriErrek = new JButton(ResourceBundle.getBundle("Etiquetas").getString("MainGUI.MakeReclamation"));
+		/*JButton jarriErrek = new JButton(ResourceBundle.getBundle("Etiquetas").getString("MainGUI.MakeReclamation"));
 		jarriErrek.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFrame a = new JarriErreklamGUI(bidaiari);
@@ -127,7 +127,7 @@ public class MainBidaiariGUI extends JFrame {
 			}
 		});
 		jarriErrek.setBounds(0, 428, 240, 60);
-		contentPane.add(jarriErrek);
+		contentPane.add(jarriErrek);*/
 		
 		JButton kontsultatuErrek = new JButton(ResourceBundle.getBundle("Etiquetas").getString("MainGUI.Kontsultatu"));
 		kontsultatuErrek.addActionListener(new ActionListener() {
@@ -136,10 +136,18 @@ public class MainBidaiariGUI extends JFrame {
 				a.setVisible(true);
 			}
 		});
-		kontsultatuErrek.setBounds(241, 428, 240, 60);
+		kontsultatuErrek.setBounds(0, 428, 481, 60);
 		contentPane.add(kontsultatuErrek);
 		
-		
+		JButton nireBalor = new JButton(ResourceBundle.getBundle("Etiquetas").getString("OnartuGUI.See"));
+		nireBalor.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame a = new ProfilaGUI(bidaiari);
+				a.setVisible(true);
+			}
+		});
+		nireBalor.setBounds(0, 487, 481, 60);
+		contentPane.add(nireBalor);
 		
 		addWindowListener(new WindowAdapter() {
 			@Override

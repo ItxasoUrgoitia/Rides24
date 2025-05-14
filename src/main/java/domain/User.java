@@ -37,8 +37,8 @@ public abstract class User implements Serializable {
 	private List<Alerta> alertak = new ArrayList<Alerta>();
 
 	
-	@OneToMany(mappedBy = "userJaso", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	//@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	//@OneToMany(mappedBy = "userJaso", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Balorazio> balorazioak = new ArrayList<Balorazio>();
 	
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)

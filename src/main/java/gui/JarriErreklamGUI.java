@@ -40,7 +40,7 @@ public class JarriErreklamGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public JarriErreklamGUI(User userJarri) {
+	public JarriErreklamGUI(User userJarri, User userJaso, Eskaera eskaera) {
 		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -54,7 +54,7 @@ public class JarriErreklamGUI extends JFrame {
 		
 		
 		JTextArea textArea = new JTextArea();
-		textArea.setBounds(85, 101, 249, 67);
+		textArea.setBounds(82, 64, 249, 67);
 		contentPane.add(textArea);
 		String sartutakoTxt = textArea.getText();
 		
@@ -70,9 +70,7 @@ public class JarriErreklamGUI extends JFrame {
 		grave.setBounds(308, 179, 111, 23);
 		contentPane.add(grave);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(29, 58, 390, 22);
-		contentPane.add(comboBox);
+		
 		
 		
 		
@@ -80,45 +78,27 @@ public class JarriErreklamGUI extends JFrame {
 			leve.setVisible(false);
 			intermedio.setVisible(false);
 			grave.setVisible(false);
-			List<Eskaera> eskList = facade.getEskaerakBidaiari((Bidaiari) userJarri);
-			for (Eskaera esk : eskList) {
-				if(esk.getEgoera().equals(EskaeraEgoera.CONFIRMED)) {
-					comboBox.addItem(esk); 
-				}	
-			}
-			
 		}else {
 			leve.setVisible(true);
 			intermedio.setVisible(true);
 			grave.setVisible(true);
-			List<Ride> rideList = facade.getDriverRides((Driver) userJarri);
-			for (Ride rid : rideList) {
-				List<Eskaera> eskList = rid.getEskaerenList();
-				for (Eskaera esk : eskList) {
-					if(esk.getEgoera().equals(EskaeraEgoera.CONFIRMED)) {
-						comboBox.addItem(esk); 
-					}	
-				}
-			}
-			
 		}
+		
 		JButton btnNewButton = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Accept"));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Eskaera eskSelect = (Eskaera) comboBox.getSelectedItem();
 				 Erreklamazioa errekJarri;
+				 
 				if (userJarri instanceof Bidaiari) {
-					facade.addErreklamazio(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez(), null);
-					
-
+					facade.addErreklamazio(userJarri, userJaso, eskaera, sartutakoTxt, eskaera.getPrez(), null);
 				}else {
 					if(leve.isSelected()) {
-						facade.addErreklamazio(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez(), ErrekLarri.TXIKIA);
+						facade.addErreklamazio(userJarri, userJaso, eskaera, sartutakoTxt, eskaera.getPrez(), ErrekLarri.TXIKIA);
 					}else if(intermedio.isSelected()) {
-						facade.addErreklamazio(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez(), ErrekLarri.ERTAINA);
+						facade.addErreklamazio(userJarri, userJaso, eskaera, sartutakoTxt, eskaera.getPrez(), ErrekLarri.ERTAINA);
 						
 					}else {
-						facade.addErreklamazio(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez(), ErrekLarri.HANDIA);
+						facade.addErreklamazio(userJarri,userJaso, eskaera, sartutakoTxt, eskaera.getPrez(), ErrekLarri.HANDIA);
 						
 					}
 					

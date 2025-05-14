@@ -106,6 +106,10 @@ public class KantzelatuGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Ride rideSelect = (Ride) rides.getSelectedItem();
 				facade.amaituRide(rideSelect);
+				JFrame a = new AukerakEskGUI(rideSelect);
+				a.setVisible(true);
+				dispose();
+				
 			}
 		});
 		btnFinished.setBounds(21, 182, 190, 23);

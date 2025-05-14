@@ -6,17 +6,26 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlIDREF;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlAccessorType(XmlAccessType.FIELD)
 @Entity
 public class Erreklamazioa implements Serializable{
+	//@Id 
+	//@GeneratedValue
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//@XmlID
 	@Id 
-	@GeneratedValue
+	//@XmlJavaTypeAdapter(IntegerAdapter.class)
+	//@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
 	@ManyToOne//(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
@@ -75,10 +84,10 @@ public class Erreklamazioa implements Serializable{
 		this.deskribapena = deskribapena;
 		this.mota = ErrekMota.PENDING;
 	}
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public User getErrekJarri() {

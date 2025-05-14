@@ -35,7 +35,7 @@ public class Balorazio implements Serializable {
 	
 	public Balorazio(User userJarri, User userJaso, String deskribapena, int nota, Eskaera eskaera) {
 		super();
-		//this.userJarri = userJarri;
+		this.userJarri = userJarri;
 		this.userJaso = userJaso;
 		this.deskribapena = deskribapena;
 		this.nota = nota;

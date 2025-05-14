@@ -1080,23 +1080,30 @@ public class DataAccess {
 	 }
 	 
 	 public void addErreklamazio(User userJarri, User userJaso, Eskaera eskSelect, String sartutakoTxt, float prez, ErrekLarri lar ) {
+		 System.out.println("Jarri" + userJarri);
+		 System.out.println("Jaso" + userJaso);
 		 try {
 				db.getTransaction().begin();
+				User userJarriDB = db.find(User.class, userJarri.getEmail());
+				User userJasoDB = db.find(User.class, userJaso.getEmail());
 				Erreklamazioa errekJarri;
-			 if (userJarri instanceof Bidaiari) {
-				  errekJarri = new Erreklamazioa(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez());
+			 if (userJarriDB instanceof Bidaiari) {
+				  errekJarri = new Erreklamazioa(userJarriDB, userJasoDB, eskSelect, sartutakoTxt, eskSelect.getPrez());
 			 }else {
 				 if(lar.equals(ErrekLarri.TXIKIA)) {
-					  errekJarri = new Erreklamazioa(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez(), ErrekLarri.TXIKIA);
+					  errekJarri = new Erreklamazioa(userJarriDB, userJasoDB, eskSelect, sartutakoTxt, eskSelect.getPrez(), ErrekLarri.TXIKIA);
 				}else if(lar.equals(ErrekLarri.ERTAINA)) {
-					 errekJarri = new Erreklamazioa(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez(), ErrekLarri.ERTAINA);
+					 errekJarri = new Erreklamazioa(userJarriDB, userJasoDB, eskSelect, sartutakoTxt, eskSelect.getPrez(), ErrekLarri.ERTAINA);
 				}else {
-					 errekJarri = new Erreklamazioa(userJarri, eskSelect.getRide().getDriver(), eskSelect, sartutakoTxt, eskSelect.getPrez(), ErrekLarri.HANDIA);
+					 errekJarri = new Erreklamazioa(userJarriDB, userJasoDB, eskSelect, sartutakoTxt, eskSelect.getPrez(), ErrekLarri.HANDIA);
 				}
 			 }
+			 System.out.println(errekJarri);
 			 db.persist(errekJarri);
 			 System.out.println(errekJarri);
 			 Erreklamazioa errek = errekJarri.getErrekJaso().addErrek(errekJarri);
+			 System.out.println("kjfñks");
+			 System.out.println(errekJarri);
 			 Alerta alert = new Alerta(errek.getErrekJaso(), AlertMota.ERREKLAMATUTA);
 				
 				addAlert(alert);
