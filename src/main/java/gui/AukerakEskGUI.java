@@ -79,11 +79,11 @@ public class AukerakEskGUI extends JFrame {
 		jLabelMsg.setForeground(Color.red);
 		contentPane.add(jLabelMsg);
 
-		JLabel lbl_Title = new JLabel("k"/*ResourceBundle.getBundle("Etiquetas").getString("OnartuGUI.Title")*/);
+		JLabel lbl_Title = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("SelectOption"));
 		lbl_Title.setBounds(49, 35, 335, 32);
 		contentPane.add(lbl_Title);
 
-		JButton erreklamatu = new JButton(ResourceBundle.getBundle("Etiquetas").getString("OnartuGUI.Accept"));
+		JButton erreklamatu = new JButton(ResourceBundle.getBundle("Etiquetas").getString("MainGUI.MakeReclamation"));
 		erreklamatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Eskaera selectedEskaera = (Eskaera) eskaerak.getSelectedItem();
@@ -95,7 +95,7 @@ public class AukerakEskGUI extends JFrame {
 		erreklamatu.setBounds(156, 180, 89, 23);
 		contentPane.add(erreklamatu);
 		
-		JButton baloratu = new JButton(ResourceBundle.getBundle("Etiquetas").getString("OnartuGUI.Reject"));
+		JButton baloratu = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Baloratu.Baloratu"));
 		baloratu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Eskaera selectedEskaera = (Eskaera) eskaerak.getSelectedItem();
@@ -106,7 +106,7 @@ public class AukerakEskGUI extends JFrame {
 		baloratu.setBounds(363, 180, 89, 23);
 		contentPane.add(baloratu);
 		
-		JButton itxi = new JButton(ResourceBundle.getBundle("Etiquetas").getString("OnartuGUI.See")); //$NON-NLS-1$ //$NON-NLS-2$
+		JButton itxi = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close")); //$NON-NLS-1$ //$NON-NLS-2$
 		itxi.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();

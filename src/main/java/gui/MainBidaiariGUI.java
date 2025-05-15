@@ -109,7 +109,7 @@ public class MainBidaiariGUI extends JFrame {
 		deletUser.setBounds(0, 308, 481, 60);
 		contentPane.add(deletUser);
 		
-		JButton notifikazioak = new JButton(ResourceBundle.getBundle("Etiquetas").getString("MainGUI.Notifications") +" " + bidaiari.getAlertak().size());
+		JButton notifikazioak = new JButton(ResourceBundle.getBundle("Etiquetas").getString("MainGUI.Notifications"));
 		notifikazioak.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFrame a = new AlertaGUI(bidaiari);
@@ -126,7 +126,7 @@ public class MainBidaiariGUI extends JFrame {
 				a.setVisible(true);
 			}
 		});
-		kontsultatuErrek.setBounds(241, 428, 240, 60);
+		kontsultatuErrek.setBounds(0, 428, 481, 60);
 		contentPane.add(kontsultatuErrek);
 		
 		JButton nireBalor = new JButton(ResourceBundle.getBundle("Etiquetas").getString("OnartuGUI.See"));

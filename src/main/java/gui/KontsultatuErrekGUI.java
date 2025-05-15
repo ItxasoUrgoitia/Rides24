@@ -69,7 +69,7 @@ public class KontsultatuErrekGUI extends JFrame {
 			System.out.println(errek.getErrekJarri().getEmail().equals(user.getEmail()));
 			System.out.println(!(errek.getMota().equals(ErrekMota.PENDING)));
 
-			if (errek.getErrekJarri().getEmail().equals(user.getEmail()) && !(errek.getMota().equals(ErrekMota.PENDING))) {
+			if (errek.getErrekJarri().getEmail().equals(user.getEmail())) {
 				listModel.addElement(errek.toString());
 			}
 

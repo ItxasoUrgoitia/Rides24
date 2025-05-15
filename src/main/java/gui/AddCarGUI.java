@@ -99,6 +99,7 @@ public class AddCarGUI extends JFrame {
         			if(!ondo) {
         				jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("Error"));
         			}
+        			dispose();
         		}
         	}
         });

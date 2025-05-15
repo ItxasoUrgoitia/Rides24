@@ -13,6 +13,7 @@ import domain.User;
 import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.ResourceBundle;
 import java.awt.event.ActionEvent;
 
 public class ErrekETaBaloBidGUI extends JFrame {
@@ -41,7 +42,7 @@ public class ErrekETaBaloBidGUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton baloratu = new JButton("New button");
+		JButton baloratu = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Baloratu.Baloratu"));
 		baloratu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) { 
 				JFrame a = new BalorazioaGUI(jarri, jaso, eskera);
@@ -52,7 +53,7 @@ public class ErrekETaBaloBidGUI extends JFrame {
 		baloratu.setBounds(44, 130, 137, 37);
 		contentPane.add(baloratu);
 		
-		JButton erreklamatu = new JButton("New button");
+		JButton erreklamatu = new JButton(ResourceBundle.getBundle("Etiquetas").getString("MainGUI.MakeReclamation"));
 		erreklamatu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFrame a = new JarriErreklamGUI(jarri, jaso, eskera);
@@ -62,7 +63,7 @@ public class ErrekETaBaloBidGUI extends JFrame {
 		erreklamatu.setBounds(245, 132, 150, 33);
 		contentPane.add(erreklamatu);
 		
-		JButton itxi = new JButton("New button");
+		JButton itxi = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
 		itxi.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
