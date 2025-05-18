@@ -738,6 +738,7 @@ public class DataAccess {
 		db.getTransaction().begin();
 		boolean ondo = true;
 		User ezabUserDB = bilatuUserEmail(user.getEmail());
+		db.getTransaction().commit();
 		if (ezabUserDB instanceof Driver) {
 			Driver ezabDriverDB = (Driver) ezabUserDB;
 			List<Ride> rideList = ezabDriverDB.getRides();
@@ -755,7 +756,8 @@ public class DataAccess {
 				}
 			}
 		}
-		 db.remove(ezabUserDB);
+		db.getTransaction().begin();
+		db.remove(ezabUserDB);
 		db.getTransaction().commit();
 		return true;
 	}
