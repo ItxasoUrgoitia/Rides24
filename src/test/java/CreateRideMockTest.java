@@ -66,7 +66,7 @@ public class CreateRideMockTest {
 	
 	
 	Driver driver;
-	
+
 	@Test
 	//sut.createRide:  The Driver("iker driver", "driver1@gmail.com") HAS one ride "from" "to" in that "date". 
 	public void test1() {
@@ -188,11 +188,11 @@ public class CreateRideMockTest {
 				}	
 				
 				
-				Mockito.when(db.find(Driver.class, null)).thenThrow(IllegalArgumentException.class);
+				Mockito.when(db.find(Driver.class, null)).thenThrow(IllegalArgumentException.class);//Ez du IllegalArgumentException kontrolatzen eta gora jaurtitzen du
 				
 				//invoke System Under Test (sut)  
 				sut.open();
-				Ride ride=sut.createRide(rideFrom, rideTo, rideDate, 0, 0, driverEmail);
+				Ride ride=sut.createRide(rideFrom, rideTo, rideDate, 0, 0, driverEmail); //Akats bat dago 
 				System.out.println("ride "+ride);
 
 				//verify the results
@@ -221,6 +221,7 @@ public class CreateRideMockTest {
 	//sut.createRide:  The ride "from" is null. The test must return null. If  an Exception is returned the createRide method is not well implemented.
 
 	//This method detects a fail in createRide method because the method does not check if the parameters are null, and the ride is created.
+	//Bidaia sortzen ari garenean eta from null badago, NullPointerException jaurtiko du.
 	
 	public void test4() {
 		String driverName="Aitor Fernandez";
@@ -249,7 +250,8 @@ public class CreateRideMockTest {
 			 ride=sut.createRide(rideFrom, rideTo, rideDate, 0, 0, driverEmail);
 			sut.close();			
 			//verify the results
-			assertNull(ride);
+			System.out.println("Ride: "+ride);
+			assertNull(ride); 
 			
 		   } catch (RideAlreadyExistException e) {
 			// TODO Auto-generated catch block

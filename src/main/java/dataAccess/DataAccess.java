@@ -935,7 +935,7 @@ public class DataAccess {
 			
 			
 			float dirua;
-			if(erreklDB.getLarri().equals(ErrekLarri.TXIKIA)) {
+	/*2*/	if(erreklDB.getLarri().equals(ErrekLarri.TXIKIA)) {
 				dirua = erreklDB.getEskaera().getPrez() * (1.1f);
 			}else if(erreklDB.getLarri().equals(ErrekLarri.ERTAINA)) {
 				dirua = erreklDB.getEskaera().getPrez() * (1.3f);
@@ -943,21 +943,21 @@ public class DataAccess {
 				dirua = erreklDB.getEskaera().getPrez() * (1.5f);
 			}
 			bidaiariDB.diruSartuBid((dirua*(-1)));
-			Movement mov = new Movement( bidaiariDB,dirua, "-");
+			Movement mov = new Movement( bidaiariDB,dirua, "-"); //m1
 			addMovement(mov);
 			db.persist(mov);
 			Alerta alert = new Alerta(bidaiariDB, AlertMota.DIRUA_ATERA);
-			addAlert(alert);
+			addAlert(alert); //a1
 			db.persist(alert);
 			
 			
 			driverDB.diruSartuDri(dirua);
-			Movement mov2 = new Movement(driverDB, dirua, "+");
+			Movement mov2 = new Movement(driverDB, dirua, "+"); //m2
 			addMovement(mov2);
 			db.persist(mov2);
 			Alerta alert2 = new Alerta(driverDB, AlertMota.DIRUA_SARTU);
 			
-			addAlert(alert2);
+			addAlert(alert2); //a2
 			db.persist(alert2);
 			
 		}else {
@@ -971,20 +971,20 @@ public class DataAccess {
 			
 			bidaiariDB.diruSartuBid(erreklDB.getEskaera().getPrez());
 			Movement mov = new Movement(bidaiariDB, erreklDB.getEskaera().getPrez(), "+");
-			addMovement(mov);
+			addMovement(mov); //m3
 			db.persist(mov);
 			Alerta alert = new Alerta(bidaiariDB, AlertMota.DIRUA_SARTU);
 			
-			addAlert(alert);
+			addAlert(alert);//a1.1
 			db.persist(alert);
 			
 			driverDB.diruSartuDri(erreklDB.getEskaera().getPrez()*(-1));
 			Movement mov2 = new Movement(driverDB,erreklDB.getEskaera().getPrez(), "-");
-			addMovement(mov2);
+			addMovement(mov2);//m4
 			db.persist(mov2);
 			Alerta alert2 = new Alerta(driverDB, AlertMota.DIRUA_ATERA);
 			
-			addAlert(alert2);
+			addAlert(alert2);//a2.1
 			db.persist(alert2);
 		}
 		erreklDB.setMota(ErrekMota.ACCEPTED);
