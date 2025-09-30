@@ -25,6 +25,7 @@ import domain.Eskaera;
 import domain.Movement;
 import domain.Ride;
 
+import java.sql.Date;
 import java.util.List;
 
 public class acceptErrekBDWhiteTest {
@@ -38,6 +39,8 @@ public class acceptErrekBDWhiteTest {
 	 private Driver driver;
 	 private Bidaiari bidaiari;
 	 private Eskaera eskaera;
+	 private Ride ride;
+	 
 	 @Test
 	 
 	 public void test1() {
@@ -46,6 +49,9 @@ public class acceptErrekBDWhiteTest {
 	  
 	         bidaiari = testDA.createBidaiari("Bidaiari Test", "123", "bidaiari1@gmail.com", "12345678A");
 	         
+	         java.sql.Date date = java.sql.Date.valueOf("2025-09-30");
+	         
+	         ride = testDA.createRide("Origin", "Destination", date, 4, 1.0, driver);
 	         
 	         
 	         eskaera = testDA.createEskaera(EskaeraEgoera.PENDING, 4, ride, bidaiari);
