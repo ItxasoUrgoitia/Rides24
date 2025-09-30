@@ -8,6 +8,7 @@ import org.junit.Test;
 import dataAccess.DataAccess;
 import domain.*;
 import domain.User;
+import domain.Erreklamazioa.ErrekLarri;
 
 import static org.junit.Assert.assertThrows;
 import javax.persistence.*;
@@ -25,10 +26,11 @@ public class AddErreklamazioBDBlackTest {
     private static EntityManagerFactory emf;
     private EntityManager em;
     private DataAccess sut;
+    private Integer eskaeraId; // Guardar el ID real de Eskaera
 
     @BeforeClass
     public static void init() {
-        emf = Persistence.createEntityManagerFactory("objectdb:test.odb");
+        emf = Persistence.createEntityManagerFactory("objectdb:db/testDB.odb");
     }
 
     @AfterClass
@@ -44,8 +46,10 @@ public class AddErreklamazioBDBlackTest {
         em.persist(new Driver("bidaiari@ex.com", "Bidaiari", "20", "100f"));
         em.persist(new Bidaiari("admin@ex.com", "Admin", "30", "200f"));
         em.persist(new Bidaiari("userjaso@ex.com", "User", "25", "150f"));
-        em.persist(new Eskaera());
+        Eskaera esk = new Eskaera();
+        em.persist(esk);
         em.getTransaction().commit();
+        eskaeraId = esk.getEskaeraNumber(); // Guardar el ID real
     }
 
     @After
@@ -61,14 +65,14 @@ public class AddErreklamazioBDBlackTest {
     @Test
     public void testNullUserJarri() {
         User userJaso = em.find(User.class, "userjaso@ex.com");
-        Eskaera esk = em.find(Eskaera.class, 1);
+        Eskaera esk = em.find(Eskaera.class, eskaeraId); // Usar el ID real
         assertThrows(NullPointerException.class, () -> sut.addErreklamazio(null, userJaso, esk, "Queja", 100f, ErrekLarri.TXIKIA));
     }
 
     @Test
     public void testNullUserJaso() {
         User userJarri = em.find(User.class, "bidaiari@ex.com");
-        Eskaera esk = em.find(Eskaera.class, 1);
+        Eskaera esk = em.find(Eskaera.class, eskaeraId); // Usar el ID real
         assertThrows(NullPointerException.class, () -> sut.addErreklamazio(userJarri, null, esk, "Queja", 100f, ErrekLarri.TXIKIA));
     }
 
@@ -83,7 +87,7 @@ public class AddErreklamazioBDBlackTest {
     public void testNullTexto() {
         User userJarri = em.find(User.class, "bidaiari@ex.com");
         User userJaso = em.find(User.class, "userjaso@ex.com");
-        Eskaera esk = em.find(Eskaera.class, 1);
+        Eskaera esk = em.find(Eskaera.class, eskaeraId); // Usar el ID real
         assertThrows(NullPointerException.class, () -> sut.addErreklamazio(userJarri, userJaso, esk, null, 100f, ErrekLarri.TXIKIA));
     }
 
@@ -91,8 +95,7 @@ public class AddErreklamazioBDBlackTest {
     public void testEmptyTexto() {
         User userJarri = em.find(User.class, "bidaiari@ex.com");
         User userJaso = em.find(User.class, "userjaso@ex.com");
-        Eskaera esk = em.find(Eskaera.class, 1);
+        Eskaera esk = em.find(Eskaera.class, eskaeraId); // Usar el ID real
         assertThrows(NullPointerException.class, () -> sut.addErreklamazio(userJarri, userJaso, esk, "", 100f, ErrekLarri.TXIKIA));
     }
 }
-
