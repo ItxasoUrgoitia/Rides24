@@ -9,8 +9,11 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import configuration.ConfigXML;
+import domain.Bidaiari;
 import domain.Driver;
+import domain.Eskaera;
 import domain.Ride;
+import domain.Eskaera.EskaeraEgoera;
 
 
 public class TestDataAccess {
@@ -87,6 +90,37 @@ public class TestDataAccess {
 			}
 			return driver;
     }
+	//Nik gehitu dut hau (createBidaiari)
+	public Bidaiari createBidaiari(String name, String pasahitza, String email, String nanZbk) {
+		System.out.println(">> TestDataAccess: createBidaiari");
+		Bidaiari bidaiari=null;
+			db.getTransaction().begin();
+			try {
+			    bidaiari=new Bidaiari(name,pasahitza, email, nanZbk);
+				db.persist(bidaiari);
+				db.getTransaction().commit();
+			}
+			catch (Exception e){
+				e.printStackTrace();
+			}
+			return bidaiari;
+    }
+	//Nik gehitu dut hau (createEskaera)
+	public Eskaera createEskaera(EskaeraEgoera egoera, int nPlaces, Ride ride, Bidaiari bidaiari) {
+		System.out.println(">> TestDataAccess: createEskaera");
+		Eskaera eskaera=null;
+			db.getTransaction().begin();
+			try {
+			    eskaera=new Eskaera(egoera, nPlaces, ride, bidaiari);
+				db.persist(eskaera);
+				db.getTransaction().commit();
+			}
+			catch (Exception e){
+				e.printStackTrace();
+			}
+			return eskaera;
+    }
+	
 	public boolean existDriver(String email) {
 		 return  db.find(Driver.class, email)!=null;
 		 

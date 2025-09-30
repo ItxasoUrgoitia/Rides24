@@ -3,8 +3,11 @@ package testOperations;
 import java.util.Date;
 
 import configuration.ConfigXML;
+import domain.Bidaiari;
 import domain.Driver;
+import domain.Eskaera;
 import domain.Ride;
+import domain.Eskaera.EskaeraEgoera;
 
 public class TestBusinessLogic {
 	TestDataAccess dbManagerTest;
@@ -34,6 +37,22 @@ public class TestBusinessLogic {
 			return driver;
 
 		}
+		
+		public Bidaiari createBidaiari(String name, String pasahitza, String email, String nanZbk) {
+			dbManagerTest.open();
+			Bidaiari bidaiari=dbManagerTest.createBidaiari( name,  pasahitza, email,  nanZbk);
+			dbManagerTest.close();
+			return bidaiari;
+
+		}
+		
+		public Eskaera createEskaera(EskaeraEgoera egoera, int nPlaces, Ride ride, Bidaiari bidaiari) {
+			dbManagerTest.open();
+			Eskaera eskaera=dbManagerTest.createEskaera( egoera,  nPlaces, ride,  bidaiari);
+			dbManagerTest.close();
+			return eskaera;
+
+	    }
 		
 		public boolean existDriver(String email) {
 			dbManagerTest.open();
