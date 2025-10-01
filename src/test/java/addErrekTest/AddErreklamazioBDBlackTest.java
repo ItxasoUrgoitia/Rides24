@@ -67,7 +67,7 @@ public class AddErreklamazioBDBlackTest {
         User userJaso = em.find(User.class, "userjaso@ex.com");
         Eskaera esk = em.find(Eskaera.class, eskaeraId); // Usar el ID real
         assertThrows(NullPointerException.class, () -> sut.addErreklamazio(null, userJaso, esk, "Queja", 100f, ErrekLarri.TXIKIA));
-    }
+        }
 
     @Test
     public void testNullUserJaso() {
