@@ -38,6 +38,5 @@
 			<attribute name="optional" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/User/Downloads/objectdb-2.9.4.zip"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
