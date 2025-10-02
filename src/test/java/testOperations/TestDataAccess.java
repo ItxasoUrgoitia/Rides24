@@ -2,6 +2,7 @@ package testOperations;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.persistence.EntityManager;
@@ -9,21 +10,19 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import configuration.ConfigXML;
+import domain.Alerta;
 import domain.Bidaiari;
 import domain.Driver;
 import domain.Eskaera;
-import domain.Ride;
 import domain.Eskaera.EskaeraEgoera;
-
+import domain.Ride;
 
 public class TestDataAccess {
-	protected  EntityManager  db;
-	protected  EntityManagerFactory emf;
+	protected EntityManager db;
+	protected EntityManagerFactory emf;
+	ConfigXML c = ConfigXML.getInstance();
 
-	ConfigXML  c=ConfigXML.getInstance();
-
-
-	public TestDataAccess()  {
+public TestDataAccess()  {
 		
 		System.out.println("TestDataAccess created");
 
@@ -57,7 +56,7 @@ public class TestDataAccess {
 		db.close();
 		System.out.println("TestDataAccess closed");
 	}
-
+	
 	public boolean removeDriver(String driverEmail) {
 		System.out.println(">> TestDataAccess: removeRide");
 		Driver d = db.find(Driver.class, driverEmail);
@@ -90,37 +89,6 @@ public class TestDataAccess {
 			}
 			return driver;
     }
-	//Nik gehitu dut hau (createBidaiari)
-	public Bidaiari createBidaiari(String name, String pasahitza, String email, String nanZbk) {
-		System.out.println(">> TestDataAccess: createBidaiari");
-		Bidaiari bidaiari=null;
-			db.getTransaction().begin();
-			try {
-			    bidaiari=new Bidaiari(name,pasahitza, email, nanZbk);
-				db.persist(bidaiari);
-				db.getTransaction().commit();
-			}
-			catch (Exception e){
-				e.printStackTrace();
-			}
-			return bidaiari;
-    }
-	//Nik gehitu dut hau (createEskaera)
-	public Eskaera createEskaera(EskaeraEgoera egoera, int nPlaces, Ride ride, Bidaiari bidaiari) {
-		System.out.println(">> TestDataAccess: createEskaera");
-		Eskaera eskaera=null;
-			db.getTransaction().begin();
-			try {
-			    eskaera=new Eskaera(egoera, nPlaces, ride, bidaiari);
-				db.persist(eskaera);
-				db.getTransaction().commit();
-			}
-			catch (Exception e){
-				e.printStackTrace();
-			}
-			return eskaera;
-    }
-	
 	public boolean existDriver(String email) {
 		 return  db.find(Driver.class, email)!=null;
 		 
@@ -172,7 +140,162 @@ public class TestDataAccess {
 		}
 
 
-		
+	public Bidaiari sortuBidaiari(String name, String pasahitza, String email, String nanZbk) {
+		Bidaiari bidaiari = null;
+		db.getTransaction().begin();
+		try {
+			bidaiari = new Bidaiari(name, pasahitza, email, nanZbk);
+			db.persist(bidaiari);
+			db.getTransaction().commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return bidaiari;
+	}
+
+	public Ride sortuRide(String from, String to, Date date, int nPlaces, double price, Driver driver) {
+		Ride ride = null;
+		db.getTransaction().begin();
+		try {
+			driver = db.find(Driver.class, driver.getEmail());
+			if (driver != null) {
+				ride = driver.addRide(from, to, date, nPlaces, (float) price);
+				db.persist(driver);
+			}
+			db.getTransaction().commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ride;
+	}
+
+	public Eskaera sortuEskaera(EskaeraEgoera egoera, int nPlaces, Ride ride, Bidaiari bidaiari) {
+		Eskaera eskaera = null;
+		db.getTransaction().begin();
+		try {
+			eskaera = new Eskaera(egoera, nPlaces, ride, bidaiari);
+			db.persist(eskaera);
+			db.getTransaction().commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return eskaera;
+	}
+
+	public void ezabatuEskaerak() {
+		db.getTransaction().begin();
+		db.createQuery("DELETE FROM Eskaera").executeUpdate();
+		db.getTransaction().commit();
+	}
+
+	public void ezabatuErabiltzaileak() {
+		db.getTransaction().begin();
+		db.createQuery("DELETE FROM Bidaiari").executeUpdate();
+		db.createQuery("DELETE FROM Driver").executeUpdate();
+		db.getTransaction().commit();
+	}
+
+	public List<Eskaera> getBidaiariEskaerak(Bidaiari bidaiari) {
+		db.getTransaction().begin();
+		try {
+			Bidaiari refreshedBidaiari = db.find(Bidaiari.class, bidaiari.getEmail());
+			List<Eskaera> eskaerak = refreshedBidaiari.getEskaerak();
+			db.getTransaction().commit();
+			return eskaerak;
+		} catch (Exception e) {
+			db.getTransaction().rollback();
+			throw e;
+		}
+	}
+
+	public List<Eskaera> getRideEskaerak(Ride ride) {
+		db.getTransaction().begin();
+		try {
+			Ride refreshedRide = db.find(Ride.class, ride.getRideNumber());
+			List<Eskaera> eskaerak = refreshedRide.getEskaerenList();
+			db.getTransaction().commit();
+			return eskaerak;
+		} catch (Exception e) {
+			db.getTransaction().rollback();
+			throw e;
+		}
+	}
+
+	public List<Alerta> getDriverAlertak(Driver driver) {
+		db.getTransaction().begin();
+		try {
+			Driver refreshedDriver = db.find(Driver.class, driver.getEmail());
+			List<Alerta> alertak = refreshedDriver.getAlertak();
+			db.getTransaction().commit();
+			return alertak;
+		} catch (Exception e) {
+			db.getTransaction().rollback();
+			throw e;
+		}
+	}
+
+	public void removeAlertak() {
+		db.getTransaction().begin();
+		db.createQuery("DELETE FROM Alerta").executeUpdate();
+		db.getTransaction().commit();
+	}
+
+	public void removeRides() {
+		db.getTransaction().begin();
+		db.createQuery("DELETE FROM Ride").executeUpdate();
+		db.getTransaction().commit();
+	}
+
+	
+
+	public Bidaiari createBidaiari(String name, String pasahitza, String email, String nanZbk) {
+		return sortuBidaiari(name, pasahitza, email, nanZbk);
+	}
+
+	public Ride createRide(String from, String to, java.sql.Date date, int nPlaces, double price, Driver driver) {
+		return sortuRide(from, to, date, nPlaces, price, driver);
+	}
+
+	public Eskaera createEskaera(Eskaera.EskaeraEgoera egoera, int nPlaces, Ride ride, Bidaiari bidaiari) {
+		return sortuEskaera(egoera, nPlaces, ride, bidaiari);
+	}
+
+	public void removeUsers() {
+		ezabatuErabiltzaileak();
+	}
+
+	public void removeEskaerak() {
+		ezabatuEskaerak();
+	}
+	
+	/*Nik gehitu dut hau (createBidaiari)
+	public Bidaiari createBidaiari(String name, String pasahitza, String email, String nanZbk) {
+		System.out.println(">> TestDataAccess: createBidaiari");
+		Bidaiari bidaiari = null;
+		db.getTransaction().begin();
+		try {
+			bidaiari = new Bidaiari(name, pasahitza, email, nanZbk);
+			db.persist(bidaiari);
+			db.getTransaction().commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return bidaiari;
+	}
+
+	// Nik gehitu dut hau (createEskaera)
+	public Eskaera createEskaera(EskaeraEgoera egoera, int nPlaces, Ride ride, Bidaiari bidaiari) {
+		System.out.println(">> TestDataAccess: createEskaera");
+		Eskaera eskaera = null;
+		db.getTransaction().begin();
+		try {
+			eskaera = new Eskaera(egoera, nPlaces, ride, bidaiari);
+			db.persist(eskaera);
+			db.getTransaction().commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return eskaera;
+	}*/
+	
 }
-
-
