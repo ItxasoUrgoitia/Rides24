@@ -1,0 +1,86 @@
+
+@businessLogic.BLFacadeImplementation#ezabatuUser(Ldomain/User;)Z]
+QC:/Users/User/git/Rides24/src/main/java/businessLogic/BLFacadeImplementation.java¯ ¯(&"startingBlock*÷
+startingBlock
+¯& ¯(1~
+|
+
+¯ ¯(
+%6"
+__annotate*)
+
+__unknown_file (
+	WebMethod*1
+
+__unknown_file (
+
+userdomain.UserU
+S
+
+¯, ¯(0
+userdomain.User"__annotation*"
+
+__unknown_file (
+
+%6*
+1*Ÿ
+1
+° °(‡
+„
+
+° °(
+%0dataAccess.DataAccess"__id*S
+
+__unknown_file (7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManager|z
+
+° °(
+
+%1void"dataAccess.DataAccess#open()V*9
+
+__unknown_file (
+
+%0dataAccess.DataAccess2open()‡
+„
+
+± ±(
+%2dataAccess.DataAccess"__id*S
+
+__unknown_file (7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManagerÛØ
+
+± ±(/
+%3boolean"1dataAccess.DataAccess#ezabatuUser(Ldomain/User;)Z*9
+
+__unknown_file (
+
+%2dataAccess.DataAccess*1
+
+__unknown_file (
+
+userdomain.User2ezabatuUser(Ldomain/User;)‡
+„
+
+² ²(
+%4dataAccess.DataAccess"__id*S
+
+__unknown_file (7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManager~|
+
+² ²(
+
+%5void"dataAccess.DataAccess#close()V*9
+
+__unknown_file (
+
+%4dataAccess.DataAccess2close()"
+
+³ ³(
+"":!
+
+¯' ¯(0
+userdomain.UserB(&
+$businessLogic.BLFacadeImplementationHX

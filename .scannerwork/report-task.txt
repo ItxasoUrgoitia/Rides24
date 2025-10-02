@@ -1,0 +1,7 @@
+organization=oihaneeeperr
+projectKey=oihaneeeperr_rides24ona
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.68145
+dashboardUrl=https://sonarcloud.io/dashboard?id=oihaneeeperr_rides24ona
+ceTaskId=AZmlwO8fg-EK4DMRO2Dw
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZmlwO8fg-EK4DMRO2Dw

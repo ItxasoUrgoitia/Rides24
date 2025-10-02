@@ -1,0 +1,912 @@
+
+:dataAccess.DataAccess#acceptErrek(Ldomain/Erreklamazioa;)VN
+BC:/Users/User/git/Rides24/src/main/java/dataAccess/DataAccess.javaö ö("9*˙+
+2
+≈ ≈($•¢
+
+≈ ≈(3
+%42domain.User"0domain.Erreklamazioa#getErrekJaso()Ldomain/User;*>
+
+__unknown_file ("
+ 
+erreklDBdomain.Erreklamazioa2getErrekJaso()_
+]
+
+≈ ≈(4
+driverdomain.Driver"__id*0
+
+__unknown_file (
+
+%42domain.Userïí
+
+∆+ ∆(<
+%43java.lang.String"(domain.User#getEmail()Ljava/lang/String;*5
+
+__unknown_file (
+
+driverdomain.Driver2
+getEmail()S
+Q
+
+∆ ∆(>
+driverDBdomain.Driver"__id*"
+
+__unknown_file (
+""ß§
+
+»" »(:
+%44domain.User"1domain.Erreklamazioa#getErrekJarri()Ldomain/User;*>
+
+__unknown_file ("
+ 
+erreklDBdomain.Erreklamazioa2getErrekJarri()c
+a
+
+» »(;
+bidaiaridomain.Bidaiari"__id*0
+
+__unknown_file (
+
+%44domain.Userôñ
+
+…1 …(D
+%45java.lang.String"(domain.User#getEmail()Ljava/lang/String;*9
+
+__unknown_file (
+
+bidaiaridomain.Bidaiari2
+getEmail()W
+U
+
+… …(F
+
+bidaiariDBdomain.Bidaiari"__id*"
+
+__unknown_file (
+""ß§
+
+Ã Ã(0
+%46domain.Eskaera"1domain.Erreklamazioa#getEskaera()Ldomain/Eskaera;*>
+
+__unknown_file ("
+ 
+erreklDBdomain.Erreklamazioa2getEskaera()wu
+
+Ã Ã(:
+%47float"domain.Eskaera#getPrez()F*3
+
+__unknown_file (
+
+%46domain.Eskaera2	getPrez()∏µ
+
+Ã Ã(;
+%48void" domain.Bidaiari#diruSartuBid(F)V*;
+
+__unknown_file (
+
+
+bidaiariDBdomain.Bidaiari**
+
+__unknown_file (
+
+%47float2diruSartuBid(F)ß§
+
+Õ+ Õ(@
+%49domain.Eskaera"1domain.Erreklamazioa#getEskaera()Ldomain/Eskaera;*>
+
+__unknown_file ("
+ 
+erreklDBdomain.Erreklamazioa2getEskaera()wu
+
+Õ+ Õ(J
+%50float"domain.Eskaera#getPrez()F*3
+
+__unknown_file (
+
+%49domain.Eskaera2	getPrez()75
+
+Õ Õ(
+%51domain.Movement"domain.Movementì
+ê
+
+Õ Õ(P
+%52"9domain.Movement#<init>(Ldomain/User;FLjava/lang/String;)V*4
+
+__unknown_file (
+
+%51domain.Movement*;
+
+__unknown_file (
+
+
+bidaiariDBdomain.Bidaiari**
+
+__unknown_file (
+
+%50float*!
+
+__unknown_file (
++b
+`
+
+Õ Õ(Q
+movdomain.Movement"__id*4
+
+__unknown_file (
+
+%51domain.Movement‡›
+
+Œ Œ(
+%53void"5dataAccess.DataAccess#addMovement(Ldomain/Movement;)V*5
+
+__unknown_file (
+dataAccess.DataAccess*4
+
+__unknown_file (
+
+movdomain.Movement2addMovement(Ldomain/Movement;)X
+V
+
+–) –(2
+%54domain.Alerta$AlertMota"__id*"
+
+__unknown_file (
+""X
+V
+
+–) –(>
+%55domain.Alerta$AlertMota"__id*"
+
+__unknown_file (
+""31
+
+– –(
+%56domain.Alerta"domain.AlertaÑ
+Å
+
+– –(?
+%57"=domain.Alerta#<init>(Ldomain/User;Ldomain/Alerta$AlertMota;)V*2
+
+__unknown_file (
+
+%56domain.Alerta*;
+
+__unknown_file (
+
+
+bidaiariDBdomain.Bidaiari*<
+
+__unknown_file ( 
+
+%55domain.Alerta$AlertMota`
+^
+
+– –(@
+alertdomain.Alerta"__id*2
+
+__unknown_file (
+
+%56domain.Alerta÷”
+
+“ “(
+%58void"0dataAccess.DataAccess#addAlert(Ldomain/Alerta;)V*5
+
+__unknown_file (
+dataAccess.DataAccess*4
+
+__unknown_file (
+
+alertdomain.Alerta2addAlert(Ldomain/Alerta;)ß§
+
+’ ’(.
+%59domain.Eskaera"1domain.Erreklamazioa#getEskaera()Ldomain/Eskaera;*>
+
+__unknown_file ("
+ 
+erreklDBdomain.Erreklamazioa2getEskaera()wu
+
+’ ’(8
+%60float"domain.Eskaera#getPrez()F*3
+
+__unknown_file (
+
+%59domain.Eskaera2	getPrez()p
+n
+
+’ ’(=
+%61float"__calculate*
+
+’8 ’(9
+**
+
+’ ’(8
+
+%60float*
+
+’9 ’(=2≤Ø
+
+’ ’(>
+%62void"domain.Driver#diruSartuDri(F)V*7
+
+__unknown_file (
+
+driverDBdomain.Driver**
+
+__unknown_file (
+
+%61float2diruSartuDri(F)ß§
+
+÷) ÷(>
+%63domain.Eskaera"1domain.Erreklamazioa#getEskaera()Ldomain/Eskaera;*>
+
+__unknown_file ("
+ 
+erreklDBdomain.Erreklamazioa2getEskaera()wu
+
+÷) ÷(H
+%64float"domain.Eskaera#getPrez()F*3
+
+__unknown_file (
+
+%63domain.Eskaera2	getPrez()75
+
+÷ ÷(
+%65domain.Movement"domain.Movementè
+å
+
+÷ ÷(N
+%66"9domain.Movement#<init>(Ldomain/User;FLjava/lang/String;)V*4
+
+__unknown_file (
+
+%65domain.Movement*7
+
+__unknown_file (
+
+driverDBdomain.Driver**
+
+__unknown_file (
+
+%64float*!
+
+__unknown_file (
+-c
+a
+
+÷ ÷(O
+mov2domain.Movement"__id*4
+
+__unknown_file (
+
+%65domain.Movement·ﬁ
+
+◊ ◊(
+%67void"5dataAccess.DataAccess#addMovement(Ldomain/Movement;)V*5
+
+__unknown_file (
+dataAccess.DataAccess*5
+
+__unknown_file (
+
+mov2domain.Movement2addMovement(Ldomain/Movement;)X
+V
+
+Ÿ( Ÿ(1
+%68domain.Alerta$AlertMota"__id*"
+
+__unknown_file (
+""X
+V
+
+Ÿ( Ÿ(=
+%69domain.Alerta$AlertMota"__id*"
+
+__unknown_file (
+""31
+
+Ÿ Ÿ(
+%70domain.Alerta"domain.AlertaÄ
+˝
+
+Ÿ Ÿ(>
+%71"=domain.Alerta#<init>(Ldomain/User;Ldomain/Alerta$AlertMota;)V*2
+
+__unknown_file (
+
+%70domain.Alerta*7
+
+__unknown_file (
+
+driverDBdomain.Driver*<
+
+__unknown_file ( 
+
+%69domain.Alerta$AlertMotaa
+_
+
+Ÿ Ÿ(?
+alert2domain.Alerta"__id*2
+
+__unknown_file (
+
+%70domain.Alerta◊‘
+
+€ €(
+%72void"0dataAccess.DataAccess#addAlert(Ldomain/Alerta;)V*5
+
+__unknown_file (
+dataAccess.DataAccess*5
+
+__unknown_file (
+
+alert2domain.Alerta2addAlert(Ldomain/Alerta;)*
+1*‘
+3
+± ±(h
+f
+
+± ±(&
+%23float"__calculate*
+
+±! ±("
+**
+
+± ±(!
+""*
+
+±" ±(&2∏µ
+
+± ±((
+%24void" domain.Bidaiari#diruSartuBid(F)V*;
+
+__unknown_file (
+
+
+bidaiariDBdomain.Bidaiari**
+
+__unknown_file (
+
+%23float2diruSartuBid(F)75
+
+≤ ≤(
+%25domain.Movement"domain.Movementã
+à
+
+≤ ≤(6
+%26"9domain.Movement#<init>(Ldomain/User;FLjava/lang/String;)V*4
+
+__unknown_file (
+
+%25domain.Movement*;
+
+__unknown_file (
+
+
+bidaiariDBdomain.Bidaiari*"
+
+__unknown_file (
+""*!
+
+__unknown_file (
+-b
+`
+
+≤ ≤(7
+movdomain.Movement"__id*4
+
+__unknown_file (
+
+%25domain.Movement‡›
+
+≥ ≥(
+%27void"5dataAccess.DataAccess#addMovement(Ldomain/Movement;)V*5
+
+__unknown_file (
+dataAccess.DataAccess*4
+
+__unknown_file (
+
+movdomain.Movement2addMovement(Ldomain/Movement;)X
+V
+
+µ) µ(2
+%28domain.Alerta$AlertMota"__id*"
+
+__unknown_file (
+""X
+V
+
+µ) µ(>
+%29domain.Alerta$AlertMota"__id*"
+
+__unknown_file (
+""31
+
+µ µ(
+%30domain.Alerta"domain.AlertaÑ
+Å
+
+µ µ(?
+%31"=domain.Alerta#<init>(Ldomain/User;Ldomain/Alerta$AlertMota;)V*2
+
+__unknown_file (
+
+%30domain.Alerta*;
+
+__unknown_file (
+
+
+bidaiariDBdomain.Bidaiari*<
+
+__unknown_file ( 
+
+%29domain.Alerta$AlertMota`
+^
+
+µ µ(@
+alertdomain.Alerta"__id*2
+
+__unknown_file (
+
+%30domain.Alerta÷”
+
+∂ ∂(
+%32void"0dataAccess.DataAccess#addAlert(Ldomain/Alerta;)V*5
+
+__unknown_file (
+dataAccess.DataAccess*4
+
+__unknown_file (
+
+alertdomain.Alerta2addAlert(Ldomain/Alerta;)™ß
+
+∫ ∫(
+%33void"domain.Driver#diruSartuDri(F)V*7
+
+__unknown_file (
+
+driverDBdomain.Driver*"
+
+__unknown_file (
+""2diruSartuDri(F)75
+
+ª ª(
+%34domain.Movement"domain.Movementá
+Ñ
+
+ª ª(5
+%35"9domain.Movement#<init>(Ldomain/User;FLjava/lang/String;)V*4
+
+__unknown_file (
+
+%34domain.Movement*7
+
+__unknown_file (
+
+driverDBdomain.Driver*"
+
+__unknown_file (
+""*!
+
+__unknown_file (
++c
+a
+
+ª ª(6
+mov2domain.Movement"__id*4
+
+__unknown_file (
+
+%34domain.Movement·ﬁ
+
+º º(
+%36void"5dataAccess.DataAccess#addMovement(Ldomain/Movement;)V*5
+
+__unknown_file (
+dataAccess.DataAccess*5
+
+__unknown_file (
+
+mov2domain.Movement2addMovement(Ldomain/Movement;)X
+V
+
+æ( æ(1
+%37domain.Alerta$AlertMota"__id*"
+
+__unknown_file (
+""X
+V
+
+æ( æ(=
+%38domain.Alerta$AlertMota"__id*"
+
+__unknown_file (
+""31
+
+æ æ(
+%39domain.Alerta"domain.AlertaÄ
+˝
+
+æ æ(>
+%40"=domain.Alerta#<init>(Ldomain/User;Ldomain/Alerta$AlertMota;)V*2
+
+__unknown_file (
+
+%39domain.Alerta*7
+
+__unknown_file (
+
+driverDBdomain.Driver*<
+
+__unknown_file ( 
+
+%38domain.Alerta$AlertMotaa
+_
+
+æ æ(?
+alert2domain.Alerta"__id*2
+
+__unknown_file (
+
+%39domain.Alerta◊‘
+
+¿ ¿(
+%41void"0dataAccess.DataAccess#addAlert(Ldomain/Alerta;)V*5
+
+__unknown_file (
+dataAccess.DataAccess*5
+
+__unknown_file (
+
+alert2domain.Alerta2addAlert(Ldomain/Alerta;)*
+1*´
+4
+Ø Ø(ß§
+
+Ø Ø(!
+%20domain.Eskaera"1domain.Erreklamazioa#getEskaera()Ldomain/Eskaera;*>
+
+__unknown_file ("
+ 
+erreklDBdomain.Erreklamazioa2getEskaera()wu
+
+Ø Ø(+
+%21float"domain.Eskaera#getPrez()F*3
+
+__unknown_file (
+
+%20domain.Eskaera2	getPrez()r
+p
+
+Ø Ø(4
+%22float"__calculate*
+
+Ø, Ø(-
+**
+
+Ø Ø(+
+
+%21float*
+
+Ø. Ø(4
+""*
+3*´
+5
+≠ ≠(ß§
+
+≠ ≠(!
+%17domain.Eskaera"1domain.Erreklamazioa#getEskaera()Ldomain/Eskaera;*>
+
+__unknown_file ("
+ 
+erreklDBdomain.Erreklamazioa2getEskaera()wu
+
+≠ ≠(+
+%18float"domain.Eskaera#getPrez()F*3
+
+__unknown_file (
+
+%17domain.Eskaera2	getPrez()r
+p
+
+≠ ≠(4
+%19float"__calculate*
+
+≠, ≠(-
+**
+
+≠ ≠(+
+
+%18float*
+
+≠. ≠(4
+""*
+3*ô
+6
+¨ ¨(≈¬
+
+¨ ¨(&
+%13domain.Erreklamazioa$ErrekLarri"@domain.Erreklamazioa#getLarri()Ldomain/Erreklamazioa$ErrekLarri;*>
+
+__unknown_file ("
+ 
+erreklDBdomain.Erreklamazioa2
+getLarri()`
+^
+
+¨' ¨(1&
+%14domain.Erreklamazioa$ErrekLarri"__id*"
+
+__unknown_file (
+""`
+^
+
+¨' ¨(9&
+%15domain.Erreklamazioa$ErrekLarri"__id*"
+
+__unknown_file (
+""Û
+
+¨ ¨(:
+%16boolean"*java.lang.Enum#equals(Ljava/lang/Object;)Z*D
+
+__unknown_file ((
+&
+%13domain.Erreklamazioa$ErrekLarri*D
+
+__unknown_file ((
+&
+%15domain.Erreklamazioa$ErrekLarri2equals(Ljava/lang/Object;)*
+4
+5*´
+7
+´ ´(ß§
+
+´ ´(!
+%10domain.Eskaera"1domain.Erreklamazioa#getEskaera()Ldomain/Eskaera;*>
+
+__unknown_file ("
+ 
+erreklDBdomain.Erreklamazioa2getEskaera()wu
+
+´ ´(+
+%11float"domain.Eskaera#getPrez()F*3
+
+__unknown_file (
+
+%10domain.Eskaera2	getPrez()r
+p
+
+´ ´(4
+%12float"__calculate*
+
+´, ´(-
+**
+
+´ ´(+
+
+%11float*
+
+´. ´(4
+""*
+3*á
+8
+¢ ¢($¶£
+
+¢ ¢(4
+%2domain.User"1domain.Erreklamazioa#getErrekJarri()Ldomain/User;*>
+
+__unknown_file ("
+ 
+erreklDBdomain.Erreklamazioa2getErrekJarri()^
+\
+
+¢ ¢(5
+driverdomain.Driver"__id*/
+
+__unknown_file (
+
+%2domain.Userîë
+
+£+ £(<
+%3java.lang.String"(domain.User#getEmail()Ljava/lang/String;*5
+
+__unknown_file (
+
+driverdomain.Driver2
+getEmail()S
+Q
+
+£ £(>
+driverDBdomain.Driver"__id*"
+
+__unknown_file (
+""§°
+
+•" •(9
+%4domain.User"0domain.Erreklamazioa#getErrekJaso()Ldomain/User;*>
+
+__unknown_file ("
+ 
+erreklDBdomain.Erreklamazioa2getErrekJaso()b
+`
+
+• •(:
+bidaiaridomain.Bidaiari"__id*/
+
+__unknown_file (
+
+%4domain.Useròï
+
+¶1 ¶(D
+%5java.lang.String"(domain.User#getEmail()Ljava/lang/String;*9
+
+__unknown_file (
+
+bidaiaridomain.Bidaiari2
+getEmail()W
+U
+
+¶ ¶(F
+
+bidaiariDBdomain.Bidaiari"__id*"
+
+__unknown_file (
+""ƒ¡
+
+™
+ ™(%
+%6domain.Erreklamazioa$ErrekLarri"@domain.Erreklamazioa#getLarri()Ldomain/Erreklamazioa$ErrekLarri;*>
+
+__unknown_file ("
+ 
+erreklDBdomain.Erreklamazioa2
+getLarri()_
+]
+
+™% ™(/%
+%7domain.Erreklamazioa$ErrekLarri"__id*"
+
+__unknown_file (
+""_
+]
+
+™% ™(6%
+%8domain.Erreklamazioa$ErrekLarri"__id*"
+
+__unknown_file (
+""Ì
+
+™
+ ™(7
+%9boolean"*java.lang.Enum#equals(Ljava/lang/Object;)Z*C
+
+__unknown_file ('
+%
+%6domain.Erreklamazioa$ErrekLarri*C
+
+__unknown_file ('
+%
+%8domain.Erreklamazioa$ErrekLarri2equals(Ljava/lang/Object;)*
+6
+7*û
+9
+õ õ(Å
+
+ú8 ú(H	
+%0int"domain.Erreklamazioa#getId()I*>
+
+__unknown_file ("
+ 
+selectRkdomain.Erreklamazioa2getId()Z
+X
+
+ú ú(J 
+erreklDBdomain.Erreklamazioa"__id*"
+
+__unknown_file (
+""§°
+
+ù ù(
+%1domain.User"0domain.Erreklamazioa#getErrekJaso()Ldomain/User;*>
+
+__unknown_file ("
+ 
+erreklDBdomain.Erreklamazioa2getErrekJaso()*
+2
+8*(
+0 "!
+
+‰ ‰(
+implicit return*≤
+1
+ﬁ ﬁ(
+_
+]
+
+ﬁ ﬁ(%
+%73domain.Erreklamazioa$ErrekMota"__id*"
+
+__unknown_file (
+""_
+]
+
+ﬁ ﬁ(%%
+%74domain.Erreklamazioa$ErrekMota"__id*"
+
+__unknown_file (
+""çä
+
+ﬁ ﬁ(&
+%75void"?domain.Erreklamazioa#setMota(Ldomain/Erreklamazioa$ErrekMota;)V*>
+
+__unknown_file ("
+ 
+erreklDBdomain.Erreklamazioa*C
+
+__unknown_file ('
+%
+%74domain.Erreklamazioa$ErrekMota2)setMota(Ldomain/Erreklamazioa$ErrekMota;)ß§
+
+ﬂ ﬂ(5
+%76domain.User"1domain.Erreklamazioa#getErrekJarri()Ldomain/User;*>
+
+__unknown_file ("
+ 
+erreklDBdomain.Erreklamazioa2getErrekJarri()X
+V
+
+ﬂ7 ﬂ(@
+%77domain.Alerta$AlertMota"__id*"
+
+__unknown_file (
+""X
+V
+
+ﬂ7 ﬂ(W
+%78domain.Alerta$AlertMota"__id*"
+
+__unknown_file (
+""31
+
+ﬂ ﬂ(
+%79domain.Alerta"domain.Alerta˘
+ˆ
+
+ﬂ ﬂ(X
+%80"=domain.Alerta#<init>(Ldomain/User;Ldomain/Alerta$AlertMota;)V*2
+
+__unknown_file (
+
+%79domain.Alerta*0
+
+__unknown_file (
+
+%76domain.User*<
+
+__unknown_file ( 
+
+%78domain.Alerta$AlertMotaa
+_
+
+ﬂ ﬂ(Y
+alert3domain.Alerta"__id*2
+
+__unknown_file (
+
+%79domain.Alerta◊‘
+
+· ·(
+%81void"0dataAccess.DataAccess#addAlert(Ldomain/Alerta;)V*5
+
+__unknown_file (
+dataAccess.DataAccess*5
+
+__unknown_file (
+
+alert3domain.Alerta2addAlert(Ldomain/Alerta;)*
+0:.
+
+ö ö(/ 
+selectRkdomain.ErreklamazioaB
+dataAccess.DataAccessH

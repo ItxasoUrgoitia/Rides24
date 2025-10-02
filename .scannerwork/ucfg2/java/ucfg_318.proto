@@ -1,0 +1,56 @@
+
+,domain.Movement#toString()Ljava/lang/String;F
+<C:/Users/User/git/Rides24/src/main/java/domain/Movement.javaL L("1*š
+1N	 N(Ž‹
+N	 N(
+%0java.lang.String"+domain.Movement#getMota()Ljava/lang/String;*/
+
+__unknown_file (
+domain.Movement2	getMota()g
+e
+N	 N(
+%1java.lang.String"__concat*$
+N	 N(
+
+%0java.lang.String*
+N N(
+ †ƒ
+N6 N(N
+%2float"$domain.Movement#getdiruKantitatea()F*/
+
+__unknown_file (
+domain.Movement2getdiruKantitatea()ú
+÷
+N  N(O
+%3java.lang.String"Pjava.lang.String#format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;*0
+
+__unknown_file ("
+java.lang.String*$
+
+__unknown_file (
+%.2f*)
+
+__unknown_file (
+
+%2floatz
+x
+N	 N(O
+%4java.lang.String"__concat*$
+N	 N(
+
+%1java.lang.String*$
+N  N(O
+
+%3java.lang.Stringi
+g
+N	 N(U
+%5java.lang.String"__concat*$
+N	 N(O
+
+%4java.lang.String*
+NR N(U
+â‚¬"$
+N N(V
+
+%5java.lang.StringB
+domain.MovementH

@@ -1,0 +1,63 @@
+
+
+5int
+
+0int
+
+	1int
+
+2int
+
+6int
+
+3int
+
+4int!this
+‰ ‰("domain.User"ûD
+B
+
+Š	 Š(A"#new-object#2Constructor:Bjava.lang.Object[]/
+-
+
+Š Š("#get-field# dirua:Bfloat&
+$
+
+Š	 Š(A"#array-write#::
+8
+
+Š Š(""#get-field# email:Bjava.lang.String&
+$
+
+Š	 Š(A"#array-write#:	9
+7
+
+Š$ Š((
+"#get-field# name:Bjava.lang.String&
+$
+
+Š	 Š(A"#array-write#:
+;
+9
+
+Š* Š(0"#get-field# nanZbk:Bjava.lang.String&
+$
+
+Š	 Š(A"#array-write#:>
+<
+
+Š2 Š(;"#get-field# pasahitza:Bjava.lang.String&
+$
+
+Š	 Š(A"#array-write#:8
+6
+
+Š= Š(@"#get-field# tlf:Bjava.lang.String&
+$
+
+Š	 Š(A"#array-write#:R
+P
+
+Š	 Š(A"/
+java.util.Objectshash([Ljava/lang/Object;)I*2hash:Bint
+
+Š Š(B*8C:/Users/User/git/Rides24/src/main/java/domain/User.java

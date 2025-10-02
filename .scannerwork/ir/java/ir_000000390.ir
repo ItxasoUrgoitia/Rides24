@@ -1,0 +1,33 @@
+
+*"Erreklamazioa [id="java.lang.String
+'
+", deskribapena="java.lang.String
+ 
+", larri="java.lang.String
+$", errekJaso="java.lang.String
+	", mota="java.lang.String
+%", errekJarri="java.lang.String
+	", diru="java.lang.String
+"]"java.lang.String
+"", eskaera="java.lang.String(this$ $("domain.Erreklamazioa"¹6
+4
+%  %(""#get-field# id:Bjava.lang.Integer8
+6
+%7 %(A"#get-field# errekJarri:Bdomain.User7
+5
+%U %(^"#get-field# errekJaso:Bdomain.User8
+6
+& &(	"#get-field# eskaera:Bdomain.Eskaera?
+=
+&$ &(0"#get-field# deskribapena:Bjava.lang.StringE
+C
+&? &(C"#get-field# mota:Bdomain.Erreklamazioa$ErrekMota,
+*
+&R &(V"#get-field# diru:BfloatG
+E
+&f &(k"#get-field# larri:Bdomain.Erreklamazioa$ErrekLarriC
+A
+%	 '(	"	#binop +#2+:	
+Bjava.lang.String
+% '(
+*AC:/Users/User/git/Rides24/src/main/java/domain/Erreklamazioa.java

@@ -1,0 +1,128 @@
+
+_businessLogic.BLFacadeImplementation#createEskaera(Ldomain/User;Ldomain/Ride;I)Ldomain/Eskaera;]
+QC:/Users/User/git/Rides24/src/main/java/businessLogic/BLFacadeImplementation.javaò ò("startingBlock*Î
+startingBlock
+ò ò(@~
+|
+
+ñ ñ(
+%6"
+__annotate*)
+
+__unknown_file (
+	WebMethod*1
+
+__unknown_file (
+
+userdomain.UserU
+S
+
+ò# ò('
+userdomain.User"__annotation*"
+
+__unknown_file (
+
+%6~
+|
+
+ñ ñ(
+%7"
+__annotate*)
+
+__unknown_file (
+	WebMethod*1
+
+__unknown_file (
+
+ridedomain.RideU
+S
+
+ò. ò(2
+ridedomain.Ride"__annotation*"
+
+__unknown_file (
+
+%7*
+1*¦	
+1
+ó ó(‡
+„
+
+ó ó(
+%0dataAccess.DataAccess"__id*S
+
+__unknown_file (7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManager|z
+
+ó ó(
+
+%1void"dataAccess.DataAccess#open()V*9
+
+__unknown_file (
+
+%0dataAccess.DataAccess2open()‡
+„
+
+ô ô(
+%2dataAccess.DataAccess"__id*S
+
+__unknown_file (7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManagerèå
+
+ô ô(@
+%3domain.Eskaera"PdataAccess.DataAccess#createEskaera(Ldomain/User;Ldomain/Ride;I)Ldomain/Eskaera;*9
+
+__unknown_file (
+
+%2dataAccess.DataAccess*1
+
+__unknown_file (
+
+userdomain.User*1
+
+__unknown_file (
+
+ridedomain.Ride*"
+
+__unknown_file (
+""2*createEskaera(Ldomain/User;Ldomain/Ride;I)c
+a
+
+ô ô(A
+eskaeradomain.Eskaera"__id*2
+
+__unknown_file (
+
+%3domain.Eskaera‡
+„
+
+õ õ(
+%4dataAccess.DataAccess"__id*S
+
+__unknown_file (7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManager~|
+
+õ õ(
+
+%5void"dataAccess.DataAccess#close()V*9
+
+__unknown_file (
+
+%4dataAccess.DataAccess2close()")
+
+ö ö(
+
+eskaeradomain.Eskaera:!
+
+ò ò((
+userdomain.User:!
+
+ò) ò(3
+ridedomain.Ride: 
+
+__unknown_file (
+""B(&
+$businessLogic.BLFacadeImplementationH

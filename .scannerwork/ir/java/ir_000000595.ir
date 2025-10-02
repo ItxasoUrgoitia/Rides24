@@ -1,0 +1,16 @@
+
+"]"java.lang.String
+&"[licensePlate="java.lang.String
+ 
+", model="java.lang.String
+!", places="java.lang.StringthisL L("
+domain.Car"ô?
+=
+M M(("#get-field# licensePlate:Bjava.lang.String,
+*
+M9 M(?"#get-field# places:Bint8
+6
+MO M(T"#get-field# model:Bjava.lang.String9
+7
+M	 M(Z	"	#binop +#2+:Bjava.lang.String
+M M([	*7C:/Users/User/git/Rides24/src/main/java/domain/Car.java

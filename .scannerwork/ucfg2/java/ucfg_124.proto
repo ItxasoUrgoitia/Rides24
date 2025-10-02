@@ -1,0 +1,127 @@
+
+[domain.Driver#removeRide(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)Ldomain/Ride;D
+:C:/Users/User/git/Rides24/src/main/java/domain/Driver.java, ,("7*±
+24 4(}
+4 4(!
+%10void"java.util.Iterator#remove()V*<
+
+__unknown_file ( 
+
+iteratorjava.util.Iterator2remove()"!
+5 5(
+
+ridedomain.Ride*÷
+32 2(ˆ…
+2 2(
+%8java.util.Date"%domain.Ride#getDate()Ljava/util/Date;*1
+
+__unknown_file (
+
+ridedomain.Ride2	getDate()ÔÑ
+2 2(1
+%9boolean"*java.util.Date#equals(Ljava/lang/Object;)Z*2
+
+__unknown_file (
+
+%8java.util.Date*:
+
+__unknown_file (
+
+
+targetDatejava.util.Date2equals(Ljava/lang/Object;)*
+2
+6*õ
+41 1(ˆ…
+1 1(
+%6java.lang.String"%domain.Ride#getTo()Ljava/lang/String;*1
+
+__unknown_file (
+
+ridedomain.Ride2getTo()ÒÏ
+1 1('
+%7boolean",java.lang.String#equals(Ljava/lang/Object;)Z*4
+
+__unknown_file (
+
+%6java.lang.String*4
+
+__unknown_file (
+
+tojava.lang.String2equals(Ljava/lang/Object;)*
+3
+6*ë
+5/ /( “
+/ /('
+%3domain.Ride"+java.util.Iterator#next()Ljava/lang/Object;*<
+
+__unknown_file ( 
+
+iteratorjava.util.Iterator2next()X
+V
+/ /((
+ridedomain.Ride"__id*/
+
+__unknown_file (
+
+%3domain.RideŒ‰
+0 0(
+%4java.lang.String"'domain.Ride#getFrom()Ljava/lang/String;*1
+
+__unknown_file (
+
+ridedomain.Ride2	getFrom()ÔÑ
+0 0(+
+%5boolean",java.lang.String#equals(Ljava/lang/Object;)Z*4
+
+__unknown_file (
+
+%4java.lang.String*6
+
+__unknown_file (
+
+fromjava.lang.String2equals(Ljava/lang/Object;)*
+4
+6*œ
+6. .(„
+. .(!
+%2boolean"java.util.Iterator#hasNext()Z*<
+
+__unknown_file ( 
+
+iteratorjava.util.Iterator2	hasNext()*
+5
+1*û
+7- -($b
+`
+- -($
+%0java.util.List"__id*8
+
+__unknown_file (*
+domain.Driver"
+rides–“
+- -(/
+%1java.util.Iterator"-java.util.List#iterator()Ljava/util/Iterator;*2
+
+__unknown_file (
+
+%0java.util.List2
+iterator()j
+h
+- -(0
+iteratorjava.util.Iterator"__id*6
+
+__unknown_file (
+
+%1java.util.Iterator*
+6*!
+18 8("
+8 8(
+"":$
+, ,($
+fromjava.lang.String:"
+,% ,(/
+tojava.lang.String:(
+,0 ,(?
+
+targetDatejava.util.DateB
+domain.DriverH

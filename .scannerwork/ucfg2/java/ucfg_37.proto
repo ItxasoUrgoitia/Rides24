@@ -1,0 +1,46 @@
+
+FdataAccess.DataAccess#getUserBalorazioa(Ldomain/User;)Ljava/util/List;N
+BC:/Users/User/git/Rides24/src/main/java/dataAccess/DataAccess.javaó ó()"11*5
+6
+ø ø(("$
+
+ø ø((
+
+%1java.util.List*·
+7
+ø
+ ø( 
+
+ø
+ ø('
+%1java.util.List",domain.User#getBalorazioak()Ljava/util/List;*9
+
+__unknown_file (
+
+existingUserdomain.User2getBalorazioak()*
+6*k
+9
+ö ö(<U
+S
+
+ö ö(<
+existingUserdomain.User"__id*"
+
+__unknown_file (
+""*
+7*¨
+11
+ö ö(
+
+ö+ ö(:
+%0java.lang.String"(domain.User#getEmail()Ljava/lang/String;*1
+
+__unknown_file (
+
+userdomain.User2
+getEmail()*
+9:!
+
+ó* ó(3
+userdomain.UserB
+dataAccess.DataAccessH

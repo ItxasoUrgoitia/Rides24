@@ -1,0 +1,118 @@
+
+:domain.Driver#removeRide(Ljava/lang/Integer;)Ldomain/Ride;D
+:C:/Users/User/git/Rides24/src/main/java/domain/Driver.java< <("5*ò
+3?# ?((b
+`
+?# ?((
+%7java.util.List"__id*8
+
+__unknown_file (*
+domain.Driver"
+rides„
+
+?# ?(/
+%8domain.Ride"
+__arrayGet*2
+
+__unknown_file (
+
+%7java.util.List*"
+
+__unknown_file (
+""_
+]
+? ?(0
+removedRidedomain.Ride"__id*/
+
+__unknown_file (
+
+%8domain.Rideb
+`
+@ @(
+%9java.util.List"__id*8
+
+__unknown_file (*
+domain.Driver"
+ridesˆ
+…
+@ @(
+%10domain.Ride"__arrayRemove*2
+
+__unknown_file (
+
+%9java.util.List*"
+
+__unknown_file (
+"""(
+A A(#
+
+removedRidedomain.Ride*÷
+4> >(b
+`
+> >(
+%3java.util.List"__id*8
+
+__unknown_file (*
+domain.Driver"
+rides„
+
+> >(
+%4domain.Ride"
+__arrayGet*2
+
+__unknown_file (
+
+%3java.util.List*"
+
+__unknown_file (
+""˜•
+> >(,
+%5java.lang.Integer".domain.Ride#getRideNumber()Ljava/lang/Integer;*/
+
+__unknown_file (
+
+%4domain.Ride2getRideNumber()ÙÖ
+> >(;
+%6boolean"-java.lang.Integer#equals(Ljava/lang/Object;)Z*5
+
+__unknown_file (
+
+%5java.lang.Integer*9
+
+__unknown_file (
+
+rideIdjava.lang.Integer2equals(Ljava/lang/Object;)*
+3
+5*Î
+5= =(b
+`
+= =(
+%0java.util.List"__id*8
+
+__unknown_file (*
+domain.Driver"
+rideski
+= =("	
+%1int"java.util.List#size()I*2
+
+__unknown_file (
+
+%0java.util.List2size()f
+d
+= =("
+%2boolean"	__compare*
+= =(
+<*
+= =(
+""*
+= =("
+	
+%1int*
+4
+1*!
+1D D("
+D D(
+"":'
+< <(&
+rideIdjava.lang.IntegerB
+domain.DriverH

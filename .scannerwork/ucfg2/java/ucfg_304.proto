@@ -1,0 +1,26 @@
+
+ gui.AddCarGUI#%field_initializer
+__unknown_file ("1*’
+1 (vt
+D
+:C:/Users/User/git/Rides24/src/main/java/gui/AddCarGUI.java# ()
+%0javax.swing.JLabel"javax.swing.JLabel•
+’
+D
+:C:/Users/User/git/Rides24/src/main/java/gui/AddCarGUI.java (+
+%1"javax.swing.JLabel#<init>()V*&
+ (
+
+%0javax.swing.JLabel—
+”
+D
+:C:/Users/User/git/Rides24/src/main/java/gui/AddCarGUI.java (,
+gui.AddCarGUI"
+	jLabelMsg"__id*&
+ (
+
+%0javax.swing.JLabel"Y
+B
+:C:/Users/User/git/Rides24/src/main/java/gui/AddCarGUI.java l(
+implicit returnB
+gui.AddCarGUI

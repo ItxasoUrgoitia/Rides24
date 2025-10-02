@@ -1,0 +1,148 @@
+
+1.0oihaneeeperr_rides24onaJavaFrontend"1759422483511*java2.B¯
+$
+src/main/java/domain/Admin.java2
+	
+type3
+	
+MAIN4
+
+package6
+
+domain7
+
+domain.Admin9
+
+class10
+
+access11
+
+public12
+
+simple-name13
+
+Admin14
+
+domain.User16
+
+unknown17
+
+extends18
+
+XmlAccessorType20
+
+annotated by21
+-
+'Recovered#typeBindingLXmlAccessorType;023
+
+
+uses24
+
+Entity26
+$
+Recovered#typeBindingLEntity;028
+d
+^domain.Admin#<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V30
+
+method31
+
+calls32
+
+
+references33
+
+domain.Admin#<init>()V35J
+
+1
+12
+
+
+3
+4Z
+
+5	
+576j§
+
+22
+222317
+A
+29;
+293031 *
+1 (28:5B
+
+
+11
+12
+
+
+13
+14
+
+25
+252617
+
+15
+151617
+
+27
+272817
+
+19
+192017
+A
+34;
+343531 *
+1 (28:5B
+
+
+11
+12
+
+
+13
+14
+;
+86
+8910 *
+1 (:5B
+
+
+11
+12
+
+
+13
+14r¡
+
+81518*
+1 ( 
+
+81921*
+1 (
+
+82224*
+1 (
+
+82521*
+1 (
+
+82724*
+1 (
+
+81524*
+1 ( 
+
+29832*
+1	 (
+
+291533*
+1 (
+
+291532*
+1 (
+
+291532*
+1 (
+
+34832*
+1	 (

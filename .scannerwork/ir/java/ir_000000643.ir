@@ -1,0 +1,30 @@
+
+"" Prezioa: "java.lang.String
+!
+" Egoera: "java.lang.String
+!" Nondik: "java.lang.String
+'" Leku kopurua: "java.lang.String
+	" Nora: "java.lang.String!this
+ñ ñ("domain.Ride"ë9
+7
+
+ò ò("#get-field# from:Bjava.lang.String7
+5
+
+ò$ ò(&"#get-field# to:Bjava.lang.String/
+-
+
+òM ò(T"#get-field# nPlaces:Bint/
+-
+
+òb ò(g	"#get-field# price:BfloatA
+?
+
+òt ò(z"#get-field# egoera:Bdomain.Ride$RideEgoera>
+<
+
+ò	 ò(z"	#binop +#2+:
+	
+Bjava.lang.String
+
+ò ò({*8C:/Users/User/git/Rides24/src/main/java/domain/Ride.java
