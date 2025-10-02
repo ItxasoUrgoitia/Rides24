@@ -1,18 +1,18 @@
 
-@configuration.ConfigXML#getBusinessLogicNode()Ljava/lang/String;P
-DC:/Users/User/git/Rides24/src/main/java/configuration/ConfigXML.java˜ ˜(#"1*µ
+>configuration.ConfigXML#getInstance()Lconfiguration/ConfigXML;P
+DC:/Users/User/git/Rides24/src/main/java/configuration/ConfigXML.java” ”($"1*½
 1
-™	 ™(|
-z
+•	 •(}
+{
 
-™	 ™(
-%0java.lang.String"__id*N
+•	 •(
+%0configuration.ConfigXML"__id*H
 
-__unknown_file (2*0
-configuration.ConfigXML"
-businessLogicNode"&
+__unknown_file (,**
+configuration.ConfigXML"
+theInstance"-
 
-™ ™(
-
-%0java.lang.StringB
+• •(
+
+%0configuration.ConfigXMLB"
 configuration.ConfigXMLH

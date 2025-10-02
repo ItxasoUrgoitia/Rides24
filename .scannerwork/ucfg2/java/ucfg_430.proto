@@ -1,19 +1,18 @@
 
-9configuration.ConfigXML#getDbFilename()Ljava/lang/String;P
-DC:/Users/User/git/Rides24/src/main/java/configuration/ConfigXML.java¤ ¤("1*®
+@configuration.ConfigXML#getBusinessLogicName()Ljava/lang/String;P
+DC:/Users/User/git/Rides24/src/main/java/configuration/ConfigXML.java   (#"1*µ
 1
-¥	 ¥(u
-s
+¡	 ¡(|
+z
 
-¥	 ¥(
-%0java.lang.String"__id*G
+¡	 ¡(
+%0java.lang.String"__id*N
 
-__unknown_file (+*)
-configuration.ConfigXML"
+__unknown_file (2*0
+configuration.ConfigXML"
+businessLogicName"&
 
-dbFilename"&
-
-¥ ¥(
+¡ ¡(
 
 %0java.lang.StringB
 configuration.ConfigXMLH

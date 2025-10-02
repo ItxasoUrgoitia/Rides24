@@ -27,7 +27,7 @@ public class ObjectdbManagerServer extends JDialog {
 	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
 	JTextArea textArea;
-	ConfigXML c;
+	private transient ConfigXML c;
 	
 	//For windows
     private String objectDbpath="src\\main\\resources\\objectdb.jar";
@@ -40,7 +40,6 @@ public class ObjectdbManagerServer extends JDialog {
 
 	public static void main(String[] args) {
 		try {
-			
 			
 			ObjectdbManagerServer dialog = new ObjectdbManagerServer();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
