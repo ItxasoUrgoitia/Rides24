@@ -44,7 +44,15 @@ public class acceptErrekBDWhiteTest {
 	 @Test
 	 
 	 public void test1() {
-	     try {
+	     
+	    	 String driverEmail="driver14@gmail.com";
+	 		 String driverName="Aitor Fernandez";
+	 		boolean existDriver=false;
+	 		 try {
+	 			testDA.open();
+				existDriver=testDA.existDriver(driverEmail);//Driver existitzen den egiaztatu
+				testDA.addDriverWithRide(driverEmail, driverName, rideFrom, rideTo, rideDate, 0, 0);//Metodo bat sortzen duena db-an driver bat bere bidaiarekin
+				testDA.close();
 	         driver = testDA.createDriver("driver1@gmail.com", "Driver Test"); 
 	  
 	         bidaiari = testDA.createBidaiari("Bidaiari Test", "123", "bidaiari1@gmail.com", "12345678A");

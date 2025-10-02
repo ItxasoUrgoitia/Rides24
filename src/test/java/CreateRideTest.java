@@ -50,7 +50,7 @@ public class CreateRideTest {
 			
 			//define parameters
 			
-			
+			 
 			//configure the state of the system (create object in the database)
 			testDA.open();
 			 existDriver=testDA.existDriver(driverEmail);//Driver existitzen den egiaztatu
