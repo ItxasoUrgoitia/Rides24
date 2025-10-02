@@ -24,6 +24,7 @@ import testOperations.TestDataAccess;
 import domain.Eskaera;
 import domain.Movement;
 import domain.Ride;
+import domain.User;
 
 import java.sql.Date;
 import java.util.List;
@@ -40,54 +41,157 @@ public class acceptErrekBDWhiteTest {
 	 private Bidaiari bidaiari;
 	 private Eskaera eskaera;
 	 private Ride ride;
+	 private Erreklamazioa errekl;
 	 
 	 @Test
+	    // sut.acceptErrek: Bidaiari is receiver, severity = TXIKIA
+	    public void test1() {
+	        String driverEmail = "driver1@gmail.com";
+	        String bidaiariEmail = "bid1@gmail.com";
+	        boolean existDriver = false;
+	        boolean existBidaiari = false;
+	        
+	        try {
+	            testDA.open();
+	            existDriver = testDA.existDriver(driverEmail);
+	            existBidaiari = testDA.existBidaiari(bidaiariEmail);
+	            driver = testDA.createDriver(driverEmail, "Driver Test");
+	            bidaiari = testDA.createBidaiari("BidName", "123", bidaiariEmail, "12345678A");
+	            ride = testDA.createRide("CityA", "CityB", Date.valueOf("2025-10-10"),5, 3.0, driver);
+	            eskaera = testDA.createEskaera(EskaeraEgoera.PENDING, 1, ride, bidaiari);
+	            errekl = testDA.addErreklamazio(driver, bidaiari, eskaera, "fls", eskaera.getPrez(), ErrekLarri.TXIKIA); 
+	            testDA.close();
+
+	            // invoke sut
+	            sut.open();
+	            sut.acceptErrek(errekl);
+	            sut.close();
+
+	            // verify
+	            testDA.open();
+	            assertEquals(ErrekMota.ACCEPTED, errekl.getMota());
+	            assertTrue(testDA.getBidaiariMove(bidaiari).stream().anyMatch(m -> m.getMota().equals("-")));
+	            assertTrue(testDA.getDriverMove(driver).stream().anyMatch(m -> m.getMota().equals("+")));
+	            testDA.close();
+	            
+	        } finally {
+	            // cleanup
+	            testDA.open();
+	            if (!existDriver) testDA.removeDriver(driverEmail);
+	            if (!existBidaiari) testDA.removeBidaiari(bidaiariEmail);
+	            testDA.close();
+	        }
+	    }
 	 
-	 public void test1() {
-	     
-	    	 String driverEmail="driver14@gmail.com";
-	 		 String driverName="Aitor Fernandez";
-	 		boolean existDriver=false;
-	 		 try {
-	 			testDA.open();
-				existDriver=testDA.existDriver(driverEmail);//Driver existitzen den egiaztatu
-				testDA.addDriverWithRide(driverEmail, driverName, rideFrom, rideTo, rideDate, 0, 0);//Metodo bat sortzen duena db-an driver bat bere bidaiarekin
-				testDA.close();
-	         driver = testDA.createDriver("driver1@gmail.com", "Driver Test"); 
-	  
-	         bidaiari = testDA.createBidaiari("Bidaiari Test", "123", "bidaiari1@gmail.com", "12345678A");
-	         
-	         java.sql.Date date = java.sql.Date.valueOf("2025-09-30");
-	         
-	         ride = testDA.createRide("Origin", "Destination", date, 4, 1.0, driver);
-	         
-	         
-	         eskaera = testDA.createEskaera(EskaeraEgoera.PENDING, 4, ride, bidaiari);
+	// sut.acceptErrek: Bidaiari is receiver, severity = Esratina
+	    public void test2() {
+	        String driverEmail = "driver1@gmail.com";
+	        String bidaiariEmail = "bid1@gmail.com";
+	        boolean existDriver = false;
+	        boolean existBidaiari = false;
+	        
+	        try {
+	            testDA.open();
+	            existDriver = testDA.existDriver(driverEmail);
+	            existBidaiari = testDA.existBidaiari(bidaiariEmail);
+	            driver = testDA.createDriver(driverEmail, "Driver Test");
+	            bidaiari = testDA.createBidaiari("BidName", "123", bidaiariEmail, "12345678A");
+	            ride = testDA.createRide("CityA", "CityB", Date.valueOf("2025-10-10"),5, 3.0, driver);
+	            eskaera = testDA.createEskaera(EskaeraEgoera.PENDING, 1, ride, bidaiari);
+	            errekl = testDA.addErreklamazio(driver, bidaiari, eskaera, "fls", eskaera.getPrez(), ErrekLarri.ERTAINA); 
+	            testDA.close();
 
-	         Erreklamazioa errekl = testDA.addErreklamazioa(driver, bidaiari, eskaera, ErrekLarri.TXIKIA);
+	            // invoke sut
+	            sut.open();
+	            sut.acceptErrek(errekl);
+	            sut.close();
 
-	         
-	         sut.acceptErrek(errekl);
-
-	         
-	         assertEquals(ErrekMota.ACCEPTED, errekl.getMota());
-	         List<Movement> bidMovs = sut.getUserMugimenduak(bidaiari);
-	         List<Movement> driMovs = sut.getUserMugimenduak(driver);
-
-	         assertTrue(bidMovs.stream().anyMatch(m -> m.getMota().equals("-")));
-	         assertTrue(driMovs.stream().anyMatch(m -> m.getMota().equals("+")));
-
-	     } finally {
-	         
-	         testDA.removeErreklamazioak();
-	         testDA.removeUsers();
-	     }
-	 }
-
+	            // verify
+	            testDA.open();
+	            assertEquals(ErrekMota.ACCEPTED, errekl.getMota());
+	            assertTrue(testDA.getBidaiariMove(bidaiari).stream().anyMatch(m -> m.getMota().equals("-")));
+	            assertTrue(testDA.getDriverMove(driver).stream().anyMatch(m -> m.getMota().equals("+")));
+	            testDA.close();
+	            
+	        } finally {
+	            // cleanup
+	            testDA.open();
+	            if (!existDriver) testDA.removeDriver(driverEmail);
+	            if (!existBidaiari) testDA.removeBidaiari(bidaiariEmail);
+	            testDA.close();
+	        }
+	    }
 	 
-	 
-	 
-	 
+	 // sut.acceptErrek: Bidaiari is receiver, severity = HANDIA
+	    public void test3() {
+	        String driverEmail = "driver1@gmail.com";
+	        String bidaiariEmail = "bid1@gmail.com";
+	        boolean existDriver = false;
+	        boolean existBidaiari = false;
+	        
+	        try {
+	            testDA.open();
+	            existDriver = testDA.existDriver(driverEmail);
+	            existBidaiari = testDA.existBidaiari(bidaiariEmail);
+	            driver = testDA.createDriver(driverEmail, "Driver Test");
+	            bidaiari = testDA.createBidaiari("BidName", "123", bidaiariEmail, "12345678A");
+	            ride = testDA.createRide("CityA", "CityB", Date.valueOf("2025-10-10"),5, 3.0, driver);
+	            eskaera = testDA.createEskaera(EskaeraEgoera.PENDING, 1, ride, bidaiari);
+	            errekl = testDA.addErreklamazio(driver, bidaiari, eskaera, "fls", eskaera.getPrez(), ErrekLarri.HANDIA); 
+	            testDA.close();
+
+	            // invoke sut
+	            sut.open();
+	            sut.acceptErrek(errekl);
+	            sut.close();
+
+	            // verify
+	            testDA.open();
+	            assertEquals(ErrekMota.ACCEPTED, errekl.getMota());
+	            assertTrue(testDA.getBidaiariMove(bidaiari).stream().anyMatch(m -> m.getMota().equals("-")));
+	            assertTrue(testDA.getDriverMove(driver).stream().anyMatch(m -> m.getMota().equals("+")));
+	            testDA.close();
+	            
+	        } finally {
+	            // cleanup
+	            testDA.open();
+	            if (!existDriver) testDA.removeDriver(driverEmail);
+	            if (!existBidaiari) testDA.removeBidaiari(bidaiariEmail);
+	            testDA.close();
+	        }
+	    }
+	    
+	    public void test4() {
+	        String driverEmail = "driver4@gmail.com";
+	        String bidaiariEmail = "bid4@gmail.com";
+	        boolean existDriver = false;
+	        boolean existBidaiari = false;
+	        try {
+	            testDA.open();
+	            existDriver = testDA.existDriver(driverEmail);
+	            existBidaiari = testDA.existBidaiari(bidaiariEmail);
+	            driver = testDA.createDriver(driverEmail, "Driver Test");
+	            bidaiari = testDA.createBidaiari("BidName", "123", bidaiariEmail, "12345678A");
+	            ride = testDA.createRide("CityA", "CityB", Date.valueOf("2025-10-10"),5, 3.0, driver);
+	            // aquí el bidaiari pone la erreklamazioa contra el driver
+	            errekl = testDA.addErreklamazio(bidaiari, driver, eskaera, "fls", eskaera.getPrez(), ErrekLarri.HANDIA); 
+	            testDA.close();
+
+	            sut.open();
+	            sut.acceptErrek(errekl);
+	            sut.close();
+
+	            assertEquals(ErrekMota.ACCEPTED, errekl.getMota());
+	            assertTrue(testDA.getBidaiariMove(bidaiari).stream().anyMatch(m -> m.getMota().equals("+")));
+	            assertTrue(testDA.getDriverMove(driver).stream().anyMatch(m -> m.getMota().equals("-")));
+
+	        } finally {
+	            testDA.open();
+	            testDA.removeDriver(driverEmail);
+	            testDA.removeBidaiari(bidaiariEmail);
+	            testDA.close();
+	        }
+	    }
 	 
 	 
 

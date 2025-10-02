@@ -181,4 +181,34 @@ public class TestBusinessLogic {
 	        dbManagerTest.close();
 	    }
 	}
+	public boolean existBidaiari(String email) {
+		dbManagerTest.open();
+		boolean existBidaiari=dbManagerTest.existBidaiari(email);
+		dbManagerTest.close();
+		return existBidaiari;
+
+	}
+	public boolean removeBidaiari(String bidaiariEmail) {
+		dbManagerTest.open();
+		boolean b=dbManagerTest.removeBidaiari(bidaiariEmail);
+		dbManagerTest.close();
+		return b;
+
+	}
+	public List<Movement> getDriverMove(Driver driver) {
+		dbManagerTest.open();
+		List<Movement> Movement = dbManagerTest.getDriverMove(driver);
+		dbManagerTest.close();
+		return Movement;
+	}
+	public List<Movement> getBidaiariMove(Bidaiari bidaiari) {
+		dbManagerTest.open();
+		List<Movement> Movement = dbManagerTest.getBidaiariMove(bidaiari);
+		dbManagerTest.close();
+		return Movement;
+	}
+			
+			
+	
+	
 }

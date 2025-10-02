@@ -18,6 +18,7 @@ import domain.Driver;
 import domain.Erreklamazioa;
 import domain.Eskaera;
 import domain.Eskaera.EskaeraEgoera;
+import domain.Movement;
 import domain.Ride;
 import domain.User;
 import exceptions.RequestAlreadyExistException;
@@ -96,6 +97,11 @@ public TestDataAccess()  {
     }
 	public boolean existDriver(String email) {
 		 return  db.find(Driver.class, email)!=null;
+		 
+
+	}
+	public boolean existBidaiari(String email) {
+		 return  db.find(Bidaiari.class, email)!=null;
 		 
 
 	}
@@ -336,5 +342,40 @@ public TestDataAccess()  {
 		}
 		return eskaera;
 	}*/
+	public boolean removeBidaiari(String bidaiariEmail) {
+		System.out.println(">> TestDataAccess: removeBidaiari");
+		Bidaiari b = db.find(Bidaiari.class, bidaiariEmail);
+		if (b!=null) {
+			db.getTransaction().begin();
+			db.remove(b);
+			db.getTransaction().commit();
+			return true;
+		} else 
+		return false;
+    }
 	
+	public List<Movement> getDriverMove(Driver driver) {
+		db.getTransaction().begin();
+		try {
+			Driver refreshedDriver = db.find(Driver.class, driver.getEmail());
+			List<Movement> Movements = refreshedDriver.getMugimenduak();
+			db.getTransaction().commit();
+			return Movements;
+		} catch (Exception e) {
+			db.getTransaction().rollback();
+			throw e;
+		}
+	}
+	public List<Movement> getBidaiariMove(Bidaiari bidaiari) {
+		db.getTransaction().begin();
+		try {
+			Bidaiari refreshedBidaiari = db.find(Bidaiari.class, bidaiari.getEmail());
+			List<Movement> Movements = refreshedBidaiari.getMugimenduak();
+			db.getTransaction().commit();
+			return Movements;
+		} catch (Exception e) {
+			db.getTransaction().rollback();
+			throw e;
+		}
+	}
 }
