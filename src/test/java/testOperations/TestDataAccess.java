@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import domain.Erreklamazioa.*;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -13,9 +15,12 @@ import configuration.ConfigXML;
 import domain.Alerta;
 import domain.Bidaiari;
 import domain.Driver;
+import domain.Erreklamazioa;
 import domain.Eskaera;
 import domain.Eskaera.EskaeraEgoera;
 import domain.Ride;
+import domain.User;
+import exceptions.RequestAlreadyExistException;
 
 public class TestDataAccess {
 	protected EntityManager db;
@@ -266,6 +271,40 @@ public TestDataAccess()  {
 
 	public void removeEskaerak() {
 		ezabatuEskaerak();
+	}
+	
+	public Erreklamazioa addErreklamazio(User userJarri, User userJaso, Eskaera eskaera, String texto, float coste, ErrekLarri larritasuna) {
+	    if(userJarri == null || userJaso == null || eskaera == null || texto == null || texto.isEmpty() || larritasuna == null) {
+	        throw new NullPointerException("Parametro nulo en addErreklamazio");
+	    }
+
+	    Erreklamazioa erreklamazioa = new Erreklamazioa(userJarri, userJaso, eskaera, texto, coste, larritasuna);
+
+	    db.getTransaction().begin();
+	    db.persist(erreklamazioa);
+	    db.getTransaction().commit();
+
+	    return erreklamazioa;
+	}
+	
+	public void addErreklamazio2(User userJarri, User userJaso, Eskaera eskaera, String text, float diruKop, ErrekLarri larritasuna) {
+	    db.getTransaction().begin();
+	    try {
+	        User uJarri = db.find(User.class, userJarri.getEmail());
+	        User uJaso = db.find(User.class, userJaso.getEmail());
+	        Eskaera esk = db.find(Eskaera.class, eskaera.getEskaeraNumber());
+
+	        if (uJarri == null || uJaso == null || esk == null) {
+	            throw new IllegalArgumentException("User o Eskaera no encontrado");
+	        }
+
+	        Erreklamazioa erreklamazioa = new Erreklamazioa(uJarri, uJaso, esk, text, diruKop, larritasuna);
+	        db.persist(erreklamazioa);
+	        db.getTransaction().commit();
+	    } catch (Exception e) {
+	        db.getTransaction().rollback();
+	        throw e;
+	    }
 	}
 	
 	/*Nik gehitu dut hau (createBidaiari)

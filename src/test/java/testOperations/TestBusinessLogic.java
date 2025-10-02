@@ -5,6 +5,7 @@ import java.util.List;
 
 import configuration.ConfigXML;
 import domain.*;
+import domain.Erreklamazioa.ErrekLarri;
 import domain.Eskaera.EskaeraEgoera;
 
 public class TestBusinessLogic {
@@ -163,5 +164,21 @@ public class TestBusinessLogic {
 		dbManagerTest.open();
 		dbManagerTest.removeEskaerak();
 		dbManagerTest.close();
+	}
+	
+	public Erreklamazioa addErreklamazio(User userJarri, User userJaso, Eskaera eskaera, String texto, float coste, ErrekLarri larritasuna) {
+	    dbManagerTest.open();
+	    Erreklamazioa e = dbManagerTest.addErreklamazio(userJarri, userJaso, eskaera, texto, coste, larritasuna);
+	    dbManagerTest.close();
+	    return e;
+	}
+	
+	public void addErreklamazio2(User userJarri, User userJaso, Eskaera eskaera, String text, float diruKop, ErrekLarri larritasuna) {
+	    dbManagerTest.open();
+	    try {
+	        dbManagerTest.addErreklamazio(userJarri, userJaso, eskaera, text, diruKop, larritasuna);
+	    } finally {
+	        dbManagerTest.close();
+	    }
 	}
 }
