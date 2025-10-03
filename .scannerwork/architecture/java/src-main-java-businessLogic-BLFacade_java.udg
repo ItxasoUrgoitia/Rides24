@@ -1,5 +1,5 @@
 
-1.0oihaneeeperr_rides24onaJavaFrontend"1759502771781*java2.Bü&
+1.0oihaneeeperr_rides24onaJavaFrontend"1759504381111*java2.Bü&
 .
 )src/main/java/businessLogic/BLFacade.java2
 	
@@ -225,9 +225,9 @@ G
 
 rejectErrekAdmin167
 H
-AbusinessLogic.BLFacade#AcceptWithChange(Ldomain/Erreklamazioa;I)V169
+AbusinessLogic.BLFacade#acceptWithChange(Ldomain/Erreklamazioa;I)V169
 
-AcceptWithChange170
+acceptWithChange170
 è
 ábusinessLogic.BLFacade#addErreklamazio(Ldomain/User;Ldomain/User;Ldomain/Eskaera;Ljava/lang/String;FLdomain/Erreklamazioa$ErrekLarri;)V172
 
@@ -374,6 +374,17 @@ G
 13
 158
 G
+168@
+16816924 *
+1Ñ Ñ(28:5B
+
+
+11
+12
+
+13
+170
+G
 177@
 17717824 *
 1á á(28:5B
@@ -478,17 +489,6 @@ E
 
 13
 103
-G
-168@
-16816924 *
-1Ñ Ñ(28:5B
-
-
-11
-12
-
-13
-170
 
 76
 767717

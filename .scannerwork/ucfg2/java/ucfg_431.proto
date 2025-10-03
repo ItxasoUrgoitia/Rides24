@@ -1,11 +1,11 @@
 
 9configuration.ConfigXML#getDbFilename()Ljava/lang/String;W
-K/Users/oihane/git/Rides24oficial/src/main/java/configuration/ConfigXML.java¤ ¤("1*®
+K/Users/oihane/git/Rides24oficial/src/main/java/configuration/ConfigXML.java¥ ¥("1*®
 1
-¥	 ¥(u
+¦	 ¦(u
 s
 
-¥	 ¥(
+¦	 ¦(
 %0java.lang.String"__id*G
 
 __unknown_file (+*)
@@ -13,7 +13,7 @@ s
 
 dbFilename"&
 
-¥ ¥(
+¦ ¦(
 
 %0java.lang.StringB
 configuration.ConfigXMLH

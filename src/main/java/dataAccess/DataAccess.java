@@ -46,6 +46,7 @@ import exceptions.*;
 public class DataAccess {
 	private EntityManager db;
 	private EntityManagerFactory emf;
+	private static final String err = "Errorea: ";
 
 	ConfigXML c = ConfigXML.getInstance();
 
@@ -406,7 +407,7 @@ public class DataAccess {
 			return existingUser.getMugimenduak();
 		} catch (Exception e) {
 			db.getTransaction().rollback();
-			System.err.println("Errorea: " + e.getMessage());
+			System.err.println(err + e.getMessage());
 			return null;
 		}
 	}
@@ -809,7 +810,7 @@ public class DataAccess {
 			return existingUser.getAlertak();
 		} catch (Exception e) {
 			db.getTransaction().rollback();
-			System.err.println("Errorea: " + e.getMessage());
+			System.err.println(err + e.getMessage());
 			return null;
 		}
 	}
@@ -888,7 +889,7 @@ public class DataAccess {
 			return existingUser.getBalorazioak();
 		} catch (Exception e) {
 			db.getTransaction().rollback();
-			System.err.println("Errorea: " + e.getMessage());
+			System.err.println(err + e.getMessage());
 			return null;
 		}
 	}
@@ -901,7 +902,7 @@ public class DataAccess {
 			return existingUser.getErrek();
 		} catch (Exception e) {
 			db.getTransaction().rollback();
-			System.err.println("Errorea: " + e.getMessage());
+			System.err.println(err + e.getMessage());
 			return null;
 		}
 	}

@@ -28,7 +28,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 
 public class BalorazioaGUI extends JFrame {
-
+	private static final String eti = "Etiquetas";
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JLabel jLabelMsg = new JLabel(); 
@@ -57,7 +57,7 @@ public class BalorazioaGUI extends JFrame {
 		a2.setBounds(118, 94, 53, 23);
 		contentPane.add(a2);
 		
-		JLabel Baloratu = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Baloratu.Baloratu"));
+		JLabel Baloratu = new JLabel(ResourceBundle.getBundle(eti).getString("Baloratu.Baloratu"));
 		Baloratu.setBounds(132, 33, 115, 14);
 		contentPane.add(Baloratu);
 		
@@ -77,7 +77,7 @@ public class BalorazioaGUI extends JFrame {
 		textArea.setBounds(90, 163, 179, 50);
 		contentPane.add(textArea);
 		
-		JLabel lblNewLabel = new JLabel(ResourceBundle.getBundle("Etiquetas").getString("Baloratu.Idatzi"));
+		JLabel lblNewLabel = new JLabel(ResourceBundle.getBundle(eti).getString("Baloratu.Idatzi"));
 		lblNewLabel.setBounds(90, 138, 179, 14);
 		contentPane.add(lblNewLabel);
 		
@@ -87,7 +87,7 @@ public class BalorazioaGUI extends JFrame {
 		this.getContentPane().add(jLabelMsg, null);
 		
 		
-		JButton baloratu = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Baloratu.Baloratu"));
+		JButton baloratu = new JButton(ResourceBundle.getBundle(eti).getString("Baloratu.Baloratu"));
 		baloratu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				BLFacade facade = MainGUI.getBusinessLogic();
@@ -108,7 +108,7 @@ public class BalorazioaGUI extends JFrame {
 				System.out.println(userJaso);
 				System.out.println(eskaera);
 				if(!a1.isSelected() && !a2.isSelected() && !a3.isSelected() && !a4.isSelected() && !a5.isSelected()) {                         
-					jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("Error"));
+					jLabelMsg.setText(ResourceBundle.getBundle(eti).getString("Error"));
 				}else {
 					
 					
@@ -126,7 +126,7 @@ public class BalorazioaGUI extends JFrame {
 		baloratu.setBounds(257, 229, 89, 23);
 		contentPane.add(baloratu);
 		
-		JButton itxi = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
+		JButton itxi = new JButton(ResourceBundle.getBundle(eti).getString("Close"));
 		itxi.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();

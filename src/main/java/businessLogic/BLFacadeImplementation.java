@@ -94,7 +94,7 @@ public class BLFacadeImplementation implements BLFacade {
 		Ride ride = dbManager.createRide(from, to, date, nPlaces, price, driverEmail);
 		dbManager.close();
 		return ride;
-	};
+	}
 
 	@WebMethod
 	public boolean addCar(String licensePlate, int places, String model, String color, String driverEmail) {
@@ -168,7 +168,7 @@ public class BLFacadeImplementation implements BLFacade {
 		boolean u = dbManager.storeUser(user);
 		dbManager.close();
 		return u;
-	};
+	}
 
 	@WebMethod
 	public User isRegistered(String email, String password) {
@@ -255,7 +255,7 @@ public class BLFacadeImplementation implements BLFacade {
 		List<String> emails = dbManager.getEmails();
 		dbManager.close();
 		return emails;
-	};
+	}
 	
 	@WebMethod 
 	public List<Eskaera> getEskaerakRide(Ride ride){
