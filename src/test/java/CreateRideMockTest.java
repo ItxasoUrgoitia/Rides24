@@ -152,17 +152,11 @@ public class CreateRideMockTest {
 			//assertTrue(existRide);
 			//testDA.close();
 			
-		   } catch (RideAlreadyExistException e) {
+		   } catch (RideMustBeLaterThanTodayException | RideAlreadyExistException e) {
 			// if the program goes to this point fail  
 			fail();
 			
-			} catch (RideMustBeLaterThanTodayException e) {
-				// if the program goes to this point fail  
-
-			fail();
-			//redone state of the system (create object in the database)
-			
-		} 
+			} 
 	} 
 	@Test
 	//sut.createRide:  The Driver is null. The test must return null. If  an Exception is returned the createRide method is not well implemented.
