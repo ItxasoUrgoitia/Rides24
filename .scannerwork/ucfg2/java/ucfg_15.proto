@@ -1,0 +1,35 @@
+
+DdataAccess.DataAccess#getDriverCars(Ldomain/Driver;)Ljava/util/List;N
+BC:/Users/User/git/Rides24/src/main/java/dataAccess/DataAccess.java± ±("1*Â
+1
+² ²(”‘
+
+³0 ³(A
+%0java.lang.String"(domain.User#getEmail()Ljava/lang/String;*5
+
+__unknown_file (
+
+driverdomain.Driver2
+getEmail()Y
+W
+
+³ ³(C
+existingDriverdomain.Driver"__id*"
+
+__unknown_file (
+""˜•
+
+µ	 µ(!
+%1java.util.List"'domain.Driver#getCars()Ljava/util/List;*=
+
+__unknown_file (!
+
+existingDriverdomain.Driver2	getCars()"$
+
+µ µ("
+
+%1java.util.List:%
+
+±  ±(-
+driverdomain.DriverB
+dataAccess.DataAccessH

@@ -1,0 +1,46 @@
+
+GdataAccess.DataAccess#getUserMugimenduak(Ldomain/User;)Ljava/util/List;N
+BC:/Users/User/git/Rides24/src/main/java/dataAccess/DataAccess.javaë ë()"11*5
+6
+ñ ñ(("$
+
+ñ ñ((
+
+%1java.util.List*∑
+7
+ñ
+ ñ(†ù
+
+ñ
+ ñ('
+%1java.util.List",domain.User#getMugimenduak()Ljava/util/List;*9
+
+__unknown_file (
+
+existingUserdomain.User2getMugimenduak()*
+6*k
+9
+î î(<U
+S
+
+î î(<
+existingUserdomain.User"__id*"
+
+__unknown_file (
+""*
+7*®
+11
+î î(êç
+
+î+ î(:
+%0java.lang.String"(domain.User#getEmail()Ljava/lang/String;*1
+
+__unknown_file (
+
+userdomain.User2
+getEmail()*
+9:!
+
+ë* ë(3
+userdomain.UserB
+dataAccess.DataAccessH

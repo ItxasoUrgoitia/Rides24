@@ -1,0 +1,55 @@
+
+*domain.Alerta#toString()Ljava/lang/String;D
+:C:/Users/User/git/Rides24/src/main/java/domain/Alerta.javaO O("1*”
+1P	 P(b
+`
+P P(
+%0java.lang.Integer"__id*5
+
+__unknown_file (*
+domain.Alerta"
+IDr
+p
+P	 P(
+%1java.lang.String"__concat*
+P	 P(
+Alerta [ID=*%
+P P(
+
+%0java.lang.Integerm
+k
+P	 P('
+%2java.lang.String"__concat*$
+P	 P(
+
+%1java.lang.String*
+P P('	
+, mota=j
+h
+P* P(.
+%3domain.Alerta$AlertMota"__id*7
+
+__unknown_file (*
+domain.Alerta"
+motaÅ
+
+P	 P(.
+%4java.lang.String"__concat*$
+P	 P('
+
+%2java.lang.String*+
+P* P(.
+
+%3domain.Alerta$AlertMotag
+e
+P	 P(4
+%5java.lang.String"__concat*$
+P	 P(.
+
+%4java.lang.String*
+P1 P(4
+]"$
+P P(5
+
+%5java.lang.StringB
+domain.AlertaH

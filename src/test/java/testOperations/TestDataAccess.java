@@ -76,11 +76,10 @@ public TestDataAccess()  {
     }
 	
 	public Driver getDriver(String driverEmail) {
-		System.out.println(">> TestDataAccess: getDriver "+driverEmail);
-		Driver d = db.find(Driver.class, driverEmail);
-		
-		return d;
-    }
+	    System.out.println(">> TestDataAccess: getDriver " + driverEmail);
+	    return db.find(Driver.class, driverEmail);
+	}
+
 	public Driver createDriver(String email, String name) {
 		System.out.println(">> TestDataAccess: createDriver");
 		Driver driver=null;

@@ -1,0 +1,130 @@
+
+ÖbusinessLogic.BLFacadeImplementation#getThisMonthDatesWithRides(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)Ljava/util/List;[
+QC:/Users/User/git/Rides24/src/main/java/businessLogic/BLFacadeImplementation.javay y(-"startingBlock*Æ
+startingBlocky- y(PÅ
+
+x x(
+%6"
+__annotate*)
+
+__unknown_file (
+	WebMethod*6
+
+__unknown_file (
+
+fromjava.lang.StringX
+V
+y5 y(9
+fromjava.lang.String"__annotation*"
+
+__unknown_file (
+
+%6
+}
+x x(
+%7"
+__annotate*)
+
+__unknown_file (
+	WebMethod*4
+
+__unknown_file (
+
+tojava.lang.StringV
+T
+yB y(D
+tojava.lang.String"__annotation*"
+
+__unknown_file (
+
+%7
+}
+x x(
+%8"
+__annotate*)
+
+__unknown_file (
+	WebMethod*4
+
+__unknown_file (
+
+datejava.util.DateV
+T
+yK y(O
+datejava.util.Date"__annotation*"
+
+__unknown_file (
+
+%8*
+1*ˆ	
+1z z(Ö
+Ç
+z z(
+%0dataAccess.DataAccess"__id*S
+
+__unknown_file (7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManagerzx
+z z(
+
+%1void"dataAccess.DataAccess#open()V*9
+
+__unknown_file (
+
+%0dataAccess.DataAccess2open()Ö
+Ç
+{ {(
+%2dataAccess.DataAccess"__id*S
+
+__unknown_file (7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManagerÃ…
+{ {(I
+%3java.util.List"vdataAccess.DataAccess#getThisMonthDatesWithRides(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)Ljava/util/List;*9
+
+__unknown_file (
+
+%2dataAccess.DataAccess*6
+
+__unknown_file (
+
+fromjava.lang.String*4
+
+__unknown_file (
+
+tojava.lang.String*4
+
+__unknown_file (
+
+datejava.util.Date2PgetThisMonthDatesWithRides(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)_
+]
+{ {(J
+datesjava.util.List"__id*2
+
+__unknown_file (
+
+%3java.util.ListÖ
+Ç
+| |(
+%4dataAccess.DataAccess"__id*S
+
+__unknown_file (7*5&
+$businessLogic.BLFacadeImplementation"
+	dbManager|z
+| |(
+
+%5void"dataAccess.DataAccess#close()V*9
+
+__unknown_file (
+
+%4dataAccess.DataAccess2close()"%
+} }(
+
+datesjava.util.List:$
+y. y(:
+fromjava.lang.String:"
+y; y(E
+tojava.lang.String:"
+yF y(O
+datejava.util.DateB(&
+$businessLogic.BLFacadeImplementationH

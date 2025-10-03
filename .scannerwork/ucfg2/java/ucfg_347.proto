@@ -1,0 +1,49 @@
+
+,domain.Ride#guztiraBalioa(Ldomain/Eskaera;)FD
+8C:/Users/User/git/Rides24/src/main/java/domain/Ride.javaõ õ("1*—
+1
+ö	 ö(‰†
+
+ö	 ö(
+%0domain.Ride"%domain.Eskaera#getRide()Ldomain/Ride;*3
+
+__unknown_file (
+
+eskdomain.Eskaera2	getRide()qo
+
+ö	 ö(!
+%1float"domain.Ride#getPrice()F*/
+
+__unknown_file (
+
+%0domain.Ride2
+getPrice()zx
+
+ö" ö(2	
+%2int"domain.Eskaera#getNPlaces()I*3
+
+__unknown_file (
+
+eskdomain.Eskaera2getNPlaces()u
+s
+
+ö	 ö(2
+%3float"__calculate*
+
+ö! ö("
+**
+
+ö	 ö(!
+
+%1float*
+
+ö" ö(2
+	
+%2int"
+
+ö ö(3
+"":#
+
+õ õ((
+eskdomain.EskaeraB
+domain.RideHX

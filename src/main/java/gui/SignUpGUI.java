@@ -67,6 +67,7 @@ public class SignUpGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public SignUpGUI() {
+		final String EMAIL = "Error.EmailFormat";
 		setTitle(ResourceBundle.getBundle("Etiquetas").getString("SignUpGUI.Title"));
 		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 649, 300);
@@ -166,7 +167,7 @@ public class SignUpGUI extends JFrame {
 		        }
 				
 				if (!email.contains("@") || !email.contains(".")) {
-					 jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("Error.EmailFormat"));
+					 jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString(EMAIL));
 			         return;
 			    }
 				 
@@ -188,7 +189,7 @@ public class SignUpGUI extends JFrame {
 				        	d.setVisible(true);
 				        	((JFrame) SwingUtilities.getWindowAncestor(btn_SignUp)).dispose(); //Botoia pultsatzean lehio hori itxiko du
 				        } else {
-				        	jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("Error.EmailFormat"));
+				        	jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString(EMAIL));
 				        }
 				    } else if (rdbtn_Passenger.isSelected()) {
 				        Bidaiari bidaiari = new Bidaiari(nameSur, password, email, NAN);
@@ -203,7 +204,7 @@ public class SignUpGUI extends JFrame {
 				        	r.setVisible(true);
 				        	((JFrame) SwingUtilities.getWindowAncestor(btn_SignUp)).dispose(); //Botoia pultsatzean lehio hori itxiko du
 				        } else {
-				        	jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("Error.EmailFormat"));
+				        	jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString(EMAIL));
 				        }
 				    } else {
 				        jLabelMsg.setText(ResourceBundle.getBundle("Etiquetas").getString("Error.Click"));

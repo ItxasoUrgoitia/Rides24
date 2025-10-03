@@ -1,0 +1,174 @@
+
+hdataAccess.DataAccess#addCar(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)ZN
+BC:/Users/User/git/Rides24/src/main/java/dataAccess/DataAccess.javaÌ Ì("5*Ç
+
+2
+Ö Ö(
+S
+Q
+
+Ö Ö(
+%4java.io.PrintStream"__id*"
+
+__unknown_file (
+""ãà
+
+Ö Ö($
+
+%5void"0java.io.PrintStream#println(Ljava/lang/String;)V*7
+
+__unknown_file (
+
+%4java.io.PrintStream*>
+
+__unknown_file ("
+ 
+licensePlatejava.lang.String2println(Ljava/lang/String;)ÊÇ
+
+× ×(B
+%6
+domain.Car"Ydomain.Driver#addCar(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)Ldomain/Car;*5
+
+__unknown_file (
+
+driverdomain.Driver*>
+
+__unknown_file ("
+ 
+licensePlatejava.lang.String*"
+
+__unknown_file (
+""*7
+
+__unknown_file (
+
+modeljava.lang.String*7
+
+__unknown_file (
+
+colorjava.lang.String2?addCar(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)W
+U
+
+× ×(C
+car
+domain.Car"__id*.
+
+__unknown_file (
+
+%6
+domain.CarS
+Q
+
+Ø Ø(
+%7java.io.PrintStream"__id*"
+
+__unknown_file (
+""Š
+
+Ø Ø(%
+%8java.lang.String"'domain.Car#toString()Ljava/lang/String;*/
+
+__unknown_file (
+
+car
+domain.Car2
+toString()ÙÖ
+
+Ø Ø(&
+
+%9void"0java.io.PrintStream#println(Ljava/lang/String;)V*7
+
+__unknown_file (
+
+%7java.io.PrintStream*4
+
+__unknown_file (
+
+%8java.lang.String2println(Ljava/lang/String;)"
+
+Ü Ü(
+""*Ô
+3
+Ò Ò(S
+Q
+
+Ó Ó(
+%2java.io.PrintStream"__id*"
+
+__unknown_file (
+""×Ô
+
+Ó Ó(-
+
+%3void"0java.io.PrintStream#println(Ljava/lang/String;)V*7
+
+__unknown_file (
+
+%2java.io.PrintStream*2
+
+__unknown_file (
+car already exists2println(Ljava/lang/String;)"
+
+Ô Ô(
+""*‚
+4
+Ñ Ñ(èå
+
+Ñ Ñ()
+%1boolean"/domain.Driver#doesCarExist(Ljava/lang/String;)Z*5
+
+__unknown_file (
+
+driverdomain.Driver*>
+
+__unknown_file ("
+ 
+licensePlatejava.lang.String2 doesCarExist(Ljava/lang/String;)*
+2
+3*é
+5
+Î Î(Q
+O
+
+Ï Ï(6
+driverdomain.Driver"__id*"
+
+__unknown_file (
+""}
+{
+
+Ð Ð(
+%0boolean"	__compare*
+
+Ð Ð(
+!=*'
+
+Ð Ð(
+
+driverdomain.Driver*
+
+Ð Ð(
+""*
+4
+1*%
+1
+Þ Þ("
+
+ß ß(
+"":.
+
+Ì Ì(+ 
+licensePlatejava.lang.String: 
+
+__unknown_file (
+"":'
+
+Ì8 Ì(E
+modeljava.lang.String:'
+
+ÌF Ì(S
+colorjava.lang.String:-
+
+ÌT Ì(f
+driverEmailjava.lang.StringB
+dataAccess.DataAccessHX

@@ -128,14 +128,10 @@ public class CreateRideTest {
 			assertTrue(existRide);
 			testDA.close();
 			
-		   } catch (RideAlreadyExistException e) {
+		   } catch (RideAlreadyExistException | RideMustBeLaterThanTodayException e) {
 			// if the program goes to this point fail  
 			fail();
 			
-			} catch (RideMustBeLaterThanTodayException e) {
-				// if the program goes to this point fail  
-
-			fail();
 			
 		} finally {
 			

@@ -1,0 +1,83 @@
+
+domain.Eskaera#hashCode()IE
+;C:/Users/User/git/Rides24/src/main/java/domain/Eskaera.java ("1*õ
+1	 (b
+`
+ (
+%0java.util.Date"__id*8
+
+__unknown_file (*
+domain.Eskaera"
+dated
+b
+ ( 
+%1java.lang.String"__id*8
+
+__unknown_file (*
+domain.Eskaera"
+fromg
+e
++ (3
+%2domain.Bidaiari"__id*<
+
+__unknown_file ( *
+domain.Eskaera"
+
+bidaiari_
+]
+5 (9
+%3domain.Ride"__id*8
+
+__unknown_file (*
+domain.Eskaera"
+rider
+p
+; (A"
+%4domain.Eskaera$EskaeraEgoera"__id*:
+
+__unknown_file (*
+domain.Eskaera"
+egoerab
+`
+C (E
+%5java.lang.String"__id*6
+
+__unknown_file (*
+domain.Eskaera"
+toå
+â
+	 (F	
+%6int",java.util.Objects#hash([Ljava/lang/Object;)I*1
+
+__unknown_file ("
+java.util.Objects*2
+
+__unknown_file (
+
+%0java.util.Date*4
+
+__unknown_file (
+
+%1java.lang.String*"
+
+__unknown_file (
+""*3
+
+__unknown_file (
+
+%2domain.Bidaiari*/
+
+__unknown_file (
+
+%3domain.Ride*@
+
+__unknown_file ($
+"
+%4domain.Eskaera$EskaeraEgoera*4
+
+__unknown_file (
+
+%5java.lang.String"
+ (G
+""B
+domain.EskaeraHX

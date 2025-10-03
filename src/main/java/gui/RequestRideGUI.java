@@ -35,8 +35,8 @@ public class RequestRideGUI extends JFrame {
 	private Calendar calendarAnt = null;
 
 	private JScrollPane scrollPaneEvents = new JScrollPane();
-
-	private JButton jButtonRequest = new JButton(ResourceBundle.getBundle("Etiquetas").getString("MainBidaiariGUI.RequestRide"));
+	private final String REQUEST = "MainBidaiariGUI.RequestRide";
+	private JButton jButtonRequest = new JButton(ResourceBundle.getBundle("Etiquetas").getString(REQUEST));
 	private JButton jButtonClose = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Close"));
 	private JLabel jLabelMsg = new JLabel();
 	private JLabel jLabelError = new JLabel();
@@ -54,7 +54,7 @@ public class RequestRideGUI extends JFrame {
 		//this.rider=rider;
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(604, 370));
-		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("MainBidaiariGUI.RequestRide"));
+		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString(REQUEST));
 		this.bidaiari = bidaiari;
 		scrollPaneEvents.setBounds(new Rectangle(25, 44, 346, 116));
 
@@ -90,7 +90,7 @@ public class RequestRideGUI extends JFrame {
 		sartuLekuKop.setBounds(28, 186, 136, 14);
 		getContentPane().add(sartuLekuKop);
 
-		JButton request = new JButton(ResourceBundle.getBundle("Etiquetas").getString("MainBidaiariGUI.RequestRide"));
+		JButton request = new JButton(ResourceBundle.getBundle("Etiquetas").getString(REQUEST));
 		request.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {

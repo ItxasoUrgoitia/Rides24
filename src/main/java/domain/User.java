@@ -53,10 +53,11 @@ public abstract class User implements Serializable {
 		this.errek = errek;
 	}
 
-	public User() {
+	protected User() {
+		
 	}
 
-	public User(String name, String pasahitza, String email, String nanZbk) {
+	protected User(String name, String pasahitza, String email, String nanZbk) {
 		this.email = email;
 		this.name = name;
 		this.pasahitza = pasahitza;
@@ -64,8 +65,7 @@ public abstract class User implements Serializable {
 		this.mugimenduak = new ArrayList<Movement>();
 		this.alertak = new ArrayList<Alerta>();
 		this.balorazioak = new ArrayList<Balorazio>();
-		this.errek = new ArrayList<Erreklamazioa>();
-
+		this.errek = new ArrayList<Erreklamazioa>(); 	
 	}
 
 	public List<Movement> getMugimenduak() {

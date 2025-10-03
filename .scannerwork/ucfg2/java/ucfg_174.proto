@@ -1,0 +1,33 @@
+
+gui.LoginGUI#%field_initializer
+__unknown_file ("1*”
+1 (ƒ
+€
+C
+9C:/Users/User/git/Rides24/src/main/java/gui/LoginGUI.java# #(#
+gui.LoginGUI"
+contentPane"__id*
+ (
+""us
+C
+9C:/Users/User/git/Rides24/src/main/java/gui/LoginGUI.java'  '(&
+%0javax.swing.JLabel"javax.swing.JLabel”
+‘
+C
+9C:/Users/User/git/Rides24/src/main/java/gui/LoginGUI.java' '((
+%1"javax.swing.JLabel#<init>()V*&
+ (
+
+%0javax.swing.JLabel•
+’
+C
+9C:/Users/User/git/Rides24/src/main/java/gui/LoginGUI.java' '()
+gui.LoginGUI"
+	jLabelMsg"__id*&
+ (
+
+%0javax.swing.JLabel"Y
+B
+9C:/Users/User/git/Rides24/src/main/java/gui/LoginGUI.java  ˆ(
+implicit returnB
+gui.LoginGUI

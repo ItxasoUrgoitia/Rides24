@@ -1,0 +1,75 @@
+
+'domain.Car#toString()Ljava/lang/String;A
+7C:/Users/User/git/Rides24/src/main/java/domain/Car.javaL L("1*¦
+1M	 M(h
+f
+M M((
+%0java.lang.String"__id*<
+
+__unknown_file ( *
+
+domain.Car"
+licensePlatet
+r
+M	 M((
+%1java.lang.String"__concat*
+M	 M(
+[licensePlate=*$
+M M((
+
+%0java.lang.Stringo
+m
+M	 M(6
+%2java.lang.String"__concat*$
+M	 M((
+
+%1java.lang.String*
+M+ M(6
+	, places=h
+f
+M	 M(?
+%3java.lang.String"__concat*$
+M	 M(6
+
+%2java.lang.String*
+M9 M(?
+""n
+l
+M	 M(L
+%4java.lang.String"__concat*$
+M	 M(?
+
+%3java.lang.String*
+MB M(L
+
+, model=a
+_
+MO M(T
+%5java.lang.String"__id*5
+
+__unknown_file (*
+
+domain.Car"
+modelz
+x
+M	 M(T
+%6java.lang.String"__concat*$
+M	 M(L
+
+%4java.lang.String*$
+MO M(T
+
+%5java.lang.Stringg
+e
+M	 M(Z
+%7java.lang.String"__concat*$
+M	 M(T
+
+%6java.lang.String*
+MW M(Z
+]"$
+M M([
+
+%7java.lang.StringB
+
+domain.CarH

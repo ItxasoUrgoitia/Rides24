@@ -1,0 +1,384 @@
+
+*domain.Eskaera#equals(Ljava/lang/Object;)ZG
+;C:/Users/User/git/Rides24/src/main/java/domain/Eskaera.java™ ™("startingBlock*ß
+13
+   (d
+b
+
+   ( 
+otherdomain.Eskaera"__id*5
+
+__unknown_file (
+
+objjava.lang.Objectd
+b
+
+¡ ¡(
+%5java.util.Date"__id*8
+
+__unknown_file (*
+domain.Eskaera"
+datek
+i
+
+¡ ¡((
+%6java.util.Date"__id*?
+
+__unknown_file (#*!
+
+otherdomain.Eskaera"
+dateú
+÷
+
+¡	 ¡()
+%7boolean"?java.util.Objects#equals(Ljava/lang/Object;Ljava/lang/Object;)Z*1
+
+__unknown_file ("
+java.util.Objects*2
+
+__unknown_file (
+
+%5java.util.Date*2
+
+__unknown_file (
+
+%6java.util.Date*
+2
+4
+6
+8
+10
+12
+1*&
+14
+Ÿ
+ Ÿ("
+
+Ÿ Ÿ(
+""*×
+15
+ž ž(
+
+ž ž(
+%2java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*.
+
+__unknown_file (
+domain.Eskaera2
+getClass()—”
+
+ž ž("
+%3java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*5
+
+__unknown_file (
+
+objjava.lang.Object2
+getClass()
+Š
+
+ž ž("
+%4boolean"	__compare*
+
+ž ž(
+!=*%
+
+ž ž(
+
+%2java.lang.Class*%
+
+ž ž("
+
+%3java.lang.Class*
+13
+14*&
+16
+
+ ("
+
+ (
+""*™
+17
+œ œ(	}
+{
+
+œ œ(
+%1boolean"	__compare*
+
+œ
+ œ(
+==*'
+
+œ œ(	
+
+objjava.lang.Object*
+
+œ œ(
+""*
+15
+16*&
+18
+›
+ ›("
+
+› ›(
+""*§
+19
+š š(
+Š
+‡
+
+š š(
+%0boolean"	__compare*
+
+š š(
+==* 
+
+š š(
+
+domain.Eskaera*'
+
+š š(
+
+objjava.lang.Object*
+17
+18*%
+1
+¡ ¤(>"
+
+¡ ¤(>
+""*í
+2
+¤! ¤((e
+c
+
+¤0 ¤(2
+%21java.lang.String"__id*6
+
+__unknown_file (*
+domain.Eskaera"
+tol
+j
+
+¤4 ¤(<
+%22java.lang.String"__id*=
+
+__unknown_file (!*
+
+otherdomain.Eskaera"
+to
+þ
+
+¤! ¤(=
+%23boolean"?java.util.Objects#equals(Ljava/lang/Object;Ljava/lang/Object;)Z*1
+
+__unknown_file ("
+java.util.Objects*5
+
+__unknown_file (
+
+%21java.lang.String*5
+
+__unknown_file (
+
+%22java.lang.String*
+1*
+startingBlock
+™ ™("
+Š
+
+˜ ˜(
+
+%24"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*5
+
+__unknown_file (
+
+objjava.lang.ObjectZ
+X
+
+™ ™(!
+objjava.lang.Object"__annotation*#
+
+__unknown_file (
+
+%24*
+19*¹
+4
+¤ ¤(u
+s
+
+¤ ¤(#
+%18domain.Eskaera$EskaeraEgoera"__id*:
+
+__unknown_file (*
+domain.Eskaera"
+egoera|
+z
+
+¤ ¤(#
+%19domain.Eskaera$EskaeraEgoera"__id*A
+
+__unknown_file (%*#
+
+otherdomain.Eskaera"
+egoeraª
+§
+
+¤ ¤(
+%20boolean"	__compare*
+
+¤ ¤(
+==*3
+
+¤ ¤(%
+#
+%18domain.Eskaera$EskaeraEgoera*3
+
+¤ ¤(%
+#
+%19domain.Eskaera$EskaeraEgoera*
+2
+1*ã
+6
+£3 £(:b
+`
+
+£B £(F
+%15domain.Ride"__id*8
+
+__unknown_file (*
+domain.Eskaera"
+ridei
+g
+
+£H £(R
+%16domain.Ride"__id*?
+
+__unknown_file (#*!
+
+otherdomain.Eskaera"
+ride÷
+ô
+
+£3 £(S
+%17boolean"?java.util.Objects#equals(Ljava/lang/Object;Ljava/lang/Object;)Z*1
+
+__unknown_file ("
+java.util.Objects*0
+
+__unknown_file (
+
+%15domain.Ride*0
+
+__unknown_file (
+
+%16domain.Ride*	
+2
+4
+1*þ
+8
+£ £(j
+h
+
+£ £(
+%12domain.Bidaiari"__id*<
+
+__unknown_file ( *
+domain.Eskaera"
+
+bidaiariq
+o
+
+£  £(.
+%13domain.Bidaiari"__id*C
+
+__unknown_file ('*%
+
+otherdomain.Eskaera"
+
+bidaiariÿ
+ü
+
+£ £(/
+%14boolean"?java.util.Objects#equals(Ljava/lang/Object;Ljava/lang/Object;)Z*1
+
+__unknown_file ("
+java.util.Objects*4
+
+__unknown_file (
+
+%12domain.Bidaiari*4
+
+__unknown_file (
+
+%13domain.Bidaiari*
+2
+4
+6
+1*Ž
+10
+¢ ¢(k
+i
+
+¢ ¢(
+%11boolean"	__compare*
+
+¢ ¢(
+==*
+
+¢ ¢(
+""*
+
+¢ ¢(
+""*
+2
+4
+6
+8
+1*þ
+12
+¡- ¡(4f
+d
+
+¡< ¡(@
+%8java.lang.String"__id*8
+
+__unknown_file (*
+domain.Eskaera"
+fromm
+k
+
+¡B ¡(L
+%9java.lang.String"__id*?
+
+__unknown_file (#*!
+
+otherdomain.Eskaera"
+fromÿ
+ü
+
+¡- ¡(M
+%10boolean"?java.util.Objects#equals(Ljava/lang/Object;Ljava/lang/Object;)Z*1
+
+__unknown_file ("
+java.util.Objects*4
+
+__unknown_file (
+
+%8java.lang.String*4
+
+__unknown_file (
+
+%9java.lang.String*
+2
+4
+6
+8
+10
+1:%
+
+™ ™(!
+objjava.lang.ObjectB
+domain.EskaeraHX

@@ -1,0 +1,45 @@
+
+ gui.OnartuGUI#%field_initializer
+__unknown_file ("1*Ê
+1 (vt
+D
+:C:/Users/User/git/Rides24/src/main/java/gui/OnartuGUI.java$  $(&
+%0javax.swing.JLabel"javax.swing.JLabel•
+’
+D
+:C:/Users/User/git/Rides24/src/main/java/gui/OnartuGUI.java$ $((
+%1"javax.swing.JLabel#<init>()V*&
+ (
+
+%0javax.swing.JLabel—
+”
+D
+:C:/Users/User/git/Rides24/src/main/java/gui/OnartuGUI.java$ $()
+gui.OnartuGUI"
+	jLabelMsg"__id*&
+ (
+
+%0javax.swing.JLabel|z
+D
+:C:/Users/User/git/Rides24/src/main/java/gui/OnartuGUI.java%" %(+
+%2javax.swing.JComboBox"javax.swing.JComboBox›
+˜
+D
+:C:/Users/User/git/Rides24/src/main/java/gui/OnartuGUI.java% %(-
+%3"javax.swing.JComboBox#<init>()V*)
+ (
+
+%2javax.swing.JComboBox™
+–
+D
+:C:/Users/User/git/Rides24/src/main/java/gui/OnartuGUI.java% %(.
+gui.OnartuGUI"
+
+comboBox"__id*)
+ (
+
+%2javax.swing.JComboBox"Y
+B
+:C:/Users/User/git/Rides24/src/main/java/gui/OnartuGUI.java  c(
+implicit returnB
+gui.OnartuGUI

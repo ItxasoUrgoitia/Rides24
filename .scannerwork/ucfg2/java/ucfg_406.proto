@@ -1,0 +1,91 @@
+
++domain.Eskaera#toString()Ljava/lang/String;G
+;C:/Users/User/git/Rides24/src/main/java/domain/Eskaera.java‰ ‰("1*¡
+1
+Š	 Š(i
+g
+
+Š Š("
+%0domain.Bidaiari"__id*<
+
+__unknown_file ( *
+domain.Eskaera"
+
+bidaiari’
+
+Š Š(-
+%1java.lang.String"(domain.User#getEmail()Ljava/lang/String;*3
+
+__unknown_file (
+
+%0domain.Bidaiari2
+getEmail()x
+v
+
+Š	 Š(-
+%2java.lang.String"__concat*
+
+Š	 Š(
+ Bidaiaria: *&
+
+Š Š(-
+
+%1java.lang.Stringu
+s
+
+Š	 Š(;
+%3java.lang.String"__concat*&
+
+Š	 Š(-
+
+%2java.lang.String*
+
+Š0 Š(;
+	 Egoera: t
+r
+
+Š> Š(D"
+%4domain.Eskaera$EskaeraEgoera"__id*:
+
+__unknown_file (*
+domain.Eskaera"
+egoera
+Š
+
+Š	 Š(D
+%5java.lang.String"__concat*&
+
+Š	 Š(;
+
+%3java.lang.String*2
+
+Š> Š(D$
+"
+%4domain.Eskaera$EskaeraEgoera€
+~
+
+Š	 Š(\
+%6java.lang.String"__concat*&
+
+Š	 Š(D
+
+%5java.lang.String*&
+
+ŠF Š(\
+ Eskatutako lekuak: n
+l
+
+Š	 Š(f
+%7java.lang.String"__concat*&
+
+Š	 Š(\
+
+%6java.lang.String*
+
+Š_ Š(f
+"""&
+
+Š Š(g
+
+%7java.lang.StringB
+domain.EskaeraH
