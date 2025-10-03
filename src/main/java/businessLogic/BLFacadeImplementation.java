@@ -10,6 +10,8 @@ import java.util.ResourceBundle;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
+import java.util.logging.Logger;
+
 import configuration.ConfigXML;
 import dataAccess.DataAccess;
 import domain.Ride;
@@ -34,8 +36,9 @@ import exceptions.*;
 public class BLFacadeImplementation implements BLFacade {
 	DataAccess dbManager;
 
+    private static final Logger logger = Logger.getLogger(BLFacadeImplementation.class.getName());
 	public BLFacadeImplementation() {
-		System.out.println("Creating BLFacadeImplementation instance");
+        logger.info("Creating BLFacadeImplementation instance");
 
 		dbManager = new DataAccess();
 
