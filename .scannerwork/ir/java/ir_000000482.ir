@@ -1,35 +1,0 @@
-
-	", name="java.lang.String
- 
-", dirua="java.lang.String
-!", nanZbk="java.lang.String
-"]"java.lang.String
-$"User [email="java.lang.String
-$
-", pasahitza="java.lang.String
-", tlf="java.lang.String!this
-™ ™("domain.User"´:
-8
-
-š š("#get-field# email:Bjava.lang.String9
-7
-
-š. š(2"#get-field# name:Bjava.lang.String;
-9
-
-šC š(I"#get-field# nanZbk:Bjava.lang.String8
-6
-
-šW š(Z	"#get-field# tlf:Bjava.lang.String>
-<
-
-› ›("#get-field# pasahitza:Bjava.lang.String/
--
-
-› ›($"#get-field# dirua:BfloatA
-?
-
-š	 ›(*"	#binop +#2+:	
-Bjava.lang.String
-
-š ›(+*8C:/Users/User/git/Rides24/src/main/java/domain/User.java

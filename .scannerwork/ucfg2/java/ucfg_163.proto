@@ -1,11 +1,11 @@
 
 domain.User#hashCode()ID
-8C:/Users/User/git/Rides24/src/main/java/domain/User.javaˆ ˆ("1*Õ
+8C:/Users/User/git/Rides24/src/main/java/domain/User.java‰ ‰("1*Õ
 1
-‰	 ‰(d
+Š	 Š(d
 b
 
-‰ ‰("
+Š Š("
 %0java.lang.String"__id*6
 
 __unknown_file (*
@@ -13,7 +13,7 @@ b
 emailc
 a
 
-‰$ ‰((
+Š$ Š((
 %1java.lang.String"__id*5
 
 __unknown_file (*
@@ -21,7 +21,7 @@ a
 namee
 c
 
-‰* ‰(0
+Š* Š(0
 %2java.lang.String"__id*7
 
 __unknown_file (*
@@ -29,7 +29,7 @@ c
 nanZbkh
 f
 
-‰2 ‰(;
+Š2 Š(;
 %3java.lang.String"__id*:
 
 __unknown_file (*
@@ -37,7 +37,7 @@ f
 	pasahitzab
 `
 
-‰= ‰(@
+Š= Š(@
 %4java.lang.String"__id*4
 
 __unknown_file (*
@@ -45,7 +45,7 @@ f
 tlf­
 ª
 
-‰	 ‰(A	
+Š	 Š(A	
 %5int",java.util.Objects#hash([Ljava/lang/Object;)I*1
 
 __unknown_file ("
@@ -74,6 +74,6 @@ f
 
 %4java.lang.String"
 
-‰ ‰(B
+Š Š(B
 ""B
 domain.UserHX
