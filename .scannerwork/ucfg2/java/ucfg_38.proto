@@ -1,18 +1,18 @@
 
 AdataAccess.DataAccess#getUserErrek(Ldomain/User;)Ljava/util/List;U
-I/Users/oihane/git/Rides24oficial/src/main/java/dataAccess/DataAccess.javaÄ Ä(("11*5
+I/Users/oihane/git/Rides24oficial/src/main/java/dataAccess/DataAccess.javaÅ Å(("11*5
 6
-Ö Ö(""$
+Ü Ü(""$
 
-Ö Ö("
+Ü Ü("
 
 %1java.util.List*´
 7
-Ö
- Ö(îë
+Ü
+ Ü(îë
 
-Ö
- Ö(!
+Ü
+ Ü(!
 %1java.util.List"&domain.User#getErrek()Ljava/util/List;*9
 
 __unknown_file (
@@ -21,19 +21,19 @@ I/Users/oihane/git/Rides24oficial/src/main/java/dataAccess/DataAccess.javaÄ 
 getErrek()*
 6*k
 9
-É É(<U
+Ñ Ñ(<U
 S
 
-É É(<
+Ñ Ñ(<
 existingUserdomain.User"__id*"
 
 __unknown_file (
 ""*
 7*®
 11
-É É(êç
+Ñ Ñ(êç
 
-É+ É(:
+Ñ+ Ñ(:
 %0java.lang.String"(domain.User#getEmail()Ljava/lang/String;*1
 
 __unknown_file (
@@ -42,6 +42,6 @@ S
 getEmail()*
 9:!
 
-Ä) Ä(2
+Å) Å(2
 userdomain.UserB
 dataAccess.DataAccessH

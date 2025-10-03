@@ -88,12 +88,8 @@ public interface BLFacade  {
 	 */	
 	@WebMethod public void initializeBD();
 	
-	//@WebMethod public boolean storeDriver(Driver driver);
-	
-	//@WebMethod public boolean storeRider(Bidaiari rider);
-	
+		
 	@WebMethod public List<String> getEmails();
-	//@WebMethod public boolean jarri(boolean jarri, Eskaera eskaera);
 	@WebMethod public boolean storeUser(User user);
 	
 	@WebMethod public User isRegistered(String email, String password);
@@ -101,14 +97,12 @@ public interface BLFacade  {
 	@WebMethod public boolean diruaSartu(User user, float diru);
 	@WebMethod public List<Bidaiari> getAllBidaiari();
 	@WebMethod public List<Ride> getDriverRides(Driver driver);
-	//@WebMethod public List<Eskaera> getAllEskaera();
 	@WebMethod public List<Ride> getAllRides();
 	@WebMethod public List<Movement> getUserMugimenduak(User user);
 	@WebMethod public List<Car> getDriverCars(Driver driver); 
 	@WebMethod public Eskaera createEskaera(User user, Ride ride, int nPlaces) throws RequestAlreadyExistException;
 	@WebMethod public boolean addCar(String licensePlate, int places, String model, String color, String driverEmail);
 	@WebMethod public void kantzelatuRide(Ride ride);
-	//@WebMethod public boolean ezabatuEskaera(Eskaera eskaera);
 	
 	@WebMethod public List<Eskaera> getEskaerakRide(Ride ride);
 	@WebMethod public void acceptEskaera(Eskaera eskaera) throws NotEnoughPlacesException, NotEnoughMoneyException;
@@ -122,7 +116,6 @@ public interface BLFacade  {
 	@WebMethod public List<Alerta> getUserAlertak(User user);
 	@WebMethod public void ezabatuAlertakUser(User user);
 	@WebMethod public void addBalorazioa(User userJaso, User userJarri, String deskribapena, Integer nota, Eskaera eskaera);
-	//@WebMethod public void addB(Balorazio balorazio);
 	@WebMethod public List<Balorazio> getUserBalorazioa(User user);
 	@WebMethod public List<Erreklamazioa> getUserErrek(User user);
 	@WebMethod public List<Erreklamazioa> getAllErrek();

@@ -67,11 +67,11 @@ public class AcceptWhithChangeGUI extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(leve.isSelected()) {
-					facade.AcceptWithChange(erreklamazio, 1);
+					facade.acceptWithChange(erreklamazio, 1);
 				}else if(intermedio.isSelected()) {
-					facade.AcceptWithChange(erreklamazio, 2);
+					facade.acceptWithChange(erreklamazio, 2);
 				}else {
-					facade.AcceptWithChange(erreklamazio, 3);
+					facade.acceptWithChange(erreklamazio, 3);
 				}
 			}
 		});

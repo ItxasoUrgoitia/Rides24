@@ -90,10 +90,8 @@ public class DataAccess {
 			Calendar today = Calendar.getInstance();
 
 			int month = today.get(Calendar.MONTH);
-			int year = today.get(Calendar.YEAR);
 			if (month == 12) {
 				month = 1;
-				year += 1;
 			}
 
 			
@@ -261,7 +259,7 @@ public class DataAccess {
 				break;
 			}
 		}
-		if (exisDa==false) {
+		if (!exisDa) {
 			eskaeraListDB.add(eskBerr);
 		} else {
 			db.getTransaction().rollback();
@@ -737,7 +735,6 @@ public class DataAccess {
 	
 	public boolean ezabatuUser(User user) {
 		db.getTransaction().begin();
-		boolean ondo = true;
 		User ezabUserDB = bilatuUserEmail(user.getEmail());
 		if (ezabUserDB instanceof Driver) {
 			Driver ezabDriverDB = (Driver) ezabUserDB;
@@ -839,7 +836,6 @@ public class DataAccess {
 		System.out.println("Nota: " + balorazio.getNota());
 		System.out.println("Eskaera: " + balorazio.getEskaera());
 		db.persist(balorazio);
-		Balorazio balorazioGehitutakoa = balorazio.getUserJaso().addBalorazioa(balorazio);
 		//Alerta alert = new Alerta(balorazio.getUserJaso(), AlertMota.BALORATUTA);
 		//addAlert(alert);
 		//db.persist(alert);

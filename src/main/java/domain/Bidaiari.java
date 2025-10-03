@@ -2,11 +2,7 @@ package domain;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
-import java.util.Vector;
-
+import java.util.*;
 import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -41,7 +37,7 @@ public class Bidaiari extends User implements Serializable{
 		}
 				
 	}
-	
+
 	
 	public void ordaindu(float diru) {
 		super.setDirua(super.getDirua()-diru);

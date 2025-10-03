@@ -1,14 +1,14 @@
 
 1dataAccess.DataAccess#getEmails()Ljava/util/List;U
-I/Users/oihane/git/Rides24oficial/src/main/java/dataAccess/DataAccess.java§ §("1*¤
+I/Users/oihane/git/Rides24oficial/src/main/java/dataAccess/DataAccess.java¨ ¨("1*¤
 1
-¨ ¨(/><
+© ©(/><
 
-¨ ¨(-
+© ©(-
 %0java.util.ArrayList"java.util.ArrayListl
 j
 
-¨ ¨(/
+© ©(/
 %1"java.util.ArrayList#<init>()V*7
 
 __unknown_file (
@@ -16,7 +16,7 @@ j
 %0java.util.ArrayListg
 e
 
-¨ ¨(0
+© ©(0
 emailsjava.util.List"__id*7
 
 __unknown_file (
@@ -24,13 +24,13 @@ e
 %0java.util.ArrayListR
 P
 
-© ©(W
+ª ª(W
 emailsjava.util.List"__id*"
 
 __unknown_file (
 """(
 
-ª ª(
+« «(
 
 emailsjava.util.ListB
 dataAccess.DataAccessH

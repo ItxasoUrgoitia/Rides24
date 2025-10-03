@@ -1,18 +1,18 @@
 
 CdataAccess.DataAccess#getUserAlertak(Ldomain/User;)Ljava/util/List;U
-I/Users/oihane/git/Rides24oficial/src/main/java/dataAccess/DataAccess.java¤ ¤(#"11*5
+I/Users/oihane/git/Rides24oficial/src/main/java/dataAccess/DataAccess.java¥ ¥(#"11*5
 6
-© ©($"$
+ª ª($"$
 
-© ©($
+ª ª($
 
 %1java.util.List*¯
 7
-©
- ©(˜•
+ª
+ ª(˜•
 
-©
- ©(#
+ª
+ ª(#
 %1java.util.List"(domain.User#getAlertak()Ljava/util/List;*9
 
 __unknown_file (
@@ -20,19 +20,19 @@ I/Users/oihane/git/Rides24oficial/src/main/java/dataAccess/DataAccess.java¤ 
 existingUserdomain.User2getAlertak()*
 6*k
 9
-§ §(<U
+¨ ¨(<U
 S
 
-§ §(<
+¨ ¨(<
 existingUserdomain.User"__id*"
 
 __unknown_file (
 ""*
 7*¨
 11
-§ §(
+¨ ¨(
 
-§+ §(:
+¨+ ¨(:
 %0java.lang.String"(domain.User#getEmail()Ljava/lang/String;*1
 
 __unknown_file (
@@ -41,6 +41,6 @@ S
 getEmail()*
 9:!
 
-¤$ ¤(-
+¥$ ¥(-
 userdomain.UserB
 dataAccess.DataAccessH

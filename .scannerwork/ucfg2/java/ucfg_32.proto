@@ -1,18 +1,18 @@
 
 1dataAccess.DataAccess#ezabatuUser(Ldomain/User;)ZU
-I/Users/oihane/git/Rides24oficial/src/main/java/dataAccess/DataAccess.javaá á("20*ı
+I/Users/oihane/git/Rides24oficial/src/main/java/dataAccess/DataAccess.javaâ â("20*ı
 13
-ì ì(O
+í í(O
 M
 
-ì ì(
+í í(
 eskdomain.Eskaera"__id*"
 
 __unknown_file (
 ""
 Œ
 
-ì ì(
+í í(
 eskdomain.Eskaera"
 __arrayGet*7
 
@@ -25,23 +25,23 @@ __arrayGet*7
 15
 12*‡
 14
-î î(	š—
+ï ï(	š—
 
-î î(
+ï ï(
 %12domain.Bidaiari"-domain.Eskaera#getBidaiari()Ldomain/Bidaiari;*3
 
 __unknown_file (
 
 eskdomain.Eskaera2getBidaiari()š—
 
-î! î(2
+ï! ï(2
 %13domain.Bidaiari"-domain.Eskaera#getBidaiari()Ldomain/Bidaiari;*3
 
 __unknown_file (
 
 eskdomain.Eskaera2getBidaiari()wu
 
-î! î(=
+ï! ï(=
 %14float"domain.User#getDirua()F*4
 
 __unknown_file (
@@ -49,7 +49,7 @@ __arrayGet*7
 %13domain.Bidaiari2
 getDirua()wu
 
-î> î(K
+ï> ï(K
 %15float"domain.Eskaera#getPrez()F*3
 
 __unknown_file (
@@ -57,21 +57,21 @@ getDirua()wu
 eskdomain.Eskaera2	getPrez()z
 x
 
-î! î(K
+ï! ï(K
 %16float"__calculate*
 
-î= î(>
+ï= ï(>
 +*
 
-î! î(=
+ï! ï(=
 
 %14float*
 
-î> î(K
+ï> ï(K
 
 %15float¥¢
 
-î î(L
+ï ï(L
 %17void"domain.User#setDirua(F)V*4
 
 __unknown_file (
@@ -82,25 +82,25 @@ x
 
 %16float2setDirua(F)š—
 
-ï" ï(3
+ğ" ğ(3
 %18domain.Bidaiari"-domain.Eskaera#getBidaiari()Ldomain/Bidaiari;*3
 
 __unknown_file (
 
 eskdomain.Eskaera2getBidaiari()wu
 
-ï4 ï(A
+ğ4 ğ(A
 %19float"domain.Eskaera#getPrez()F*3
 
 __unknown_file (
 
 eskdomain.Eskaera2	getPrez()75
 
-ï ï(!
+ğ ğ(!
 %20domain.Movement"domain.MovementŒ
 ‰
 
-ï ï(G
+ğ ğ(G
 %21"9domain.Movement#<init>(Ldomain/User;FLjava/lang/String;)V*4
 
 __unknown_file (
@@ -119,14 +119,14 @@ x
 +b
 `
 
-ï ï(H
+ğ ğ(H
 movdomain.Movement"__id*4
 
 __unknown_file (
 
 %20domain.Movementàİ
 
-ğ ğ(
+ñ ñ(
 %22void"5dataAccess.DataAccess#addMovement(Ldomain/Movement;)V*5
 
 __unknown_file (
@@ -136,7 +136,7 @@ x
 
 movdomain.Movement2addMovement(Ldomain/Movement;)š—
 
-ò  ò(1
+ó  ó(1
 %23domain.Bidaiari"-domain.Eskaera#getBidaiari()Ldomain/Bidaiari;*3
 
 __unknown_file (
@@ -144,24 +144,24 @@ x
 eskdomain.Eskaera2getBidaiari()X
 V
 
-ò3 ò(<
+ó3 ó(<
 %24domain.Alerta$AlertMota"__id*"
 
 __unknown_file (
 ""X
 V
 
-ò3 ò(N
+ó3 ó(N
 %25domain.Alerta$AlertMota"__id*"
 
 __unknown_file (
 ""31
 
-ò ò(
+ó ó(
 %26domain.Alerta"domain.Alertaı
 ú
 
-ò ò(O
+ó ó(O
 %27"=domain.Alerta#<init>(Ldomain/User;Ldomain/Alerta$AlertMota;)V*2
 
 __unknown_file (
@@ -177,14 +177,14 @@ V
 %25domain.Alerta$AlertMota`
 ^
 
-ò ò(P
+ó ó(P
 alertdomain.Alerta"__id*2
 
 __unknown_file (
 
 %26domain.AlertaÖÓ
 
-ô ô(
+õ õ(
 %28void"0dataAccess.DataAccess#addAlert(Ldomain/Alerta;)V*5
 
 __unknown_file (
@@ -195,20 +195,20 @@ V
 alertdomain.Alerta2addAlert(Ldomain/Alerta;)]
 [
 
-ö ö(!#
+÷ ÷(!#
 %29domain.Eskaera$EskaeraEgoera"__id*"
 
 __unknown_file (
 ""]
 [
 
-ö ö(+#
+÷ ÷(+#
 %30domain.Eskaera$EskaeraEgoera"__id*"
 
 __unknown_file (
 ""ú÷
 
-ö ö(,
+÷ ÷(,
 %31void"9domain.Eskaera#setEgoera(Ldomain/Eskaera$EskaeraEgoera;)V*3
 
 __unknown_file (
@@ -220,9 +220,9 @@ V
 %30domain.Eskaera$EskaeraEgoera2)setEgoera(Ldomain/Eskaera$EskaeraEgoera;)*
 13*µ
 15
-í	 í(¯¬
+î	 î(¯¬
 
-í	 í("
+î	 î("
 %8domain.Eskaera$EskaeraEgoera"8domain.Eskaera#getEgoera()Ldomain/Eskaera$EskaeraEgoera;*3
 
 __unknown_file (
@@ -230,39 +230,39 @@ V
 eskdomain.Eskaera2getEgoera()\
 Z
 
-í í('"
+î î('"
 %9domain.Eskaera$EskaeraEgoera"__id*"
 
 __unknown_file (
 ""]
 [
 
-í í(0#
+î î(0#
 %10domain.Eskaera$EskaeraEgoera"__id*"
 
 __unknown_file (
 ""©
 ¦
 
-í	 í(0
+î	 î(0
 %11boolean"	__compare*
 
-í í(
+î î(
 ==*2
 
-í	 í($
+î	 î($
 "
 %8domain.Eskaera$EskaeraEgoera*3
 
-í í(0%
+î î(0%
 #
 %10domain.Eskaera$EskaeraEgoera*
 13
 14*¿
 16
-ì ì(¦£
+í í(¦£
 
-ì ì(-
+í í(-
 %7java.util.ArrayList"2domain.Ride#getEskaerenList()Ljava/util/ArrayList;*3
 
 __unknown_file (
@@ -270,9 +270,9 @@ Z
 rideDBdomain.Ride2getEskaerenList()*
 13*œ
 17
-ê ê(œ™
+ë ë(œ™
 
-ê& ê(:
+ë& ë(:
 %3java.lang.Integer".domain.Ride#getRideNumber()Ljava/lang/Integer;*1
 
 __unknown_file (
@@ -280,27 +280,27 @@ Z
 ridedomain.Ride2getRideNumber()O
 M
 
-ê ê(<
+ë ë(<
 rideDBdomain.Ride"__id*"
 
 __unknown_file (
 ""V
 T
 
-ë ë(
+ì ì(
 %4domain.Ride$RideEgoera"__id*"
 
 __unknown_file (
 ""V
 T
 
-ë ë()
+ì ì()
 %5domain.Ride$RideEgoera"__id*"
 
 __unknown_file (
 ""ãà
 
-ë ë(*
+ì ì(*
 
 %6void"0domain.Ride#setEgoera(Ldomain/Ride$RideEgoera;)V*3
 
@@ -313,10 +313,10 @@ T
 %5domain.Ride$RideEgoera2#setEgoera(Ldomain/Ride$RideEgoera;)*
 16*…
 19
-æ" æ(,l
+ç" ç(,l
 j
 
-æ æ(-
+ç ç(-
 ezabDriverDBdomain.Driver"__id*7
 
 __unknown_file (
@@ -324,7 +324,7 @@ j
 
 ezabUserDBdomain.User˜•
 
-ç ç(0
+è è(0
 %2java.util.List"(domain.Driver#getRides()Ljava/util/List;*;
 
 __unknown_file (
@@ -333,7 +333,7 @@ ezabUserDBdomain.User˜•
 getRides()d
 b
 
-ç ç(1
+è è(1
 rideListjava.util.List"__id*2
 
 __unknown_file (
@@ -341,22 +341,22 @@ b
 %2java.util.List*
 12*%
 1
-– –("
+— —("
 
-˜ ˜(
+™ ™(
 ""*ú
 2
-ı ı(O
+ş ş(O
 M
 
-ı ı(
+ş ş(
 eskdomain.Eskaera"__id*"
 
 __unknown_file (
 ""
 Œ
 
-ı ı(
+ş ş(
 eskdomain.Eskaera"
 __arrayGet*7
 
@@ -369,16 +369,16 @@ __arrayGet*7
 9
 1*Ø
 3
- ((
+ ((
 
- (2
+ (2
 %66domain.Ride"%domain.Eskaera#getRide()Ldomain/Ride;*9
 
 __unknown_file (
 
 	eskaeraDBdomain.Eskaera2	getRide()Œ‰
 
- (>
+ (>
 %67domain.Driver"&domain.Ride#getDriver()Ldomain/Driver;*0
 
 __unknown_file (
@@ -386,24 +386,24 @@ __arrayGet*7
 %66domain.Ride2getDriver()X
 V
 
-@ (I
+@ (I
 %68domain.Alerta$AlertMota"__id*"
 
 __unknown_file (
 ""X
 V
 
-@ (\
+@ (\
 %69domain.Alerta$AlertMota"__id*"
 
 __unknown_file (
 ""31
 
- (
+ (
 %70domain.Alerta"domain.Alertaû
 ø
 
- (]
+ (]
 %71"=domain.Alerta#<init>(Ldomain/User;Ldomain/Alerta$AlertMota;)V*2
 
 __unknown_file (
@@ -419,14 +419,14 @@ V
 %69domain.Alerta$AlertMota`
 ^
 
- (^
+ (^
 alertdomain.Alerta"__id*2
 
 __unknown_file (
 
 %70domain.AlertaÖÓ
 
-‘ ‘(
+’ ’(
 %72void"0dataAccess.DataAccess#addAlert(Ldomain/Alerta;)V*5
 
 __unknown_file (
@@ -437,23 +437,23 @@ V
 alertdomain.Alerta2addAlert(Ldomain/Alerta;)*
 2*
 4
-† †( 
+‡ ‡( 
 
-† †(
+‡ ‡(
 %49domain.Bidaiari"-domain.Eskaera#getBidaiari()Ldomain/Bidaiari;*9
 
 __unknown_file (
 
 	eskaeraDBdomain.Eskaera2getBidaiari()}{
 
-†+ †(>
+‡+ ‡(>
 %50float"domain.Eskaera#getPrez()F*9
 
 __unknown_file (
 
 	eskaeraDBdomain.Eskaera2	getPrez()±®
 
-† †(?
+‡ ‡(?
 %51void" domain.Bidaiari#diruSartuBid(F)V*4
 
 __unknown_file (
@@ -464,25 +464,25 @@ V
 
 %50float2diruSartuBid(F) 
 
-‡# ‡(:
+ˆ# ˆ(:
 %52domain.Bidaiari"-domain.Eskaera#getBidaiari()Ldomain/Bidaiari;*9
 
 __unknown_file (
 
 	eskaeraDBdomain.Eskaera2getBidaiari()}{
 
-‡; ‡(N
+ˆ; ˆ(N
 %53float"domain.Eskaera#getPrez()F*9
 
 __unknown_file (
 
 	eskaeraDBdomain.Eskaera2	getPrez()75
 
-‡ ‡(!
+ˆ ˆ(!
 %54domain.Movement"domain.MovementŒ
 ‰
 
-‡ ‡(T
+ˆ ˆ(T
 %55"9domain.Movement#<init>(Ldomain/User;FLjava/lang/String;)V*4
 
 __unknown_file (
@@ -501,14 +501,14 @@ V
 +b
 `
 
-‡ ‡(U
+ˆ ˆ(U
 movdomain.Movement"__id*4
 
 __unknown_file (
 
 %54domain.Movementàİ
 
-ˆ ˆ(
+‰ ‰(
 %56void"5dataAccess.DataAccess#addMovement(Ldomain/Movement;)V*5
 
 __unknown_file (
@@ -518,14 +518,14 @@ V
 
 movdomain.Movement2addMovement(Ldomain/Movement;)
 
-Š Š()
+‹ ‹()
 %57domain.Ride"%domain.Eskaera#getRide()Ldomain/Ride;*9
 
 __unknown_file (
 
 	eskaeraDBdomain.Eskaera2	getRide()us
 
-Š Š(6
+‹ ‹(6
 
 %58int"domain.Ride#getnPlaces()I*0
 
@@ -533,7 +533,7 @@ V
 
 %57domain.Ride2getnPlaces()
 
-‹ ‹(/
+Œ Œ(/
 
 %59int"domain.Eskaera#getNPlaces()I*9
 
@@ -541,7 +541,7 @@ V
 
 	eskaeraDBdomain.Eskaera2getNPlaces()
 
-Œ Œ(
+ (
 %60domain.Ride"%domain.Eskaera#getRide()Ldomain/Ride;*9
 
 __unknown_file (
@@ -549,20 +549,20 @@ V
 	eskaeraDBdomain.Eskaera2	getRide()h
 f
 
-Œ% Œ(;
+% (;
 
 %61int"__calculate*
 
-Œ. Œ(/
+. (/
 +*
 
-Œ% Œ(.
+% (.
 ""*
 
-Œ/ Œ(;
+/ (;
 ""£ 
 
-Œ Œ(<
+ (<
 %62void"domain.Ride#setnPlaces(I)V*0
 
 __unknown_file (
@@ -575,20 +575,20 @@ f
 %61int2setnPlaces(I)]
 [
 
- ('#
+ ('#
 %63domain.Eskaera$EskaeraEgoera"__id*"
 
 __unknown_file (
 ""]
 [
 
- (1#
+ (1#
 %64domain.Eskaera$EskaeraEgoera"__id*"
 
 __unknown_file (
 ""€ı
 
- (2
+ (2
 %65void"9domain.Eskaera#setEgoera(Ldomain/Eskaera$EskaeraEgoera;)V*9
 
 __unknown_file (
@@ -600,9 +600,9 @@ f
 %64domain.Eskaera$EskaeraEgoera2)setEgoera(Ldomain/Eskaera$EskaeraEgoera;)*
 3*»
 5
-… …(¶³
+† †(¶³
 
-… …($#
+† †($#
 %45domain.Eskaera$EskaeraEgoera"8domain.Eskaera#getEgoera()Ldomain/Eskaera$EskaeraEgoera;*9
 
 __unknown_file (
@@ -610,53 +610,53 @@ f
 	eskaeraDBdomain.Eskaera2getEgoera()]
 [
 
-…( …(5#
+†( †(5#
 %46domain.Eskaera$EskaeraEgoera"__id*"
 
 __unknown_file (
 ""]
 [
 
-…( …(>#
+†( †(>#
 %47domain.Eskaera$EskaeraEgoera"__id*"
 
 __unknown_file (
 ""ª
 §
 
-… …(>
+† †(>
 %48boolean"	__compare*
 
-…% …('
+†% †('
 ==*3
 
-… …($%
+† †($%
 #
 %45domain.Eskaera$EskaeraEgoera*3
 
-…( …(>%
+†( †(>%
 #
 %47domain.Eskaera$EskaeraEgoera*
 3
 4*Õ
 6
-„ „(]
+… …(]
 [
 
-„ „('#
+… …('#
 %42domain.Eskaera$EskaeraEgoera"__id*"
 
 __unknown_file (
 ""]
 [
 
-„ „(1#
+… …(1#
 %43domain.Eskaera$EskaeraEgoera"__id*"
 
 __unknown_file (
 ""€ı
 
-„ „(2
+… …(2
 %44void"9domain.Eskaera#setEgoera(Ldomain/Eskaera$EskaeraEgoera;)V*9
 
 __unknown_file (
@@ -668,9 +668,9 @@ f
 %43domain.Eskaera$EskaeraEgoera2)setEgoera(Ldomain/Eskaera$EskaeraEgoera;)*
 3*½
 7
-‚ ‚(¨¥
+ƒ ƒ(¨¥
 
-‚0 ‚(F
+ƒ0 ƒ(F
 %37java.lang.Integer"4domain.Eskaera#getEskaeraNumber()Ljava/lang/Integer;*3
 
 __unknown_file (
@@ -678,13 +678,13 @@ f
 eskdomain.Eskaera2getEskaeraNumber()U
 S
 
-‚ ‚(H
+ƒ ƒ(H
 	eskaeraDBdomain.Eskaera"__id*"
 
 __unknown_file (
 ""¶³
 
-ƒ	 ƒ(#
+„	 „(#
 %38domain.Eskaera$EskaeraEgoera"8domain.Eskaera#getEgoera()Ldomain/Eskaera$EskaeraEgoera;*9
 
 __unknown_file (
@@ -692,45 +692,45 @@ S
 	eskaeraDBdomain.Eskaera2getEgoera()]
 [
 
-ƒ" ƒ(/#
+„" „(/#
 %39domain.Eskaera$EskaeraEgoera"__id*"
 
 __unknown_file (
 ""]
 [
 
-ƒ" ƒ(7#
+„" „(7#
 %40domain.Eskaera$EskaeraEgoera"__id*"
 
 __unknown_file (
 ""ª
 §
 
-ƒ	 ƒ(7
+„	 „(7
 %41boolean"	__compare*
 
-ƒ ƒ(!
+„ „(!
 ==*3
 
-ƒ	 ƒ(%
+„	 „(%
 #
 %38domain.Eskaera$EskaeraEgoera*3
 
-ƒ" ƒ(7%
+„" „(7%
 #
 %40domain.Eskaera$EskaeraEgoera*
 5
 6*%
 8
-ÿ ÿ("
+€ €("
 
-ÿ ÿ(
+€ €(
 ""*µ
 9
-ş ş(
+ÿ ÿ(
 °­
 
-ş ş(#
+ÿ ÿ(#
 %33domain.Eskaera$EskaeraEgoera"8domain.Eskaera#getEgoera()Ldomain/Eskaera$EskaeraEgoera;*3
 
 __unknown_file (
@@ -738,39 +738,39 @@ S
 eskdomain.Eskaera2getEgoera()]
 [
 
-ş ş('#
+ÿ ÿ('#
 %34domain.Eskaera$EskaeraEgoera"__id*"
 
 __unknown_file (
 ""]
 [
 
-ş ş(0#
+ÿ ÿ(0#
 %35domain.Eskaera$EskaeraEgoera"__id*"
 
 __unknown_file (
 ""ª
 §
 
-ş ş(0
+ÿ ÿ(0
 %36boolean"	__compare*
 
-ş ş(
+ÿ ÿ(
 ==*3
 
-ş ş(%
+ÿ ÿ(%
 #
 %33domain.Eskaera$EskaeraEgoera*3
 
-ş ş(0%
+ÿ ÿ(0%
 #
 %35domain.Eskaera$EskaeraEgoera*
 7
 8*
 20
-â â(
+ã ã(
 
-ä$ ä(3
+å$ å(3
 %0java.lang.String"(domain.User#getEmail()Ljava/lang/String;*1
 
 __unknown_file (
@@ -778,7 +778,7 @@ S
 userdomain.User2
 getEmail()üù
 
-ä ä(4
+å å(4
 %1domain.User"FdataAccess.DataAccess#bilatuUserEmail(Ljava/lang/String;)Ldomain/User;*5
 
 __unknown_file (
@@ -789,7 +789,7 @@ getEmail()üù
 %0java.lang.String2#bilatuUserEmail(Ljava/lang/String;)`
 ^
 
-ä ä(5
+å å(5
 
 ezabUserDBdomain.User"__id*/
 
@@ -799,10 +799,10 @@ ezabUserDBdomain.User"__id*/
 19
 11*š
 11
-û# û(-k
+ü# ü(-k
 i
 
-û û(.
+ü ü(.
 	ezabBidDBdomain.Bidaiari"__id*7
 
 __unknown_file (
@@ -810,7 +810,7 @@ i
 
 ezabUserDBdomain.Userª§
 
-ü ü(2
+ı ı(2
 %32java.util.ArrayList"2domain.Bidaiari#getEskaerak()Ljava/util/ArrayList;*:
 
 __unknown_file (
@@ -818,7 +818,7 @@ ezabUserDBdomain.Userª§
 	ezabBidDBdomain.Bidaiari2getEskaerak()i
 g
 
-ü ü(3
+ı ı(3
 eskListjava.util.List"__id*8
 
 __unknown_file (
@@ -826,17 +826,17 @@ g
 %32java.util.ArrayList*
 2*ù
 12
-è è(M
+é é(M
 K
 
-è è(
+é é(
 ridedomain.Ride"__id*"
 
 __unknown_file (
 ""
 ‹
 
-è è(
+é é(
 ridedomain.Ride"
 __arrayGet*8
 
@@ -849,6 +849,6 @@ __arrayGet*8
 17
 1:!
 
-á á(%
+â â(%
 userdomain.UserB
 dataAccess.DataAccessHX
