@@ -15,7 +15,6 @@ import dataAccess.DataAccess;
 import domain.Bidaiari;
 import domain.Driver;
 import domain.Ride;
-import domain.User;
 import domain.Eskaera;
 import exceptions.RequestAlreadyExistException;
 

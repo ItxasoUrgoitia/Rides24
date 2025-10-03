@@ -53,7 +53,8 @@ public abstract class User implements Serializable {
 		this.errek = errek;
 	}
 
-	private User() {
+	protected User() {
+		
 	}
 
 	protected User(String name, String pasahitza, String email, String nanZbk) {
