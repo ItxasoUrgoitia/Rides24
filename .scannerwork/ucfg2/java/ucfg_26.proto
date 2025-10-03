@@ -1,10 +1,10 @@
 
 DdataAccess.DataAccess#getEskaerakRide(Ldomain/Ride;)Ljava/util/List;U
-I/Users/oihane/git/Rides24oficial/src/main/java/dataAccess/DataAccess.java€ €(%"1*¿
+I/Users/oihane/git/Rides24oficial/src/main/java/dataAccess/DataAccess.javaş ş(%"1*¿
 1
-‚ ‚(œ™
+€ €(œ™
 
-ƒ' ƒ(;
+' (;
 %0java.lang.Integer".domain.Ride#getRideNumber()Ljava/lang/Integer;*1
 
 __unknown_file (
@@ -12,13 +12,13 @@ I/Users/oihane/git/Rides24oficial/src/main/java/dataAccess/DataAccess.java€ 
 ridedomain.Ride2getRideNumber()O
 M
 
-ƒ ƒ(=
+ (=
 rideDBdomain.Ride"__id*"
 
 __unknown_file (
 ""¦£
 
-‡ ‡(6
+… …(6
 %1java.util.ArrayList"2domain.Ride#getEskaerenList()Ljava/util/ArrayList;*3
 
 __unknown_file (
@@ -26,17 +26,17 @@ M
 rideDBdomain.Ride2getEskaerenList()i
 g
 
-‡ ‡(7
+… …(7
 eskaerakjava.util.List"__id*7
 
 __unknown_file (
 
 %1java.util.ArrayList"*
 
-‰ ‰(
+‡ ‡(
 
 eskaerakjava.util.List:!
 
-€& €(/
+ş& ş(/
 ridedomain.RideB
 dataAccess.DataAccessH

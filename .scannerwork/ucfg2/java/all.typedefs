@@ -4415,9 +4415,9 @@ $<init>(Lgui/AlertaGUI;Ldomain/User;)5gui.AlertaGUI$1#<init>(Lgui/AlertaGUI;Ldo
 J<init>(Lgui/KantzelatuGUI;Ljavax/swing/JComboBox;LbusinessLogic/BLFacade;)_gui.KantzelatuGUI$2#<init>(Lgui/KantzelatuGUI;Ljavax/swing/JComboBox;LbusinessLogic/BLFacade;)Vs
 -actionPerformed(Ljava/awt/event/ActionEvent;)Bgui.KantzelatuGUI$2#actionPerformed(Ljava/awt/event/ActionEvent;)Vj
 gui.AukerakEskGUIjavax.swing.JFrameA
-<init>(Ldomain/Ride;)(gui.AukerakEskGUI#<init>(Ldomain/Ride;)V¯
-gui.AcceptWhithChangeGUI$1java.awt.event.ActionListenerjava.lang.Objectd
-"<init>(Lgui/AcceptWhithChangeGUI;)>gui.AcceptWhithChangeGUI$1#<init>(Lgui/AcceptWhithChangeGUI;)Vz
+<init>(Ldomain/Ride;)(gui.AukerakEskGUI#<init>(Ldomain/Ride;)Vö
+gui.AcceptWhithChangeGUI$1java.awt.event.ActionListenerjava.lang.Objectª
+„<init>(Lgui/AcceptWhithChangeGUI;Ljavax/swing/JRadioButton;LbusinessLogic/BLFacade;Ldomain/Erreklamazioa;Ljavax/swing/JRadioButton;) gui.AcceptWhithChangeGUI$1#<init>(Lgui/AcceptWhithChangeGUI;Ljavax/swing/JRadioButton;LbusinessLogic/BLFacade;Ldomain/Erreklamazioa;Ljavax/swing/JRadioButton;)Vz
 -actionPerformed(Ljava/awt/event/ActionEvent;)Igui.AcceptWhithChangeGUI$1#actionPerformed(Ljava/awt/event/ActionEvent;)Vª
 gui.JarriErreklamGUIjavax.swing.JFrame~
 2<init>(Ldomain/User;Ldomain/User;Ldomain/Eskaera;)Hgui.JarriErreklamGUI#<init>(Ldomain/User;Ldomain/User;Ldomain/Eskaera;)V®

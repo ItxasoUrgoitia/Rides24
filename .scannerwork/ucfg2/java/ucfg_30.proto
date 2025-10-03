@@ -1,10 +1,10 @@
 
 LdataAccess.DataAccess#getEskaerakBidaiari(Ldomain/Bidaiari;)Ljava/util/List;U
-I/Users/oihane/git/Rides24oficial/src/main/java/dataAccess/DataAccess.javaÆ Æ()"1*Û
+I/Users/oihane/git/Rides24oficial/src/main/java/dataAccess/DataAccess.javaÄ Ä()"1*Û
 1
-Ç Ç(˜•
+Å Å(˜•
 
-È0 È(C
+Æ0 Æ(C
 %0java.lang.String"(domain.User#getEmail()Ljava/lang/String;*9
 
 __unknown_file (
@@ -13,14 +13,14 @@ I/Users/oihane/git/Rides24oficial/src/main/java/dataAccess/DataAccess.javaÆ 
 getEmail()W
 U
 
-È È(E
+Æ Æ(E
 
 bidaiariDBdomain.Bidaiari"__id*"
 
 __unknown_file (
 ""ª§
 
-Ê	 Ê(!
+È	 È(!
 %1java.util.ArrayList"2domain.Bidaiari#getEskaerak()Ljava/util/ArrayList;*;
 
 __unknown_file (
@@ -28,10 +28,10 @@ bidaiariDBdomain.Bidaiari"__id*"
 
 bidaiariDBdomain.Bidaiari2getEskaerak()")
 
-Ê Ê("
+È È("
 
 %1java.util.ArrayList:)
 
-Æ* Æ(;
+Ä* Ä(;
 bidaiaridomain.BidaiariB
 dataAccess.DataAccessH

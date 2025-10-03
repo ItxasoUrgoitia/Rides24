@@ -11,6 +11,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 import java.util.logging.Logger;
+import java.util.logging.Level;
 
 import configuration.ConfigXML;
 import dataAccess.DataAccess;
@@ -48,8 +49,8 @@ public class BLFacadeImplementation implements BLFacade {
 
 	public BLFacadeImplementation(DataAccess da) {
 
-		System.out.println("Creating BLFacadeImplementation instance with DataAccess parameter");
-		ConfigXML.getInstance();
+		 logger.info("Creating BLFacadeImplementation instance with DataAccess parameter");
+	        ConfigXML.getInstance();
 
 		dbManager = da;
 	}
@@ -144,23 +145,7 @@ public class BLFacadeImplementation implements BLFacade {
 		dbManager.initializeDB();
 		dbManager.close();
 	}
-	/*@WebMethod 
-	public boolean jarri(boolean jarri, Eskaera eskaera) {
-		dbManager.open();
-		boolean ondo=dbManager.jarri(jarri, eskaera);
-		dbManager.close();
-		return ondo;
-	}*/
 
-	/*
-	 * @WebMethod public boolean storeDriver(Driver driver) { dbManager.open();
-	 * boolean d = dbManager.storeDriver(driver); dbManager.close(); return d; };
-	 */
-
-	/*
-	 * @WebMethod public boolean storeRider(Bidaiari rider) { dbManager.open();
-	 * boolean r= dbManager.storeRider(rider); dbManager.close(); return r; };
-	 */
 
 	@WebMethod
 	public boolean storeUser(User user) {

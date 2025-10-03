@@ -74,9 +74,7 @@ public class BusinessLogicServer extends JDialog {
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						textArea.append("\n\n\nClosing the server... ");
-					    
-							//server.close();
-						
+					    						
 						System.exit(1);
 					}
 				});

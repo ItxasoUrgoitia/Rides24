@@ -1,5 +1,5 @@
 
-1.0oihaneeeperr_rides24onaJavaFrontend"1759505198390*java2.B˜
+1.0oihaneeeperr_rides24onaJavaFrontend"1759505814357*java2.Bá
 0
 +src/main/java/gui/AcceptWhithChangeGUI.java2
 	
@@ -71,7 +71,9 @@ references33
 O
 Igui.AcceptWhithChangeGUI$1#actionPerformed(Ljava/awt/event/ActionEvent;)V47
 
-actionPerformed48J
+actionPerformed48
+G
+AbusinessLogic.BLFacade#acceptWithChange(Ldomain/Erreklamazioa;I)V50J
 
 1
 12
@@ -81,7 +83,7 @@ Igui.AcceptWhithChangeGUI$1#actionPerformed(Ljava/awt/event/ActionEvent;)V47
 4Z
 
 5	
-576jæ
+576jú
 
 39
 394028
@@ -97,6 +99,9 @@ A
 
 13
 19
+
+49
+495028
 
 26
 262728
@@ -165,7 +170,7 @@ B
 14
 
 36
-363728ró
+363728r•
 
 232629*
 1! !(+
@@ -244,6 +249,24 @@ B
 
 233932*
 1A A(
+
+463633*
+1F F(
+
+464930*
+1F F(
+
+463633*
+1H H(
+
+464930*
+1H H(
+
+463633*
+1J J(
+
+464930*
+1J J(
 
 232033*
 1O O(
