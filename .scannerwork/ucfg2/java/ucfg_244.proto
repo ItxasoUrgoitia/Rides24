@@ -1,11 +1,11 @@
 
-UbusinessLogic.BLFacadeImplementation#bilatuUserEmail(Ljava/lang/String;)Ldomain/User;]
-QC:/Users/User/git/Rides24/src/main/java/businessLogic/BLFacadeImplementation.javaµ µ('"startingBlock*…
+UbusinessLogic.BLFacadeImplementation#bilatuUserEmail(Ljava/lang/String;)Ldomain/User;d
+X/Users/oihane/git/Rides24oficial/src/main/java/businessLogic/BLFacadeImplementation.java¸ ¸('"startingBlock*…
 startingBlock
-µ' µ(5…
+¸' ¸(5…
 ‚
 
-µ µ(
+¸ ¸(
 %6"
 __annotate*)
 
@@ -17,7 +17,7 @@ __annotate*)
 emailjava.lang.String[
 Y
 
-µ/ µ(4
+¸/ ¸(4
 emailjava.lang.String"__annotation*"
 
 __unknown_file (
@@ -25,17 +25,17 @@ Y
 %6*
 1*²
 1
-¶ ¶(‡
+¹ ¹(‡
 „
 
-¶ ¶(
+¹ ¹(
 %0dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
 	dbManager|z
 
-¶ ¶(
+¹ ¹(
 
 %1void"dataAccess.DataAccess#open()V*9
 
@@ -44,14 +44,14 @@ $businessLogic.BLFacadeImplementation"
 %0dataAccess.DataAccess2open()‡
 „
 
-· ·(
+º º(
 %2dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
 	dbManagerƒ€
 
-· ·(.
+º º(.
 %3domain.User"FdataAccess.DataAccess#bilatuUserEmail(Ljava/lang/String;)Ldomain/User;*9
 
 __unknown_file (
@@ -63,7 +63,7 @@ $businessLogic.BLFacadeImplementation"
 emailjava.lang.String2#bilatuUserEmail(Ljava/lang/String;)Z
 X
 
-· ·(/
+º º(/
 userdomain.User"__id*/
 
 __unknown_file (
@@ -71,14 +71,14 @@ X
 %3domain.User‡
 „
 
-¸ ¸(
+» »(
 %4dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
 	dbManager~|
 
-¸ ¸(
+» »(
 
 %5void"dataAccess.DataAccess#close()V*9
 
@@ -86,10 +86,10 @@ $businessLogic.BLFacadeImplementation"
 
 %4dataAccess.DataAccess2close()"#
 
-¹ ¹(
+¼ ¼(
 
 userdomain.User:'
 
-µ( µ(4
+¸( ¸(4
 emailjava.lang.StringB(&
 $businessLogic.BLFacadeImplementationH

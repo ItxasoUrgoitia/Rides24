@@ -1,9 +1,9 @@
 
-sbusinessLogic.BLFacadeImplementation#getRides(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)Ljava/util/List;[
-QC:/Users/User/git/Rides24/src/main/java/businessLogic/BLFacadeImplementation.javan n("startingBlock*®
-startingBlockn n(>
+sbusinessLogic.BLFacadeImplementation#getRides(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)Ljava/util/List;b
+X/Users/oihane/git/Rides24oficial/src/main/java/businessLogic/BLFacadeImplementation.javaq q("startingBlock*®
+startingBlockq q(>
 
-m m(
+p p(
 %6"
 __annotate*)
 
@@ -14,14 +14,14 @@ __annotate*)
 
 fromjava.lang.StringX
 V
-n# n('
+q# q('
 fromjava.lang.String"__annotation*"
 
 __unknown_file (
 
 %6
 }
-m m(
+p p(
 %7"
 __annotate*)
 
@@ -32,14 +32,14 @@ __annotate*)
 
 tojava.lang.StringV
 T
-n0 n(2
+q0 q(2
 tojava.lang.String"__annotation*"
 
 __unknown_file (
 
 %7
 }
-m m(
+p p(
 %8"
 __annotate*)
 
@@ -50,22 +50,22 @@ __annotate*)
 
 datejava.util.DateV
 T
-n9 n(=
+q9 q(=
 datejava.util.Date"__annotation*"
 
 __unknown_file (
 
 %8*
 1*Ò	
-1o o(…
+1r r(…
 ‚
-o o(
+r r(
 %0dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
 	dbManagerzx
-o o(
+r r(
 
 %1void"dataAccess.DataAccess#open()V*9
 
@@ -73,13 +73,13 @@ $businessLogic.BLFacadeImplementation"
 
 %0dataAccess.DataAccess2open()…
 ‚
-p p(
+s s(
 %2dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
 	dbManager¨¥
-p p(7
+s s(7
 %3java.util.List"ddataAccess.DataAccess#getRides(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)Ljava/util/List;*9
 
 __unknown_file (
@@ -98,33 +98,33 @@ $businessLogic.BLFacadeImplementation"
 
 datejava.util.Date2>getRides(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)_
 ]
-p p(8
+s s(8
 ridesjava.util.List"__id*2
 
 __unknown_file (
 
 %3java.util.List…
 ‚
-q q(
+t t(
 %4dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
 	dbManager|z
-q q(
+t t(
 
 %5void"dataAccess.DataAccess#close()V*9
 
 __unknown_file (
 
 %4dataAccess.DataAccess2close()"%
-r r(
+u u(
 
 ridesjava.util.List:$
-n n((
+q q((
 fromjava.lang.String:"
-n) n(3
+q) q(3
 tojava.lang.String:"
-n4 n(=
+q4 q(=
 datejava.util.DateB(&
 $businessLogic.BLFacadeImplementationH

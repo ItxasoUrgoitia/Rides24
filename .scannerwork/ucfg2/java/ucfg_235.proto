@@ -1,18 +1,18 @@
 
-@businessLogic.BLFacadeImplementation#getEmails()Ljava/util/List;]
-QC:/Users/User/git/Rides24/src/main/java/businessLogic/BLFacadeImplementation.javaú ú("1*Ü
+@businessLogic.BLFacadeImplementation#getEmails()Ljava/util/List;d
+X/Users/oihane/git/Rides24oficial/src/main/java/businessLogic/BLFacadeImplementation.javaı ı("1*Ü
 1
-û û(‡
+ş ş(‡
 „
 
-û û(
+ş ş(
 %0dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
 	dbManager|z
 
-û û(
+ş ş(
 
 %1void"dataAccess.DataAccess#open()V*9
 
@@ -21,14 +21,14 @@ $businessLogic.BLFacadeImplementation"
 %0dataAccess.DataAccess2open()‡
 „
 
-ü ü(!
+ÿ ÿ(!
 %2dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
 	dbManager 
 
-ü ü(-
+ÿ ÿ(-
 %3java.util.List"1dataAccess.DataAccess#getEmails()Ljava/util/List;*9
 
 __unknown_file (
@@ -36,7 +36,7 @@ $businessLogic.BLFacadeImplementation"
 %2dataAccess.DataAccess2getEmails()b
 `
 
-ü ü(.
+ÿ ÿ(.
 emailsjava.util.List"__id*2
 
 __unknown_file (
@@ -44,14 +44,14 @@ $businessLogic.BLFacadeImplementation"
 %3java.util.List‡
 „
 
-ı ı(
+€ €(
 %4dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
 	dbManager~|
 
-ı ı(
+€ €(
 
 %5void"dataAccess.DataAccess#close()V*9
 
@@ -59,7 +59,7 @@ $businessLogic.BLFacadeImplementation"
 
 %4dataAccess.DataAccess2close()"(
 
-ş ş(
+ (
 
 emailsjava.util.ListB(&
 $businessLogic.BLFacadeImplementationH

@@ -49,7 +49,7 @@ public class BLFacadeImplementation implements BLFacade {
 	public BLFacadeImplementation(DataAccess da) {
 
 		System.out.println("Creating BLFacadeImplementation instance with DataAccess parameter");
-		ConfigXML c = ConfigXML.getInstance();
+		ConfigXML.getInstance();
 
 		dbManager = da;
 	}
@@ -376,7 +376,7 @@ public class BLFacadeImplementation implements BLFacade {
 		dbManager.close();
 	}
 	
-	@WebMethod public void AcceptWithChange(Erreklamazioa erreklamazio, int num) {
+	@WebMethod public void acceptWithChange(Erreklamazioa erreklamazio, int num) {
 		dbManager.open();
 	    dbManager.AcceptWithChange(erreklamazio, num);
 		dbManager.close();

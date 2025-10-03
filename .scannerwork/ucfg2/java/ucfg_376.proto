@@ -1,45 +1,45 @@
 
 !gui.OnartuGUI2#%field_initializer
-__unknown_file ("1*”
-1 (wu
-E
-;C:/Users/User/git/Rides24/src/main/java/gui/OnartuGUI2.java&  &(&
-%0javax.swing.JLabel"javax.swing.JLabelñ
-ì
-E
-;C:/Users/User/git/Rides24/src/main/java/gui/OnartuGUI2.java& &((
+__unknown_file ("1*Ü
+1 (~|
+L
+B/Users/oihane/git/Rides24oficial/src/main/java/gui/OnartuGUI2.java&  &(&
+%0javax.swing.JLabel"javax.swing.JLabelù
+ö
+L
+B/Users/oihane/git/Rides24oficial/src/main/java/gui/OnartuGUI2.java& &((
 %1"javax.swing.JLabel#<init>()V*&
  (
 
-%0javax.swing.JLabelô
-ñ
-E
-;C:/Users/User/git/Rides24/src/main/java/gui/OnartuGUI2.java& &()
+%0javax.swing.JLabel†
+ù
+L
+B/Users/oihane/git/Rides24oficial/src/main/java/gui/OnartuGUI2.java& &()
 gui.OnartuGUI2"
 	jLabelMsg"__id*&
  (
 
-%0javax.swing.JLabel}{
-E
-;C:/Users/User/git/Rides24/src/main/java/gui/OnartuGUI2.java'" '(+
-%2javax.swing.JComboBox"javax.swing.JComboBoxú
-ô
-E
-;C:/Users/User/git/Rides24/src/main/java/gui/OnartuGUI2.java' '(-
+%0javax.swing.JLabelÖÇ
+L
+B/Users/oihane/git/Rides24oficial/src/main/java/gui/OnartuGUI2.java'" '(+
+%2javax.swing.JComboBox"javax.swing.JComboBox£
+†
+L
+B/Users/oihane/git/Rides24oficial/src/main/java/gui/OnartuGUI2.java' '(-
 %3"javax.swing.JComboBox#<init>()V*)
  (
 
-%2javax.swing.JComboBoxõ
-ò
-E
-;C:/Users/User/git/Rides24/src/main/java/gui/OnartuGUI2.java' '(.
+%2javax.swing.JComboBox¢
+ü
+L
+B/Users/oihane/git/Rides24oficial/src/main/java/gui/OnartuGUI2.java' '(.
 gui.OnartuGUI2"
 
 comboBox"__id*)
  (
 
-%2javax.swing.JComboBox"Z
-C
-;C:/Users/User/git/Rides24/src/main/java/gui/OnartuGUI2.java" (
+%2javax.swing.JComboBox"a
+J
+B/Users/oihane/git/Rides24oficial/src/main/java/gui/OnartuGUI2.java" (
 implicit returnB
 gui.OnartuGUI2

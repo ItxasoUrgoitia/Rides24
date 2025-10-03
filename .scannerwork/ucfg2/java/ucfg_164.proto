@@ -1,167 +1,18 @@
 
-'domain.User#equals(Ljava/lang/Object;)ZD
-8C:/Users/User/git/Rides24/src/main/java/domain/User.javaé é("startingBlock*%
-2
-î
- î("
-
-î î(
-""*—
-3
-ì ì(çä
-
-ì ì(
-%2java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*+
-
-__unknown_file (
-domain.User2
-getClass()óî
-
-ì ì("
-%3java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*5
-
-__unknown_file (
-
-objjava.lang.Object2
-getClass()ç
-ä
-
-ì ì("
-%4boolean"	__compare*
-
-ì ì(
-!=*%
-
-ì ì(
-
-%2java.lang.Class*%
-
-ì ì("
-
-%3java.lang.Class*
-2
-1*ä
-startingBlock
-é é("å
-â
-
-ç ç(
-
-%8"
-__annotate*2
-
-__unknown_file (
-java.lang.Override*5
-
-__unknown_file (
-
-objjava.lang.ObjectY
-W
-
-é é(!
-objjava.lang.Object"__annotation*"
-
-__unknown_file (
-
-%8*
-7*%
-4
-í
- í("
-
-í í(
-""*ñ
-5
-ë ë(	}
-{
-
-ë ë(
-%1boolean"	__compare*
-
-ë
- ë(
-==*'
-
-ë ë(	
-
-objjava.lang.Object*
-
-ë ë(
-""*
-3
-4*%
-6
-ê
- ê("
-
-ê ê(
-""*°
-7
-è è(
-á
-Ñ
-
-è è(
-%0boolean"	__compare*
-
-è è(
-==*
-
-è è(
-
-domain.User*'
-
-è è(
-
-objjava.lang.Object*
-5
-6*‹
+,domain.User#getPasahitza()Ljava/lang/String;K
+?/Users/oihane/git/Rides24oficial/src/main/java/domain/User.javaÄ Ä("1*°
 1
-ï ï(a
-_
+Å	 Å(h
+f
 
-ï ï(
-otherdomain.User"__id*5
+Å	 Å(
+%0java.lang.String"__id*:
 
-__unknown_file (
-
-objjava.lang.Objectd
-b
+__unknown_file (*
+domain.User"
+	pasahitza"&
 
-ñ ñ(
-%5java.lang.String"__id*6
-
-__unknown_file (*
-domain.User"
-emailk
-i
-
-ñ ñ(*
-%6java.lang.String"__id*=
-
-__unknown_file (!*
-
-otherdomain.User"
-email˛
-˚
-
-ñ	 ñ(+
-%7boolean"?java.util.Objects#equals(Ljava/lang/Object;Ljava/lang/Object;)Z*1
-
-__unknown_file ("
-java.util.Objects*4
-
-__unknown_file (
+Å Å(
 
-%5java.lang.String*4
-
-__unknown_file (
-
-%6java.lang.String"
-
-ñ ñ(,
-"":%
-
-é é(!
-objjava.lang.ObjectB
-domain.UserHX
+%0java.lang.StringB
+domain.UserH

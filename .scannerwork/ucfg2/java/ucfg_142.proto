@@ -1,80 +1,33 @@
 
-domain.User#%field_initializer
-__unknown_file ("1*Å
-1 (vt
-B
-8C:/Users/User/git/Rides24/src/main/java/domain/User.java"* "(=
-%0java.util.ArrayList"java.util.ArrayListï
-í
-B
-8C:/Users/User/git/Rides24/src/main/java/domain/User.java"& "(?
-%1"java.util.ArrayList#<init>()V*'
- (
-
-%0java.util.ArrayListñ
-ì
-B
-8C:/Users/User/git/Rides24/src/main/java/domain/User.java  "(@
-domain.User"
-mugimenduak"__id*'
- (
-
-%0java.util.ArrayListvt
-B
-8C:/Users/User/git/Rides24/src/main/java/domain/User.java%$ %(5
-%2java.util.ArrayList"java.util.ArrayListï
-í
-B
-8C:/Users/User/git/Rides24/src/main/java/domain/User.java%  %(7
-%3"java.util.ArrayList#<init>()V*'
- (
-
-%2java.util.ArrayListí
-è
-B
-8C:/Users/User/git/Rides24/src/main/java/domain/User.java$ %(8
-domain.User"	
-alertak"__id*'
- (
-
-%2java.util.ArrayListvt
-B
-8C:/Users/User/git/Rides24/src/main/java/domain/User.java*+ *(?
-%4java.util.ArrayList"java.util.ArrayListï
-í
-B
-8C:/Users/User/git/Rides24/src/main/java/domain/User.java*' *(A
-%5"java.util.ArrayList#<init>()V*'
- (
-
-%4java.util.ArrayListñ
-ì
-B
-8C:/Users/User/git/Rides24/src/main/java/domain/User.java) *(B
-domain.User"
-balorazioak"__id*'
- (
-
-%4java.util.ArrayListvt
-B
-8C:/Users/User/git/Rides24/src/main/java/domain/User.java.) .(A
-%6java.util.ArrayList"java.util.ArrayListï
-í
-B
-8C:/Users/User/git/Rides24/src/main/java/domain/User.java.% .(C
-%7"java.util.ArrayList#<init>()V*'
- (
-
-%6java.util.ArrayListê
-ç
-B
-8C:/Users/User/git/Rides24/src/main/java/domain/User.java, .(D
-domain.User"
-errek"__id*'
- (
-
-%6java.util.ArrayList"X
-A
-8C:/Users/User/git/Rides24/src/main/java/domain/User.java «(
-implicit returnB
-domain.User
+gui.LoginGUI#%field_initializer
+__unknown_file ("1*∑
+1 (ä
+á
+J
+@/Users/oihane/git/Rides24oficial/src/main/java/gui/LoginGUI.java# #(#
+gui.LoginGUI"
+contentPane"__id*
+ (
+""|z
+J
+@/Users/oihane/git/Rides24oficial/src/main/java/gui/LoginGUI.java'  '(&
+%0javax.swing.JLabel"javax.swing.JLabelõ
+ò
+J
+@/Users/oihane/git/Rides24oficial/src/main/java/gui/LoginGUI.java' '((
+%1"javax.swing.JLabel#<init>()V*&
+ (
+
+%0javax.swing.JLabelú
+ô
+J
+@/Users/oihane/git/Rides24oficial/src/main/java/gui/LoginGUI.java' '()
+gui.LoginGUI"
+	jLabelMsg"__id*&
+ (
+
+%0javax.swing.JLabel"`
+I
+@/Users/oihane/git/Rides24oficial/src/main/java/gui/LoginGUI.java  à(
+implicit returnB
+gui.LoginGUI

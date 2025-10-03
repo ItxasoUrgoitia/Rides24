@@ -1,11 +1,11 @@
 
-UbusinessLogic.BLFacadeImplementation#getUserBalorazioa(Ldomain/User;)Ljava/util/List;]
-QC:/Users/User/git/Rides24/src/main/java/businessLogic/BLFacadeImplementation.javaÓ# Ó(4"startingBlock*÷
+UbusinessLogic.BLFacadeImplementation#getUserBalorazioa(Ldomain/User;)Ljava/util/List;d
+X/Users/oihane/git/Rides24oficial/src/main/java/businessLogic/BLFacadeImplementation.javaÖ# Ö(4"startingBlock*÷
 startingBlock
-Ó4 Ó(?~
+Ö4 Ö(?~
 |
 
-Ó Ó(
+Ö Ö(
 %6"
 __annotate*)
 
@@ -17,7 +17,7 @@ __annotate*)
 userdomain.UserU
 S
 
-Ó: Ó(>
+Ö: Ö(>
 userdomain.User"__annotation*"
 
 __unknown_file (
@@ -25,17 +25,17 @@ S
 %6*
 1*³
 1
-Ô Ô(‡
+× ×(‡
 „
 
-Ô Ô(
+× ×(
 %0dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
 	dbManager|z
 
-Ô Ô(
+× ×(
 
 %1void"dataAccess.DataAccess#open()V*9
 
@@ -44,14 +44,14 @@ $businessLogic.BLFacadeImplementation"
 %0dataAccess.DataAccess2open()‡
 „
 
-Õ Õ(!
+Ø Ø(!
 %2dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
 	dbManagerýú
 
-Õ Õ(9
+Ø Ø(9
 %3java.util.List"FdataAccess.DataAccess#getUserBalorazioa(Ldomain/User;)Ljava/util/List;*9
 
 __unknown_file (
@@ -63,7 +63,7 @@ $businessLogic.BLFacadeImplementation"
 userdomain.User2 getUserBalorazioa(Ldomain/User;)_
 ]
 
-Õ Õ(:
+Ø Ø(:
 alkjava.util.List"__id*2
 
 __unknown_file (
@@ -71,14 +71,14 @@ $businessLogic.BLFacadeImplementation"
 %3java.util.List‡
 „
 
-Ö Ö(
+Ù Ù(
 %4dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
 	dbManager~|
 
-Ö Ö(
+Ù Ù(
 
 %5void"dataAccess.DataAccess#close()V*9
 
@@ -86,10 +86,10 @@ $businessLogic.BLFacadeImplementation"
 
 %4dataAccess.DataAccess2close()"%
 
-× ×(
+Ú Ú(
 
 alkjava.util.List:!
 
-Ó5 Ó(>
+Ö5 Ö(>
 userdomain.UserB(&
 $businessLogic.BLFacadeImplementationH

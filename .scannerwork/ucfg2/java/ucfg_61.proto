@@ -1,16 +1,16 @@
 
-2domain.Bidaiari#getEskaerak()Ljava/util/ArrayList;F
-<C:/Users/User/git/Rides24/src/main/java/domain/Bidaiari.java7 7(&"1*¤
-18 8(l
-j
-8 8(
-%0java.util.ArrayList"__id*=
+1domain.Erreklamazioa#getErrekJarri()Ldomain/User;R
+H/Users/oihane/git/Rides24oficial/src/main/java/domain/Erreklamazioa.java] ]("1*›
+1^	 ^(k
+i
+^	 ^(
+%0domain.User"__id*D
 
-__unknown_file (!*
-domain.Bidaiari"
+__unknown_file ((*&
+domain.Erreklamazioa"
 
-eskaerak"'
-8 8(
-
-%0java.util.ArrayListB
-domain.BidaiariH
+errekJarri"
+^ ^(
+
+%0domain.UserB
+domain.ErreklamazioaH

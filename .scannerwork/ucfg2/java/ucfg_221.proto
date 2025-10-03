@@ -1,9 +1,9 @@
 
-ÖbusinessLogic.BLFacadeImplementation#getThisMonthDatesWithRides(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)Ljava/util/List;[
-QC:/Users/User/git/Rides24/src/main/java/businessLogic/BLFacadeImplementation.javay y(-"startingBlock*Æ
-startingBlocky- y(PÅ
+ÖbusinessLogic.BLFacadeImplementation#getThisMonthDatesWithRides(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)Ljava/util/List;b
+X/Users/oihane/git/Rides24oficial/src/main/java/businessLogic/BLFacadeImplementation.java| |(-"startingBlock*Æ
+startingBlock|- |(PÅ
 
-x x(
+{ {(
 %6"
 __annotate*)
 
@@ -14,14 +14,14 @@ __annotate*)
 
 fromjava.lang.StringX
 V
-y5 y(9
+|5 |(9
 fromjava.lang.String"__annotation*"
 
 __unknown_file (
 
 %6
 }
-x x(
+{ {(
 %7"
 __annotate*)
 
@@ -32,14 +32,14 @@ __annotate*)
 
 tojava.lang.StringV
 T
-yB y(D
+|B |(D
 tojava.lang.String"__annotation*"
 
 __unknown_file (
 
 %7
 }
-x x(
+{ {(
 %8"
 __annotate*)
 
@@ -50,22 +50,22 @@ __annotate*)
 
 datejava.util.DateV
 T
-yK y(O
+|K |(O
 datejava.util.Date"__annotation*"
 
 __unknown_file (
 
 %8*
-1*ˆ	
-1z z(Ö
+1*¯	
+1} }(Ö
 Ç
-z z(
+} }(
 %0dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
 	dbManagerzx
-z z(
+} }(
 
 %1void"dataAccess.DataAccess#open()V*9
 
@@ -73,13 +73,13 @@ $businessLogic.BLFacadeImplementation"
 
 %0dataAccess.DataAccess2open()Ö
 Ç
-{ {(
+~ ~(
 %2dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
 	dbManagerÃ…
-{ {(I
+~ ~(I
 %3java.util.List"vdataAccess.DataAccess#getThisMonthDatesWithRides(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)Ljava/util/List;*9
 
 __unknown_file (
@@ -98,33 +98,34 @@ $businessLogic.BLFacadeImplementation"
 
 datejava.util.Date2PgetThisMonthDatesWithRides(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)_
 ]
-{ {(J
+~ ~(J
 datesjava.util.List"__id*2
 
 __unknown_file (
 
 %3java.util.ListÖ
 Ç
-| |(
+ (
 %4dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
 	dbManager|z
-| |(
+ (
 
 %5void"dataAccess.DataAccess#close()V*9
 
 __unknown_file (
 
-%4dataAccess.DataAccess2close()"%
-} }(
+%4dataAccess.DataAccess2close()"'
+
+Ä Ä(
 
 datesjava.util.List:$
-y. y(:
+|. |(:
 fromjava.lang.String:"
-y; y(E
+|; |(E
 tojava.lang.String:"
-yF y(O
+|F |(O
 datejava.util.DateB(&
 $businessLogic.BLFacadeImplementationH

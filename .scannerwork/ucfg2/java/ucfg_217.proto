@@ -1,9 +1,9 @@
 
-]businessLogic.BLFacadeImplementation#getDestinationCities(Ljava/lang/String;)Ljava/util/List;[
-QC:/Users/User/git/Rides24/src/main/java/businessLogic/BLFacadeImplementation.javaI I()"startingBlock*ü
-startingBlockI) I(6
+]businessLogic.BLFacadeImplementation#getDestinationCities(Ljava/lang/String;)Ljava/util/List;b
+X/Users/oihane/git/Rides24oficial/src/main/java/businessLogic/BLFacadeImplementation.javaL L()"startingBlock*ü
+startingBlockL) L(6
 
-H H(
+K K(
 %6"
 __annotate*)
 
@@ -14,22 +14,22 @@ __annotate*)
 
 fromjava.lang.StringX
 V
-I1 I(5
+L1 L(5
 fromjava.lang.String"__annotation*"
 
 __unknown_file (
 
 %6*
 1*À
-1J J(…
+1M M(…
 ‚
-J J(
+M M(
 %0dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
 	dbManagerzx
-J J(
+M M(
 
 %1void"dataAccess.DataAccess#open()V*9
 
@@ -37,13 +37,13 @@ $businessLogic.BLFacadeImplementation"
 
 %0dataAccess.DataAccess2open()…
 ‚
-L L('
+O O('
 %2dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
 	dbManagerˆ…
-L L(>
+O O(>
 %3java.util.List"JdataAccess.DataAccess#getArrivalCities(Ljava/lang/String;)Ljava/util/List;*9
 
 __unknown_file (
@@ -54,29 +54,29 @@ $businessLogic.BLFacadeImplementation"
 
 fromjava.lang.String2$getArrivalCities(Ljava/lang/String;)f
 d
-L L(?
+O O(?
 targetCitiesjava.util.List"__id*2
 
 __unknown_file (
 
 %3java.util.List…
 ‚
-N N(
+Q Q(
 %4dataAccess.DataAccess"__id*S
 
 __unknown_file (7*5&
 $businessLogic.BLFacadeImplementation"
 	dbManager|z
-N N(
+Q Q(
 
 %5void"dataAccess.DataAccess#close()V*9
 
 __unknown_file (
 
 %4dataAccess.DataAccess2close()",
-P P( 
+S S( 
 
 targetCitiesjava.util.List:$
-I* I(5
+L* L(5
 fromjava.lang.StringB(&
 $businessLogic.BLFacadeImplementationH

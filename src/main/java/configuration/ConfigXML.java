@@ -4,7 +4,8 @@ import java.io.File;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-
+import java.util.logging.Logger;
+import java.util.logging.Level;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -38,6 +39,7 @@ public class ConfigXML {
 	
 	private int databasePort;
 	
+    private static final Logger logger = Logger.getLogger(ConfigXML.class.getName());
 
 	
 	private String user;
@@ -124,14 +126,13 @@ public class ConfigXML {
 				
 			  password=getTagValue("password", config);
 
-			  System.out.print("Read from config.xml: ");
-			  System.out.print("\t businessLogicLocal="+businessLogicLocal);
-			  System.out.print("\t databaseLocal="+databaseLocal);
-			  System.out.println("\t dataBaseInitialized="+isDatabaseInitialized); 
+			  logger.info("Read from config.xml: " +
+				        "\t businessLogicLocal=" + businessLogicLocal +
+				        "\t databaseLocal=" + databaseLocal +
+				        "\t dataBaseInitialized=" + isDatabaseInitialized);
 					  
 		  } catch (Exception e) {
-			System.out.println("Error in ConfigXML.java: problems with "+ configFile);
-		    e.printStackTrace();
+	            logger.log(Level.SEVERE, "Error in ConfigXML.java: problems with " + configFile, e);
 		  }		
 		
 	}

@@ -129,7 +129,7 @@ public interface BLFacade  {
 	@WebMethod public void acceptErrek(Erreklamazioa selectRk);
 	@WebMethod public void rejectErrekUser(Erreklamazioa selectRk);
 	@WebMethod public void rejectErrekAdmin(Erreklamazioa selectRk);
-	@WebMethod public void AcceptWithChange(Erreklamazioa erreklamazio, int num);
+	@WebMethod public void acceptWithChange(Erreklamazioa erreklamazio, int num);
 	@WebMethod public void addErreklamazio(User userJarri, User userJaso, Eskaera eskSelect, String sartutakoTxt, float prez, ErrekLarri lar);
 	
 	@WebMethod public Driver getDriverOfRide(Ride ride);
