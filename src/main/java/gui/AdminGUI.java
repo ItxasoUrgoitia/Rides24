@@ -49,7 +49,8 @@ public class AdminGUI extends JFrame {
 		contentPane.add(comboBox);
 		
 		BLFacade facade = MainGUI.getBusinessLogic();
-		JButton reject = new JButton(ResourceBundle.getBundle("Etiquetas").getString("OnartuGUI.Reject"));
+		final String e="Etiquetas";;
+		JButton reject = new JButton(ResourceBundle.getBundle(e).getString("OnartuGUI.Reject"));
 		reject.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				facade.rejectErrekAdmin((Erreklamazioa) comboBox.getSelectedItem());
@@ -58,7 +59,7 @@ public class AdminGUI extends JFrame {
 		reject.setBounds(37, 214, 89, 23);
 		contentPane.add(reject);
 		
-		JButton accept = new JButton(ResourceBundle.getBundle("Etiquetas").getString("Accept"));
+		JButton accept = new JButton(ResourceBundle.getBundle(e).getString("Accept"));
 		accept.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				facade.acceptErrek((Erreklamazioa) comboBox.getSelectedItem());
@@ -67,7 +68,7 @@ public class AdminGUI extends JFrame {
 		accept.setBounds(173, 214, 89, 23);
 		contentPane.add(accept);
 		
-		JButton acceptChange = new JButton(ResourceBundle.getBundle("Etiquetas").getString("AWC.Title"));
+		JButton acceptChange = new JButton(ResourceBundle.getBundle(e).getString("AWC.Title"));
 		acceptChange.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JFrame a = new AcceptWhithChangeGUI((Erreklamazioa) comboBox.getSelectedItem());
