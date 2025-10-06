@@ -49,3 +49,6 @@ Thumbs.db
 
 logs/
 
+
+# Maven - IGNORAR TODO
+target/
