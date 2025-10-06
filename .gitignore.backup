@@ -1,3 +1,98 @@
+
+# SonarQube - ARCHIVOS TEMPORALES
+
+.scannerwork/
+
+.sonar/
+
+
+
+# Archivos compilados de Java
+
+*.jar
+
+*.war
+
+*.ear
+
+*.class
+
+
+
+# Archivos de build (EXCEPTO target/ que tiene coverage)
+
+build/
+
+bin/
+
+out/
+
+dist/
+
+
+
+# Archivos de IDEs
+
+.idea/
+
+*.iml
+
+*.ipr
+
+*.iws
+
+.vscode/
+
+*.swp
+
+*.swo
+
+
+
+# Archivos del sistema
+
+.DS_Store
+
+Thumbs.db
+
+*.lnk
+
+
+
+# Logs
+
+*.log
+
+logs/
+
+
+
+# Archivos temporales y de análisis
+
+*.tmp
+
+*.temp
+
+*.udg
+
+
+
+# Dependencias
+
+lib/
+
+libs/
+
+dependency-reduced-pom.xml
+
+
+
+# Archivos de configuración local
+
+*.local
+
+*.local.*
+
 /target/
 src/main/resources/rides.temp$
 src/main/resources/rides.temp
