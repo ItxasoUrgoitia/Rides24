@@ -1,0 +1,11 @@
+/target/
+src/main/resources/rides.temp$
+src/main/resources/rides.temp
+
+.sonar/
+sonar-project.properties
+.sonar/
+.sonar/
+sonar-project.properties
+.scannerwork/
+.sonar/
