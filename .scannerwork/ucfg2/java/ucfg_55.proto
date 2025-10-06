@@ -1,195 +1,0 @@
-
-1domain.Erreklamazioa#toString()Ljava/lang/String;R
-H/Users/oihane/git/Rides24oficial/src/main/java/domain/Erreklamazioa.java$ $("1*Ó
-1%	 %(i
-g
-%  %("
-%0java.lang.Integer"__id*<
-
-__unknown_file ( *
-domain.Erreklamazioa"
-idy
-w
-%	 %("
-%1java.lang.String"__concat*"
-%	 %(
-Erreklamazioa [id=*%
-%  %("
-
-%0java.lang.Integers
-q
-%	 %(4
-%2java.lang.String"__concat*$
-%	 %("
-
-%1java.lang.String*
-%% %(4
-, errekJarri=k
-i
-%7 %(A
-%3domain.User"__id*D
-
-__unknown_file ((*&
-domain.Erreklamazioa"
-
-errekJarriu
-s
-%	 %(A
-%4java.lang.String"__concat*$
-%	 %(4
-
-%2java.lang.String*
-%7 %(A
-
-%3domain.Userr
-p
-%	 %(R
-%5java.lang.String"__concat*$
-%	 %(A
-
-%4java.lang.String*
-%D %(R
-, errekJaso=j
-h
-%U %(^
-%6domain.User"__id*C
-
-__unknown_file ('*%
-domain.Erreklamazioa"
-	errekJasou
-s
-%	 %(^
-%7java.lang.String"__concat*$
-%	 %(R
-
-%5java.lang.String*
-%U %(^
-
-%6domain.Userp
-n
-%	 %(m
-%8java.lang.String"__concat*$
-%	 %(^
-
-%7java.lang.String*
-%a %(m
-
-, eskaera=k
-i
-& &(
-%9domain.Eskaera"__id*A
-
-__unknown_file (%*#
-domain.Erreklamazioa"	
-eskaeray
-w
-%	 &(
-%10java.lang.String"__concat*$
-%	 %(m
-
-%8java.lang.String*"
-& &(
-
-%9domain.Eskaeraw
-u
-%	 &(!
-%11java.lang.String"__concat*%
-%	 &(
-
-%10java.lang.String*
-& &(!
-, deskribapena=s
-q
-&$ &(0
-%12java.lang.String"__id*F
-
-__unknown_file (**(
-domain.Erreklamazioa"
-deskribapena}
-{
-%	 &(0
-%13java.lang.String"__concat*%
-%	 &(!
-
-%11java.lang.String*%
-&$ &(0
-
-%12java.lang.Stringo
-m
-%	 &(<
-%14java.lang.String"__concat*%
-%	 &(0
-
-%13java.lang.String*
-&3 &(<	
-, mota=y
-w
-&? &(C%
-%15domain.Erreklamazioa$ErrekMota"__id*>
-
-__unknown_file ("* 
-domain.Erreklamazioa"
-motaŒ
-‰
-%	 &(C
-%16java.lang.String"__concat*%
-%	 &(<
-
-%14java.lang.String*3
-&? &(C'
-%
-%15domain.Erreklamazioa$ErrekMotao
-m
-%	 &(O
-%17java.lang.String"__concat*%
-%	 &(C
-
-%16java.lang.String*
-&F &(O	
-, diru=j
-h
-%	 &(V
-%18java.lang.String"__concat*%
-%	 &(O
-
-%17java.lang.String*
-&R &(V
-""p
-n
-%	 &(c
-%19java.lang.String"__concat*%
-%	 &(V
-
-%18java.lang.String*
-&Y &(c
-
-, larri={
-y
-&f &(k&
-%20domain.Erreklamazioa$ErrekLarri"__id*?
-
-__unknown_file (#*!
-domain.Erreklamazioa"
-larri
-Š
-%	 &(k
-%21java.lang.String"__concat*%
-%	 &(c
-
-%19java.lang.String*4
-&f &(k(
-&
-%20domain.Erreklamazioa$ErrekLarrii
-g
-%	 '(	
-%22java.lang.String"__concat*%
-%	 &(k
-
-%21java.lang.String*
-' '(	
-]"%
-% '(
-
-
-%22java.lang.StringB
-domain.ErreklamazioaH

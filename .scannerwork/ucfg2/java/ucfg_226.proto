@@ -1,92 +1,0 @@
-
-@businessLogic.BLFacadeImplementation#diruaSartu(Ldomain/User;F)Zd
-X/Users/oihane/git/Rides24oficial/src/main/java/businessLogic/BLFacadeImplementation.java¶ ¶("startingBlock*÷
-startingBlock
-¶ ¶(1~
-|
-
-µ µ(
-%6"
-__annotate*)
-
-__unknown_file (
-	WebMethod*1
-
-__unknown_file (
-
-userdomain.UserU
-S
-
-¶  ¶($
-userdomain.User"__annotation*"
-
-__unknown_file (
-
-%6*
-1*Ã
-1
-· ·(‡
-„
-
-· ·(
-%0dataAccess.DataAccess"__id*S
-
-__unknown_file (7*5&
-$businessLogic.BLFacadeImplementation"
-	dbManager|z
-
-· ·(
-
-%1void"dataAccess.DataAccess#open()V*9
-
-__unknown_file (
-
-%0dataAccess.DataAccess2open()‡
-„
-
-¸ ¸(
-%2dataAccess.DataAccess"__id*S
-
-__unknown_file (7*5&
-$businessLogic.BLFacadeImplementation"
-	dbManagerÿü
-
-¸ ¸(.
-%3boolean"1dataAccess.DataAccess#diruaSartu(Ldomain/User;F)Z*9
-
-__unknown_file (
-
-%2dataAccess.DataAccess*1
-
-__unknown_file (
-
-userdomain.User*"
-
-__unknown_file (
-""2diruaSartu(Ldomain/User;F)‡
-„
-
-¹ ¹(
-%4dataAccess.DataAccess"__id*S
-
-__unknown_file (7*5&
-$businessLogic.BLFacadeImplementation"
-	dbManager~|
-
-¹ ¹(
-
-%5void"dataAccess.DataAccess#close()V*9
-
-__unknown_file (
-
-%4dataAccess.DataAccess2close()"
-
-º º(
-"":!
-
-¶ ¶(%
-userdomain.User: 
-
-__unknown_file (
-""B(&
-$businessLogic.BLFacadeImplementationHX

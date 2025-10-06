@@ -1,65 +1,0 @@
-
-@businessLogic.BLFacadeImplementation#getEmails()Ljava/util/List;d
-X/Users/oihane/git/Rides24oficial/src/main/java/businessLogic/BLFacadeImplementation.javaı ı("1*Ü
-1
-ş ş(‡
-„
-
-ş ş(
-%0dataAccess.DataAccess"__id*S
-
-__unknown_file (7*5&
-$businessLogic.BLFacadeImplementation"
-	dbManager|z
-
-ş ş(
-
-%1void"dataAccess.DataAccess#open()V*9
-
-__unknown_file (
-
-%0dataAccess.DataAccess2open()‡
-„
-
-ÿ ÿ(!
-%2dataAccess.DataAccess"__id*S
-
-__unknown_file (7*5&
-$businessLogic.BLFacadeImplementation"
-	dbManager 
-
-ÿ ÿ(-
-%3java.util.List"1dataAccess.DataAccess#getEmails()Ljava/util/List;*9
-
-__unknown_file (
-
-%2dataAccess.DataAccess2getEmails()b
-`
-
-ÿ ÿ(.
-emailsjava.util.List"__id*2
-
-__unknown_file (
-
-%3java.util.List‡
-„
-
-€ €(
-%4dataAccess.DataAccess"__id*S
-
-__unknown_file (7*5&
-$businessLogic.BLFacadeImplementation"
-	dbManager~|
-
-€ €(
-
-%5void"dataAccess.DataAccess#close()V*9
-
-__unknown_file (
-
-%4dataAccess.DataAccess2close()"(
-
- (
-
-emailsjava.util.ListB(&
-$businessLogic.BLFacadeImplementationH

@@ -1,65 +1,0 @@
-
-BbusinessLogic.BLFacadeImplementation#getAllRides()Ljava/util/List;d
-X/Users/oihane/git/Rides24oficial/src/main/java/businessLogic/BLFacadeImplementation.javaÆ Æ("1*ä
-1
-Ç Ç(‡
-„
-
-Ç Ç(
-%0dataAccess.DataAccess"__id*S
-
-__unknown_file (7*5&
-$businessLogic.BLFacadeImplementation"
-	dbManager|z
-
-Ç Ç(
-
-%1void"dataAccess.DataAccess#open()V*9
-
-__unknown_file (
-
-%0dataAccess.DataAccess2open()‡
-„
-
-È È(!
-%2dataAccess.DataAccess"__id*S
-
-__unknown_file (7*5&
-$businessLogic.BLFacadeImplementation"
-	dbManager¤¡
-
-È È(/
-%3java.util.List"3dataAccess.DataAccess#getAllRides()Ljava/util/List;*9
-
-__unknown_file (
-
-%2dataAccess.DataAccess2getAllRides()d
-b
-
-È È(0
-rideListjava.util.List"__id*2
-
-__unknown_file (
-
-%3java.util.List‡
-„
-
-É É(
-%4dataAccess.DataAccess"__id*S
-
-__unknown_file (7*5&
-$businessLogic.BLFacadeImplementation"
-	dbManager~|
-
-É É(
-
-%5void"dataAccess.DataAccess#close()V*9
-
-__unknown_file (
-
-%4dataAccess.DataAccess2close()"*
-
-Ê Ê(
-
-rideListjava.util.ListB(&
-$businessLogic.BLFacadeImplementationH

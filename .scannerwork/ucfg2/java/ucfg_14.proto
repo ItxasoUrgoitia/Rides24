@@ -1,36 +1,0 @@
-
-EdataAccess.DataAccess#getDriverRides(Ldomain/Driver;)Ljava/util/List;U
-I/Users/oihane/git/Rides24oficial/src/main/java/dataAccess/DataAccess.javaª ª(!"1*Ä
-1
-« «(”‘
-
-¬0 ¬(A
-%0java.lang.String"(domain.User#getEmail()Ljava/lang/String;*5
-
-__unknown_file (
-
-driverdomain.Driver2
-getEmail()Y
-W
-
-¬ ¬(C
-existingDriverdomain.Driver"__id*"
-
-__unknown_file (
-""š—
-
-®	 ®("
-%1java.util.List"(domain.Driver#getRides()Ljava/util/List;*=
-
-__unknown_file (!
-
-existingDriverdomain.Driver2
-getRides()"$
-
-® ®(#
-
-%1java.util.List:%
-
-ª" ª(/
-driverdomain.DriverB
-dataAccess.DataAccessH

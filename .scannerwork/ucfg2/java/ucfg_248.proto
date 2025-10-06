@@ -1,95 +1,0 @@
-
-UbusinessLogic.BLFacadeImplementation#getUserBalorazioa(Ldomain/User;)Ljava/util/List;d
-X/Users/oihane/git/Rides24oficial/src/main/java/businessLogic/BLFacadeImplementation.javaÖ# Ö(4"startingBlock*÷
-startingBlock
-Ö4 Ö(?~
-|
-
-Ö Ö(
-%6"
-__annotate*)
-
-__unknown_file (
-	WebMethod*1
-
-__unknown_file (
-
-userdomain.UserU
-S
-
-Ö: Ö(>
-userdomain.User"__annotation*"
-
-__unknown_file (
-
-%6*
-1*³
-1
-× ×(‡
-„
-
-× ×(
-%0dataAccess.DataAccess"__id*S
-
-__unknown_file (7*5&
-$businessLogic.BLFacadeImplementation"
-	dbManager|z
-
-× ×(
-
-%1void"dataAccess.DataAccess#open()V*9
-
-__unknown_file (
-
-%0dataAccess.DataAccess2open()‡
-„
-
-Ø Ø(!
-%2dataAccess.DataAccess"__id*S
-
-__unknown_file (7*5&
-$businessLogic.BLFacadeImplementation"
-	dbManagerýú
-
-Ø Ø(9
-%3java.util.List"FdataAccess.DataAccess#getUserBalorazioa(Ldomain/User;)Ljava/util/List;*9
-
-__unknown_file (
-
-%2dataAccess.DataAccess*1
-
-__unknown_file (
-
-userdomain.User2 getUserBalorazioa(Ldomain/User;)_
-]
-
-Ø Ø(:
-alkjava.util.List"__id*2
-
-__unknown_file (
-
-%3java.util.List‡
-„
-
-Ù Ù(
-%4dataAccess.DataAccess"__id*S
-
-__unknown_file (7*5&
-$businessLogic.BLFacadeImplementation"
-	dbManager~|
-
-Ù Ù(
-
-%5void"dataAccess.DataAccess#close()V*9
-
-__unknown_file (
-
-%4dataAccess.DataAccess2close()"%
-
-Ú Ú(
-
-alkjava.util.List:!
-
-Ö5 Ö(>
-userdomain.UserB(&
-$businessLogic.BLFacadeImplementationH

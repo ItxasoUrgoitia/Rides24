@@ -1,37 +1,0 @@
-
-LdataAccess.DataAccess#getEskaerakBidaiari(Ldomain/Bidaiari;)Ljava/util/List;U
-I/Users/oihane/git/Rides24oficial/src/main/java/dataAccess/DataAccess.javaÄ Ä()"1*Û
-1
-Å Å(˜•
-
-Æ0 Æ(C
-%0java.lang.String"(domain.User#getEmail()Ljava/lang/String;*9
-
-__unknown_file (
-
-bidaiaridomain.Bidaiari2
-getEmail()W
-U
-
-Æ Æ(E
-
-bidaiariDBdomain.Bidaiari"__id*"
-
-__unknown_file (
-""ª§
-
-È	 È(!
-%1java.util.ArrayList"2domain.Bidaiari#getEskaerak()Ljava/util/ArrayList;*;
-
-__unknown_file (
-
-
-bidaiariDBdomain.Bidaiari2getEskaerak()")
-
-È È("
-
-%1java.util.ArrayList:)
-
-Ä* Ä(;
-bidaiaridomain.BidaiariB
-dataAccess.DataAccessH

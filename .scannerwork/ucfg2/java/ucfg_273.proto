@@ -1,45 +1,0 @@
-
- gui.OnartuGUI#%field_initializer
-__unknown_file ("1*˝
-1 (}{
-K
-A/Users/oihane/git/Rides24oficial/src/main/java/gui/OnartuGUI.java$  $(&
-%0javax.swing.JLabel"javax.swing.JLabelú
-ô
-K
-A/Users/oihane/git/Rides24oficial/src/main/java/gui/OnartuGUI.java$ $((
-%1"javax.swing.JLabel#<init>()V*&
- (
-
-%0javax.swing.JLabelû
-õ
-K
-A/Users/oihane/git/Rides24oficial/src/main/java/gui/OnartuGUI.java$ $()
-gui.OnartuGUI"
-	jLabelMsg"__id*&
- (
-
-%0javax.swing.JLabelÑÅ
-K
-A/Users/oihane/git/Rides24oficial/src/main/java/gui/OnartuGUI.java%" %(+
-%2javax.swing.JComboBox"javax.swing.JComboBox¢
-ü
-K
-A/Users/oihane/git/Rides24oficial/src/main/java/gui/OnartuGUI.java% %(-
-%3"javax.swing.JComboBox#<init>()V*)
- (
-
-%2javax.swing.JComboBox†
-ù
-K
-A/Users/oihane/git/Rides24oficial/src/main/java/gui/OnartuGUI.java% %(.
-gui.OnartuGUI"
-
-comboBox"__id*)
- (
-
-%2javax.swing.JComboBox"`
-I
-A/Users/oihane/git/Rides24oficial/src/main/java/gui/OnartuGUI.java  c(
-implicit returnB
-gui.OnartuGUI

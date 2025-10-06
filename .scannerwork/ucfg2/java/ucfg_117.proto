@@ -1,90 +1,0 @@
-
- gui.SignUpGUI#%field_initializer
-__unknown_file ("1*™
-1 (å
-â
-K
-A/Users/oihane/git/Rides24oficial/src/main/java/gui/SignUpGUI.java# #(# 
-gui.SignUpGUI"
-contentPane"__id*
- (
-""é
-ã
-K
-A/Users/oihane/git/Rides24oficial/src/main/java/gui/SignUpGUI.java$ $($"
-gui.SignUpGUI"
-jButtomSingUp"__id*
- (
-""å
-â
-K
-A/Users/oihane/git/Rides24oficial/src/main/java/gui/SignUpGUI.java% %(' 
-gui.SignUpGUI"
-rdbtnDriver"__id*
- (
-""è
-å
-K
-A/Users/oihane/git/Rides24oficial/src/main/java/gui/SignUpGUI.java& &(*#
-gui.SignUpGUI"
-rdbtnPassenger"__id*
- (
-""àÖ
-K
-A/Users/oihane/git/Rides24oficial/src/main/java/gui/SignUpGUI.java'- '(8
-%0javax.swing.ButtonGroup"javax.swing.ButtonGroup¶
-£
-K
-A/Users/oihane/git/Rides24oficial/src/main/java/gui/SignUpGUI.java') '(:
-%1"!javax.swing.ButtonGroup#<init>()V*+
- (
-
-%0javax.swing.ButtonGroup•
-¢
-K
-A/Users/oihane/git/Rides24oficial/src/main/java/gui/SignUpGUI.java' '(; 
-gui.SignUpGUI"
-buttonGroup"__id*+
- (
-
-%0javax.swing.ButtonGroupàÖ
-K
-A/Users/oihane/git/Rides24oficial/src/main/java/gui/SignUpGUI.java,/ ,(:
-%2javax.swing.ButtonGroup"javax.swing.ButtonGroup¶
-£
-K
-A/Users/oihane/git/Rides24oficial/src/main/java/gui/SignUpGUI.java,+ ,(<
-%3"!javax.swing.ButtonGroup#<init>()V*+
- (
-
-%2javax.swing.ButtonGroupß
-§
-K
-A/Users/oihane/git/Rides24oficial/src/main/java/gui/SignUpGUI.java, ,(="
-gui.SignUpGUI"
-buttonGroup_1"__id*+
- (
-
-%2javax.swing.ButtonGroup}{
-K
-A/Users/oihane/git/Rides24oficial/src/main/java/gui/SignUpGUI.java-  -(&
-%4javax.swing.JLabel"javax.swing.JLabelú
-ô
-K
-A/Users/oihane/git/Rides24oficial/src/main/java/gui/SignUpGUI.java- -((
-%5"javax.swing.JLabel#<init>()V*&
- (
-
-%4javax.swing.JLabelû
-õ
-K
-A/Users/oihane/git/Rides24oficial/src/main/java/gui/SignUpGUI.java- -()
-gui.SignUpGUI"
-	jLabelMsg"__id*&
- (
-
-%4javax.swing.JLabel"a
-J
-A/Users/oihane/git/Rides24oficial/src/main/java/gui/SignUpGUI.java  ﬂ(
-implicit returnB
-gui.SignUpGUI

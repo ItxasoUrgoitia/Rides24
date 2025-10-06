@@ -1,35 +1,0 @@
-
-CdataAccess.DataAccess#getDriverOfRide(Ldomain/Ride;)Ldomain/Driver;U
-I/Users/oihane/git/Rides24oficial/src/main/java/dataAccess/DataAccess.javaÛ Û("1*¯
-1
-Ü Ü(œ™
-
-Ý" Ý(6
-%0java.lang.Integer".domain.Ride#getRideNumber()Ljava/lang/Integer;*1
-
-__unknown_file (
-
-ridedomain.Ride2getRideNumber()L
-J
-
-Ý Ý(8
-rDBdomain.Ride"__id*"
-
-__unknown_file (
-""‹ˆ
-
-ß
- ß(
-%1domain.Driver"&domain.Ride#getDriver()Ldomain/Driver;*0
-
-__unknown_file (
-
-rDBdomain.Ride2getDriver()"#
-
-ß ß(
-
-%1domain.Driver:!
-
-Û  Û()
-ridedomain.RideB
-dataAccess.DataAccessH

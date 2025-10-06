@@ -2,3 +2,6 @@
 src/main/resources/rides.temp$
 src/main/resources/rides.temp
 
+.scannerwork/
+.sonar/
+sonar-project.properties

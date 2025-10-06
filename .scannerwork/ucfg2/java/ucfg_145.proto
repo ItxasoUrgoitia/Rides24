@@ -1,80 +1,0 @@
-
-domain.User#%field_initializer
-__unknown_file ("1*‹
-1 (}{
-I
-?/Users/oihane/git/Rides24oficial/src/main/java/domain/User.java"* "(=
-%0java.util.ArrayList"java.util.ArrayListú
-ô
-I
-?/Users/oihane/git/Rides24oficial/src/main/java/domain/User.java"& "(?
-%1"java.util.ArrayList#<init>()V*'
- (
-
-%0java.util.ArrayListù
-ö
-I
-?/Users/oihane/git/Rides24oficial/src/main/java/domain/User.java  "(@
-domain.User"
-mugimenduak"__id*'
- (
-
-%0java.util.ArrayList}{
-I
-?/Users/oihane/git/Rides24oficial/src/main/java/domain/User.java%$ %(5
-%2java.util.ArrayList"java.util.ArrayListú
-ô
-I
-?/Users/oihane/git/Rides24oficial/src/main/java/domain/User.java%  %(7
-%3"java.util.ArrayList#<init>()V*'
- (
-
-%2java.util.ArrayListô
-ñ
-I
-?/Users/oihane/git/Rides24oficial/src/main/java/domain/User.java$ %(8
-domain.User"	
-alertak"__id*'
- (
-
-%2java.util.ArrayList}{
-I
-?/Users/oihane/git/Rides24oficial/src/main/java/domain/User.java*+ *(?
-%4java.util.ArrayList"java.util.ArrayListú
-ô
-I
-?/Users/oihane/git/Rides24oficial/src/main/java/domain/User.java*' *(A
-%5"java.util.ArrayList#<init>()V*'
- (
-
-%4java.util.ArrayListù
-ö
-I
-?/Users/oihane/git/Rides24oficial/src/main/java/domain/User.java) *(B
-domain.User"
-balorazioak"__id*'
- (
-
-%4java.util.ArrayList}{
-I
-?/Users/oihane/git/Rides24oficial/src/main/java/domain/User.java.) .(A
-%6java.util.ArrayList"java.util.ArrayListú
-ô
-I
-?/Users/oihane/git/Rides24oficial/src/main/java/domain/User.java.% .(C
-%7"java.util.ArrayList#<init>()V*'
- (
-
-%6java.util.ArrayListó
-î
-I
-?/Users/oihane/git/Rides24oficial/src/main/java/domain/User.java, .(D
-domain.User"
-errek"__id*'
- (
-
-%6java.util.ArrayList"_
-H
-?/Users/oihane/git/Rides24oficial/src/main/java/domain/User.java «(
-implicit returnB
-domain.User

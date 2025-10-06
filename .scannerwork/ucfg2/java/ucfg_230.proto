@@ -1,95 +1,0 @@
-
-TbusinessLogic.BLFacadeImplementation#getDriverRides(Ldomain/Driver;)Ljava/util/List;d
-X/Users/oihane/git/Rides24oficial/src/main/java/businessLogic/BLFacadeImplementation.java× ×(!"startingBlock*
-startingBlock
-×! ×(0ƒ
-€
-
-Ö Ö(
-%6"
-__annotate*)
-
-__unknown_file (
-	WebMethod*5
-
-__unknown_file (
-
-driverdomain.DriverY
-W
-
-×) ×(/
-driverdomain.Driver"__annotation*"
-
-__unknown_file (
-
-%6*
-1*½
-1
-Ø Ø(‡
-„
-
-Ø Ø(
-%0dataAccess.DataAccess"__id*S
-
-__unknown_file (7*5&
-$businessLogic.BLFacadeImplementation"
-	dbManager|z
-
-Ø Ø(
-
-%1void"dataAccess.DataAccess#open()V*9
-
-__unknown_file (
-
-%0dataAccess.DataAccess2open()‡
-„
-
-Ù Ù( 
-%2dataAccess.DataAccess"__id*S
-
-__unknown_file (7*5&
-$businessLogic.BLFacadeImplementation"
-	dbManagerÿü
-
-Ù Ù(7
-%3java.util.List"EdataAccess.DataAccess#getDriverRides(Ldomain/Driver;)Ljava/util/List;*9
-
-__unknown_file (
-
-%2dataAccess.DataAccess*5
-
-__unknown_file (
-
-driverdomain.Driver2getDriverRides(Ldomain/Driver;)c
-a
-
-Ù Ù(8
-ridListjava.util.List"__id*2
-
-__unknown_file (
-
-%3java.util.List‡
-„
-
-Ú Ú(
-%4dataAccess.DataAccess"__id*S
-
-__unknown_file (7*5&
-$businessLogic.BLFacadeImplementation"
-	dbManager~|
-
-Ú Ú(
-
-%5void"dataAccess.DataAccess#close()V*9
-
-__unknown_file (
-
-%4dataAccess.DataAccess2close()")
-
-Û Û(
-
-ridListjava.util.List:%
-
-×" ×(/
-driverdomain.DriverB(&
-$businessLogic.BLFacadeImplementationH

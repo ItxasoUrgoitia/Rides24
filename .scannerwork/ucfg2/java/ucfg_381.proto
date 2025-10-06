@@ -1,45 +1,0 @@
-
-$gui.AukerakEskGUI#%field_initializer
-__unknown_file ("1*¢
-1 (Å
-O
-E/Users/oihane/git/Rides24oficial/src/main/java/gui/AukerakEskGUI.java&  &(&
-%0javax.swing.JLabel"javax.swing.JLabel†
-ù
-O
-E/Users/oihane/git/Rides24oficial/src/main/java/gui/AukerakEskGUI.java& &((
-%1"javax.swing.JLabel#<init>()V*&
- (
-
-%0javax.swing.JLabel¶
-£
-O
-E/Users/oihane/git/Rides24oficial/src/main/java/gui/AukerakEskGUI.java& &()"
-gui.AukerakEskGUI"
-	jLabelMsg"__id*&
- (
-
-%0javax.swing.JLabelàÖ
-O
-E/Users/oihane/git/Rides24oficial/src/main/java/gui/AukerakEskGUI.java'" '(+
-%2javax.swing.JComboBox"javax.swing.JComboBox¶
-£
-O
-E/Users/oihane/git/Rides24oficial/src/main/java/gui/AukerakEskGUI.java' '(-
-%3"javax.swing.JComboBox#<init>()V*)
- (
-
-%2javax.swing.JComboBox®
-•
-O
-E/Users/oihane/git/Rides24oficial/src/main/java/gui/AukerakEskGUI.java' '(.!
-gui.AukerakEskGUI"
-
-comboBox"__id*)
- (
-
-%2javax.swing.JComboBox"d
-M
-E/Users/oihane/git/Rides24oficial/src/main/java/gui/AukerakEskGUI.java" v(
-implicit returnB
-gui.AukerakEskGUI

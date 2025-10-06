@@ -1,95 +1,0 @@
-
-[businessLogic.BLFacadeImplementation#getEskaerakBidaiari(Ldomain/Bidaiari;)Ljava/util/List;d
-X/Users/oihane/git/Rides24oficial/src/main/java/businessLogic/BLFacadeImplementation.javaŸ! Ÿ(4"startingBlock*‰
-startingBlock
-Ÿ4 Ÿ(G‡
-„
-
-Ÿ Ÿ(
-%6"
-__annotate*)
-
-__unknown_file (
-	WebMethod*9
-
-__unknown_file (
-
-bidaiaridomain.Bidaiari]
-[
-
-Ÿ> Ÿ(F
-bidaiaridomain.Bidaiari"__annotation*"
-
-__unknown_file (
-
-%6*
-1*Ñ
-1
-   (‡
-„
-
-   (
-%0dataAccess.DataAccess"__id*S
-
-__unknown_file (7*5&
-$businessLogic.BLFacadeImplementation"
-	dbManager|z
-
-   (
-
-%1void"dataAccess.DataAccess#open()V*9
-
-__unknown_file (
-
-%0dataAccess.DataAccess2open()‡
-„
-
-¡ ¡($
-%2dataAccess.DataAccess"__id*S
-
-__unknown_file (7*5&
-$businessLogic.BLFacadeImplementation"
-	dbManager‘Ž
-
-¡ ¡(B
-%3java.util.List"LdataAccess.DataAccess#getEskaerakBidaiari(Ldomain/Bidaiari;)Ljava/util/List;*9
-
-__unknown_file (
-
-%2dataAccess.DataAccess*9
-
-__unknown_file (
-
-bidaiaridomain.Bidaiari2&getEskaerakBidaiari(Ldomain/Bidaiari;)d
-b
-
-¡ ¡(C
-eskaerakjava.util.List"__id*2
-
-__unknown_file (
-
-%3java.util.List‡
-„
-
-¢ ¢(
-%4dataAccess.DataAccess"__id*S
-
-__unknown_file (7*5&
-$businessLogic.BLFacadeImplementation"
-	dbManager~|
-
-¢ ¢(
-
-%5void"dataAccess.DataAccess#close()V*9
-
-__unknown_file (
-
-%4dataAccess.DataAccess2close()"*
-
-£ £(
-
-eskaerakjava.util.List:)
-
-Ÿ5 Ÿ(F
-bidaiaridomain.BidaiariB(&
-$businessLogic.BLFacadeImplementationH
