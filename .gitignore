@@ -1,18 +1,51 @@
 
-# SonarQube files - ARCHIVOS TEMPORALES
+# SonarQube - ARCHIVOS TEMPORALES
 
 .scannerwork/
 
 .sonar/
 
-/target/
-src/main/resources/rides.temp$
-src/main/resources/rides.temp
 
-.sonar/
-sonar-project.properties
-.sonar/
-.sonar/
-sonar-project.properties
-.scannerwork/
-.sonar/
+
+# Archivos compilados de Java
+
+*.jar
+
+*.war
+
+*.ear
+
+*.class
+
+
+
+# Archivos temporales de análisis
+
+*.udg
+
+
+
+# Archivos de IDEs
+
+.idea/
+
+*.iml
+
+.vscode/
+
+
+
+# Archivos del sistema
+
+.DS_Store
+
+Thumbs.db
+
+
+
+# Logs
+
+*.log
+
+logs/
+
