@@ -52,3 +52,10 @@ logs/
 
 # Maven - IGNORAR TODO
 target/
+
+# Archivos temporales
+*.temp
+*.tmp
+*.cache
+*.bak
+*.backup
