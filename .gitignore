@@ -1,54 +1,33 @@
-
 # SonarQube - ARCHIVOS TEMPORALES
-
 .scannerwork/
-
 .sonar/
 
-
-
 # Archivos compilados de Java
-
 *.jar
-
 *.war
-
 *.ear
-
 *.class
 
-
-
 # Archivos temporales de análisis
-
 *.udg
 
-
-
-# Archivos de IDEs
-
+# Archivos del IDE
 .idea/
-
 *.iml
-
 .vscode/
 
-
+# Archivos de Eclipse
+.classpath
+.project
+.settings/
 
 # Archivos del sistema
-
 .DS_Store
-
 Thumbs.db
 
-
-
 # Logs
-
 *.log
-
 logs/
-
 
 # Maven - IGNORAR TODO
 target/
