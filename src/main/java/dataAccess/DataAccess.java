@@ -193,16 +193,13 @@ public class DataAccess {
 			return null;
 		}
 	}
+	
 	public void addMovement(Movement mov) {
 		User usr = mov.getUsr();
 		if(mov.getMota().equals("+")) {
-			Alerta alert = new Alerta(usr, AlertMota.DIRUA_SARTU);
-			addAlert(alert);
-			db.persist(alert);
+			createAlert(usr, AlertMota.DIRUA_SARTU);
 		}else {
-			Alerta alert = new Alerta(usr, AlertMota.DIRUA_ATERA);
-			addAlert(alert);
-			db.persist(alert);
+			createAlert(usr, AlertMota.DIRUA_ATERA);
 		}
 		usr.addMovement(mov);
 	}
@@ -267,12 +264,10 @@ public class DataAccess {
 		}
 		ArrayList<Eskaera> rideEskaeraListDB = rideDB.getEskaerenList();
 		rideEskaeraListDB.add(eskBerr);
-		System.out.println("Create eskaeran dago (data acces)");
-		Alerta alert = new Alerta(rideDB.getDriver(), AlertMota.ESKAERA_EGIN);
-		System.out.println("alerta sortu da (data acces)");
 		
-		addAlert(alert);
-		db.persist(alert);
+		
+		
+		createAlert(rideDB.getDriver(), AlertMota.ESKAERA_EGIN);
 		db.getTransaction().commit();
 			
 		return eskBerr;
@@ -357,9 +352,7 @@ public class DataAccess {
 			float diruBerr = existingUser.getDirua() + diru;
 			if (diruBerr>0) {
 				existingUser.setDirua(diruBerr);
-				Movement mov = new Movement (existingUser, diru, "+");
-				addMovement(mov);
-				db.persist(mov);
+				createMov(existingUser, diru, "+");
 				db.getTransaction().commit();
 				return true;
 			}else {
@@ -442,13 +435,10 @@ public class DataAccess {
 		for(Eskaera esk: rideDB.getEskaerenList()) {
 			if (esk.getEgoera()==EskaeraEgoera.ACCEPTED) {
 				esk.getBidaiari().setDirua(esk.getBidaiari().getDirua()+esk.getPrez());
-				Movement mov = new Movement(esk.getBidaiari(),esk.getPrez(), "+");
-				addMovement(mov);
-				db.persist(mov);
-				Alerta alert = new Alerta(esk.getBidaiari(), AlertMota.BIDAIA_KANTZELATU);
 				
-				addAlert(alert);
-				db.persist(alert);
+				createMov(esk.getBidaiari(),esk.getPrez(), "+");
+				createAlert(esk.getBidaiari(), AlertMota.BIDAIA_KANTZELATU);
+				
 				esk.setEgoera(EskaeraEgoera.CANCELLED);
 			}
 		}
@@ -464,10 +454,9 @@ public class DataAccess {
 		for(Eskaera esk: rideDB.getEskaerenList()) {
 			if(esk.getEgoera()==EskaeraEgoera.ACCEPTED) {
 				esk.setEgoera(EskaeraEgoera.FINISHED);
-				Alerta alert = new Alerta(esk.getBidaiari(), AlertMota.BIDAIA_AMAITUTA);
 				
-				addAlert(alert);
-				db.persist(alert);
+				createAlert(esk.getBidaiari(), AlertMota.BIDAIA_AMAITUTA);
+				
 			}
 		}
 		
@@ -648,7 +637,7 @@ public class DataAccess {
 	}
 	
 	
-	public void acceptEskaera(Eskaera eskaera) throws NotEnoughPlacesException, NotEnoughMoneyException{
+	/*public void acceptEskaera(Eskaera eskaera) throws NotEnoughPlacesException, NotEnoughMoneyException{
 		db.getTransaction().begin();
 
 		Eskaera eskaeraDB = db.find(Eskaera.class, eskaera.getEskaeraNumber());
@@ -682,26 +671,68 @@ public class DataAccess {
 		addAlert(alert);
 		db.persist(alert);
 		db.getTransaction().commit();
+	}*/
+	
+	public void acceptEskaera(Eskaera eskaera) throws NotEnoughPlacesException, NotEnoughMoneyException {
+	    
+	    db.getTransaction().begin();
+	    Eskaera eskaeraDB = db.find(Eskaera.class, eskaera.getEskaeraNumber());
+	    Bidaiari bidaiariDB = eskaeraDB.getBidaiari();
+	    Ride ride = eskaeraDB.getRide();
+
+	    verifyMoney(bidaiariDB, ride);
+	    verifyPlaces(ride, eskaeraDB);
+
+	    processAcceptance(eskaeraDB, bidaiariDB, ride);
+	    db.getTransaction().commit();
 	}
+	
+	private void verifyMoney(Bidaiari bidaiari, Ride ride) throws NotEnoughMoneyException {
+	    if (bidaiari.getDirua() < ride.getPrice() * 1.5) {
+	        db.getTransaction().rollback();
+	        throw new NotEnoughMoneyException();
+	    }
+	    db.persist(bidaiari);
+	}
+	
+	private void verifyPlaces(Ride ride, Eskaera eskaera) throws NotEnoughPlacesException {
+	    if (ride.getnPlaces() < eskaera.getNPlaces()) {
+	        db.getTransaction().rollback();
+	        throw new NotEnoughPlacesException();
+	    }
+	}
+	
+	private void processAcceptance(Eskaera eskaera, Bidaiari bidaiari, Ride ride) {
+	    eskaera.acceptRequest();
+	    ride.setnPlaces(ride.getnPlaces() - eskaera.getNPlaces());
+
+	    
+	    createMov(bidaiari, eskaera.getPrez(), "-");
+	    
+	    
+	    createAlert(bidaiari, AlertMota.ESKAERA_ONARTU);
+	}
+
+
+
 	
 	public void ezOnartuEskaera(Eskaera eskaera) {
 		db.getTransaction().begin();
 		Eskaera eskaeraDB = db.find(Eskaera.class, eskaera.getEskaeraNumber());
 		eskaeraDB.ezeztatuEskaera();
-		Alerta alert = new Alerta(eskaeraDB.getBidaiari(), AlertMota.ESKAERA_EZONARTUA);
-		
-		addAlert(alert);
-		db.persist(alert);
+		createAlert(eskaeraDB.getBidaiari(), AlertMota.ESKAERA_EZONARTUA);
 		db.getTransaction().commit();
+		
+		
 	}
 	public void konfirmatuEskaera(Eskaera eskaera) {
 		db.getTransaction().begin();
 		Eskaera eskaeraDB = db.find(Eskaera.class, eskaera.getEskaeraNumber());
 		eskaeraDB.konfirmatuEskaera();
 		eskaeraDB.getRide().getDriver().diruSartuDri(eskaeraDB.getNPlaces()*eskaeraDB.getRide().getPrice());
-		Movement mov = new Movement( eskaeraDB.getRide().getDriver(),eskaeraDB.getRide().getPrice(), "+");
-		addMovement(mov);
-		db.persist(mov);
+		
+		createMov(eskaeraDB.getRide().getDriver(),eskaeraDB.getRide().getPrice(), "+");
+		
 		db.getTransaction().commit();
 	}
 	
@@ -711,6 +742,7 @@ public class DataAccess {
 		db.getTransaction().commit();
 		return bidaiariDB.getEskaerak();
 	}
+	
 	public void kantzelatuEskaera(Eskaera eskaera) {
 		db.getTransaction().begin();
 		Eskaera eskaeraDB = db.find(Eskaera.class, eskaera.getEskaeraNumber());
@@ -718,22 +750,21 @@ public class DataAccess {
 			eskaeraDB.setEgoera(EskaeraEgoera.CANCELLED);
 		}else if (eskaeraDB.getEgoera() == EskaeraEgoera.ACCEPTED) {
 			eskaeraDB.getBidaiari().diruSartuBid(eskaeraDB.getPrez());
-			Movement mov = new Movement( eskaeraDB.getBidaiari(),eskaeraDB.getPrez(), "+");
-			addMovement(mov);
-			db.persist(mov);
+			
+			
+			createMov(eskaeraDB.getBidaiari(),eskaeraDB.getPrez(), "+");
 			int lekuLibre = eskaeraDB.getRide().getnPlaces();
 			int eskatutakoak = eskaeraDB.getNPlaces();
 			eskaeraDB.getRide().setnPlaces(lekuLibre+eskatutakoak);
 			eskaeraDB.setEgoera(EskaeraEgoera.CANCELLED);	
 		}
-		Alerta alert = new Alerta(eskaeraDB.getRide().getDriver(), AlertMota.ESKAERA_KANTZELATU);
 		
-		addAlert(alert);
-		db.persist(alert);
+		
+		createAlert(eskaeraDB.getRide().getDriver(), AlertMota.ESKAERA_KANTZELATU);
 		db.getTransaction().commit();
 	}
 	
-	public boolean ezabatuUser(User user) {
+	/*public boolean ezabatuUser(User user) {
 		db.getTransaction().begin();
 		User ezabUserDB = bilatuUserEmail(user.getEmail());
 		if (ezabUserDB instanceof Driver) {
@@ -788,7 +819,58 @@ public class DataAccess {
 		 db.remove(ezabUserDB);
 		db.getTransaction().commit();
 		return true;
+	}*/
+	
+	public boolean ezabatuUser(User user) {
+	    db.getTransaction().begin();
+	    User ezabUserDB = bilatuUserEmail(user.getEmail());
+
+	    boolean result;
+
+	    if (ezabUserDB instanceof Driver) {
+	        result = ezabatuDriver((Driver) ezabUserDB);
+	    } else {
+	        result = ezabatuBidaiari((Bidaiari) ezabUserDB);
+	    }
+
+	    if (result) {
+	        db.remove(ezabUserDB);
+	        db.getTransaction().commit();
+	    } else {
+	        db.getTransaction().rollback();
+	    }
+
+	    return result;
 	}
+	
+	private boolean ezabatuDriver(Driver driver) {
+	    for (Ride ride : driver.getRides()) {
+	        Ride rideDB = db.find(Ride.class, ride.getRideNumber());
+	        rideDB.setEgoera(RideEgoera.CANCELLED);
+	        kantzelatuEskaerakRide(rideDB);
+	    }
+	    return true;
+	}
+
+	private boolean ezabatuBidaiari(Bidaiari bidaiari) {
+	    for (Eskaera esk : bidaiari.getEskaerak()) {
+	        if (esk.getEgoera() == EskaeraEgoera.FINISHED) {
+	            return false;
+	        }
+	        kantzelatuEskaera(esk);
+	    }
+	    return true;
+	}
+
+	private void kantzelatuEskaerakRide(Ride rideDB) {
+	    for (Eskaera esk : rideDB.getEskaerenList()) {
+	        if (esk.getEgoera() == EskaeraEgoera.ACCEPTED) {
+	            esk.getBidaiari().diruSartuBid(esk.getPrez());;
+	        }
+	        esk.setEgoera(EskaeraEgoera.CANCELLED);
+	    }
+	}
+
 	
 	public User bilatuUserEmail(String email) {
 		User user = db.find(User.class, email);
@@ -817,6 +899,19 @@ public class DataAccess {
 			System.out.println("Data Acces-eko addAlert metodora iritsi da");
 			usr.addAlert(alert);
 	}
+	public void createAlert(User user, AlertMota mota) {
+		Alerta alert = new Alerta(user, mota);
+		addAlert(alert); 
+		db.persist(alert);
+	}
+	
+	public void createMov(User user, float diru, String mota) {
+		Movement mov = new Movement(user,  diru,  mota);
+		addMovement(mov);
+		db.persist(mov);
+	}
+	
+	
 	/*public void addB(Balorazio b) {
 		User usr = b.getUserJaso();
 		System.out.println("Data Acces-eko addAlert metodora iritsi da");
@@ -940,22 +1035,15 @@ public class DataAccess {
 				dirua = erreklDB.getEskaera().getPrez() * (1.5f);
 			}
 			bidaiariDB.diruSartuBid((dirua*(-1)));
-			Movement mov = new Movement( bidaiariDB,dirua, "-"); //m1
-			addMovement(mov);
-			db.persist(mov);
-			Alerta alert = new Alerta(bidaiariDB, AlertMota.DIRUA_ATERA);
-			addAlert(alert); //a1
-			db.persist(alert);
 			
+			createMov( bidaiariDB,dirua, "-");
+			
+			createAlert(bidaiariDB, AlertMota.DIRUA_ATERA);
 			
 			driverDB.diruSartuDri(dirua);
-			Movement mov2 = new Movement(driverDB, dirua, "+"); //m2
-			addMovement(mov2);
-			db.persist(mov2);
-			Alerta alert2 = new Alerta(driverDB, AlertMota.DIRUA_SARTU);
 			
-			addAlert(alert2); //a2
-			db.persist(alert2);
+			createMov(driverDB, dirua, "+");
+			createAlert(driverDB, AlertMota.DIRUA_SARTU);
 			
 		}else {
 			//Bidaiariari gehitu dirua besteari kendu
@@ -967,28 +1055,22 @@ public class DataAccess {
 			
 			
 			bidaiariDB.diruSartuBid(erreklDB.getEskaera().getPrez());
-			Movement mov = new Movement(bidaiariDB, erreklDB.getEskaera().getPrez(), "+");
-			addMovement(mov); //m3
-			db.persist(mov);
-			Alerta alert = new Alerta(bidaiariDB, AlertMota.DIRUA_SARTU);
 			
-			addAlert(alert);//a1.1
-			db.persist(alert);
+			createMov(bidaiariDB, erreklDB.getEskaera().getPrez(), "+");
+			createAlert(bidaiariDB, AlertMota.DIRUA_SARTU);
+			
+			
 			
 			driverDB.diruSartuDri(erreklDB.getEskaera().getPrez()*(-1));
-			Movement mov2 = new Movement(driverDB,erreklDB.getEskaera().getPrez(), "-");
-			addMovement(mov2);//m4
-			db.persist(mov2);
-			Alerta alert2 = new Alerta(driverDB, AlertMota.DIRUA_ATERA);
 			
-			addAlert(alert2);//a2.1
-			db.persist(alert2);
+			createMov(driverDB,erreklDB.getEskaera().getPrez(), "-");
+			createAlert(driverDB, AlertMota.DIRUA_ATERA);
+			
 		}
 		erreklDB.setMota(ErrekMota.ACCEPTED);
-		Alerta alert3 = new Alerta(erreklDB.getErrekJarri(), AlertMota.ERREKLAMAZIOA_ONARTUTA);
 		
-		addAlert(alert3);
-		db.persist(alert3);
+		createAlert(erreklDB.getErrekJarri(), AlertMota.ERREKLAMAZIOA_ONARTUTA);
+		
 		db.getTransaction().commit();
 	}
 	
@@ -997,10 +1079,10 @@ public class DataAccess {
 		 Erreklamazioa errekDB = db.find(Erreklamazioa.class, selectRk.getId());
 		 addAdminErrek(errekDB);
 		 errekDB.setMota(ErrekMota.ADMIN);
-		 Alerta alert = new Alerta(errekDB.getErrekJarri(), AlertMota.ERREKLAMAZIOA_DEUSESTATUTA);
+		
 		 
-		 addAlert(alert);
-		 db.persist(alert);
+		 createAlert(errekDB.getErrekJarri(), AlertMota.ERREKLAMAZIOA_DEUSESTATUTA);
+		 
 		 db.getTransaction().commit();
 	 }
 	
@@ -1020,13 +1102,12 @@ public class DataAccess {
 		 db.getTransaction().begin();
 		 Erreklamazioa errekDB = db.find(Erreklamazioa.class, selectRk.getId());
 		 errekDB.setMota(ErrekMota.REJECTED);
-		 Alerta alert = new Alerta(errekDB.getErrekJarri(), AlertMota.ADMINAK_ERREKLAMAZIOA_DEUSESTATU);
 		 
-		 addAlert(alert);
-		 db.persist(alert);
+		 createAlert(errekDB.getErrekJarri(), AlertMota.ADMINAK_ERREKLAMAZIOA_DEUSESTATU);
+		 
 		 db.getTransaction().commit();
 	 }
-	 public void AcceptWithChange(Erreklamazioa selectRk, int num) {
+	 /*public void AcceptWithChange(Erreklamazioa selectRk, int num) {
 		 db.getTransaction().begin();
 		 Erreklamazioa erreklDB = db.find(Erreklamazioa.class, selectRk.getId());
 		 
@@ -1074,7 +1155,68 @@ public class DataAccess {
 		 db.persist(alert3);
 		 db.getTransaction().commit();
 		 
-	 }
+	 }*/
+	 
+	 public void AcceptWithChange(Erreklamazioa selectRk, int num) {
+		    db.getTransaction().begin();
+		    Erreklamazioa erreklDB = db.find(Erreklamazioa.class, selectRk.getId());
+
+		    Driver driverDB = getDriver(erreklDB);
+		    Bidaiari bidaiariDB = getBidaiari(erreklDB);
+
+		    float dirua = calculateAmount(erreklDB, num);
+		    processBidaiari(bidaiariDB, dirua);
+		    processDriver(driverDB, dirua);
+		    erreklDB.setMota(ErrekMota.ACCEPTED);
+			
+			
+			createAlert(erreklDB.getErrekJarri(), AlertMota.ADMINAK_ERREKLAMAZIOA_ONARTU);
+			
+		    db.getTransaction().commit();
+		}
+	 
+	 private Driver getDriver(Erreklamazioa erreklDB) {
+		    Driver driver = (Driver) erreklDB.getErrekJarri();
+		    return db.find(Driver.class, driver.getEmail());
+		}
+
+		private Bidaiari getBidaiari(Erreklamazioa erreklDB) {
+		    Bidaiari bidaiari = (Bidaiari) erreklDB.getErrekJaso();
+		    return db.find(Bidaiari.class, bidaiari.getEmail());
+		}
+		
+		private float calculateAmount(Erreklamazioa erreklDB, int num) {
+		    float prez = erreklDB.getEskaera().getPrez();
+		    if (num == 1) {
+		        erreklDB.setLarri(ErrekLarri.TXIKIA);
+		        return prez * 1.1f;
+		    } else if (num == 2) {
+		        erreklDB.setLarri(ErrekLarri.ERTAINA);
+		        return prez * 1.3f;
+		    } else {
+		        erreklDB.setLarri(ErrekLarri.HANDIA);
+		        return prez * 1.5f;
+		    }
+		}
+
+		private void processBidaiari(Bidaiari bidaiari, float dirua) {
+		    bidaiari.diruSartuBid(dirua*(-1));
+		    
+			 createMov(bidaiari,dirua, "-" );
+			
+			 
+			 createAlert(bidaiari, AlertMota.DIRUA_ATERA);
+		}
+
+		private void processDriver(Driver driver, float dirua) {
+		    driver.diruSartuDri(dirua);
+		    
+			 createMov(driver,dirua, "+" );
+			 
+			 createAlert(driver, AlertMota.DIRUA_SARTU);
+		}
+
+	 
 	 
 	 public void addErreklamazio(User userJarri, User userJaso, Eskaera eskSelect, String sartutakoTxt, float prez, ErrekLarri lar ) {
 		 System.out.println("Jarri" + userJarri);
@@ -1101,10 +1243,10 @@ public class DataAccess {
 			 Erreklamazioa errek = errekJarri.getErrekJaso().addErrek(errekJarri);
 			 System.out.println("kjfñks");
 			 System.out.println(errekJarri);
-			 Alerta alert = new Alerta(errek.getErrekJaso(), AlertMota.ERREKLAMATUTA);
+			 
+				createAlert(errek.getErrekJaso(), AlertMota.ERREKLAMATUTA);
 				
-				addAlert(alert);
-				db.persist(alert);
+				
 				db.getTransaction().commit();
 			} catch (NullPointerException e) {
 				// TODO Auto-generated catch block
