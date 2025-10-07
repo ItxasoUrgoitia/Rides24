@@ -1228,8 +1228,12 @@ public class DataAccess {
 	 
 	 
 	 public void addErreklamazio(User userJarri, User userJaso, Eskaera eskSelect, String sartutakoTxt, float prez, ErrekLarri lar ) {
+		 if (userJaso == null) {
+		        throw new IllegalArgumentException("User Jaso ezin da null izan");
+		    }
 		 System.out.println("Jarri" + userJarri);
 		 System.out.println("Jaso" + userJaso);
+		 
 		 try {
 				db.getTransaction().begin();
 				User userJarriDB = db.find(User.class, userJarri.getEmail());
