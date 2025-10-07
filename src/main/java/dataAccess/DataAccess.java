@@ -1015,7 +1015,9 @@ public class DataAccess {
 	
 	public void acceptErrek(Erreklamazioa selectRk) {
 		db.getTransaction().begin();
-		Erreklamazioa erreklDB = db.find(Erreklamazioa.class, selectRk.getId());
+		try {
+			Erreklamazioa erreklDB = db.find(Erreklamazioa.class, selectRk.getId());
+		
 		if(erreklDB.getErrekJaso() instanceof Bidaiari) {
 			//Txikia --> *1,1
 			//Ertaina --> *1,3
@@ -1074,6 +1076,11 @@ public class DataAccess {
 		createAlert(erreklDB.getErrekJarri(), AlertMota.ERREKLAMAZIOA_ONARTUTA);
 		
 		db.getTransaction().commit();
+		
+		}catch(NullPointerException e ) {
+			db.getTransaction().rollback(); 
+			throw e;
+		}
 	}
 	
 	 public void rejectErrekUser(Erreklamazioa selectRk) {
