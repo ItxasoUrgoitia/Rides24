@@ -54,7 +54,7 @@ public class AddErreklamazioMockBlackTest {
         Mockito.when(em.find(User.class, "bidaiari@ex.com")).thenReturn(userJarri);
         Mockito.when(em.find(User.class, "userjaso@ex.com")).thenReturn(userJaso);
         Mockito.when(em.find(Eskaera.class, esk.getEskaeraNumber())).thenReturn(esk);
-        assertThrows(NullPointerException.class, () -> sut.addErreklamazio(userJarri, userJaso, esk, null, 100f, ErrekLarri.TXIKIA));
+        assertThrows(IllegalArgumentException.class, () -> sut.addErreklamazio(userJarri, userJaso, esk, null, 100f, ErrekLarri.TXIKIA));
     }
 
     @Test
@@ -65,6 +65,6 @@ public class AddErreklamazioMockBlackTest {
         Mockito.when(em.find(User.class, "bidaiari@ex.com")).thenReturn(userJarri);
         Mockito.when(em.find(User.class, "userjaso@ex.com")).thenReturn(userJaso);
         Mockito.when(em.find(Eskaera.class, esk.getEskaeraNumber())).thenReturn(esk);
-        assertThrows(NullPointerException.class, () -> sut.addErreklamazio(userJarri, userJaso, esk, "", 100f, ErrekLarri.TXIKIA));
+        assertThrows(IllegalArgumentException.class, () -> sut.addErreklamazio(userJarri, userJaso, esk, "", 100f, ErrekLarri.TXIKIA));
     }
 }

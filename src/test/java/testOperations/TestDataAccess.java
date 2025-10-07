@@ -24,7 +24,7 @@ import domain.User;
 import exceptions.RequestAlreadyExistException;
 
 public class TestDataAccess {
-	protected EntityManager db;
+	public EntityManager db;
 	protected EntityManagerFactory emf;
 	ConfigXML c = ConfigXML.getInstance();
 

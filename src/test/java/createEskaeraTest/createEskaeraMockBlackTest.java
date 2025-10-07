@@ -82,15 +82,19 @@ public class createEskaeraMockBlackTest {
 	@Test
 	public void testCreateEskaeraExistitzenDa() {
 		try {
-			Driver driver = new Driver("driver2@gmail.com", "Driver Test");
-			Bidaiari bidaiari = new Bidaiari("Bidaiari Test", "1234", "bidaiari2@gmail.com", "12345678B");
-			Ride ride = new Ride("Hasiera", "Helmuga", java.sql.Date.valueOf("2025-10-10"), 5, 10.0f, driver);
-			ArrayList<Eskaera> eskaerak = new ArrayList<>();
-			Eskaera existEskaera = new Eskaera(Eskaera.EskaeraEgoera.PENDING, 2, ride, bidaiari);
-			eskaerak.add(existEskaera);
-			when(db.find(Bidaiari.class, bidaiari.getEmail())).thenReturn(bidaiari);
-			when(db.find(Ride.class, ride.getRideNumber())).thenReturn(ride);
-			when(bidaiari.getEskaerak()).thenReturn(eskaerak);
+			// Objekto benetakoak
+            Driver driver = new Driver("driver2@gmail.com", "Driver Test");
+            Bidaiari bidaiari = new Bidaiari("Bidaiari Test", "1234", "bidaiari2@gmail.com", "12345678B");
+            Ride ride = new Ride("Hasiera", "Helmuga", java.sql.Date.valueOf("2025-10-10"), 5, 10.0f, driver);
+
+            // Eskaera existitzen da
+            Eskaera existEskaera = new Eskaera(Eskaera.EskaeraEgoera.PENDING, 2, ride, bidaiari);
+            bidaiari.getEskaerak().add(existEskaera);
+            ride.getEskaerenList().add(existEskaera);
+
+            // Mock bakarrik EntityManager-rentzat
+            when(db.find(Bidaiari.class, bidaiari.getEmail())).thenReturn(bidaiari);
+            when(db.find(Ride.class, ride.getRideNumber())).thenReturn(ride);
 
 			sut.createEskaera(bidaiari, ride, 3);
 			fail("RequestAlreadyExistException jaurti behar zuen");

@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import dataAccess.DataAccess;
@@ -19,9 +21,29 @@ import java.sql.Date;
 import java.util.List;
 
 public class createEskaeraBDWhiteTest {
-	static DataAccess sut = new DataAccess();
+	static DataAccess sut; // = new DataAccess();
 	static TestDataAccess testDA = new TestDataAccess();
 
+	@Before
+    public void setUp() {
+        // **Konexioa ireki test bakoitzaren hasieran**
+        testDA.open();
+        // **sut-eri testDA-ren konexioa eman**
+        sut = new DataAccess(testDA.db);
+        
+        // **Datu-basea garbitu**
+        testDA.removeAlertak();
+        testDA.removeEskaerak();
+        testDA.removeRides();
+        testDA.removeUsers();
+    }
+
+    @After
+    public void tearDown() {
+        // **Konexioa itxi test bakoitzaren bukaeran**
+        testDA.close();
+    }
+	    
 	@Test
 	public void testCreateEskaeraWhiteBox() {
 		try {

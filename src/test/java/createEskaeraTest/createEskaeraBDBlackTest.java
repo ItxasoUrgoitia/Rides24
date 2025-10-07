@@ -38,7 +38,7 @@ public class createEskaeraBDBlackTest {
 		em.createQuery("DELETE FROM Driver").executeUpdate();
 		em.getTransaction().commit();
 	}
-
+	
 	@After
 	public void tearDown() {
 		if (em.getTransaction().isActive())
