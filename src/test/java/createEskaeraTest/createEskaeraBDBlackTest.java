@@ -51,7 +51,7 @@ public class createEskaeraBDBlackTest {
 	public void testCreateEskaeraBlackBox() {
 		try {
 			em.getTransaction().begin();
-			Driver driver = new Driver("driver1@gmail.com", "Driver Test");
+			Driver driver = new Driver("Driver Test", "pasahitza1", "driver1@gmail.com", "12345678A");
 			Bidaiari bidaiari = new Bidaiari("Bidaiari Test", "1234", "bidaiari1@gmail.com", "12345678A");
 			Ride ride = new Ride("Hasiera", "Helmuga", Date.valueOf("2025-10-10"), 5, 10.0f, driver);
 			em.persist(driver);

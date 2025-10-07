@@ -1229,8 +1229,25 @@ public class DataAccess {
 	 
 	 public void addErreklamazio(User userJarri, User userJaso, Eskaera eskSelect, String sartutakoTxt, float prez, ErrekLarri lar ) {
 		 if (userJaso == null) {
-		        throw new IllegalArgumentException("User Jaso ezin da null izan");
+		        throw new NullPointerException("User Jaso ezin da null izan");
 		    }
+		 
+		 if (userJarri == null) {
+		        throw new NullPointerException("User Jarri ezin da null izan");
+		        }
+		 if (eskSelect == null) {
+			 	throw new NullPointerException("Eskaera ezin da null izan");
+		 	
+		 }
+		 if (sartutakoTxt == null || sartutakoTxt.trim().isEmpty()) {
+		        throw new IllegalArgumentException("Sartutako testua ezin da hutsik egon");
+		    }
+		 if (lar == null) {
+		        throw new NullPointerException("ErrekLarri ezin da null izan");
+		    }
+		 if(prez < 0) {
+			 throw new IllegalArgumentException("Prezioa ezin da negatiboa izan");
+		 }
 		 System.out.println("Jarri" + userJarri);
 		 System.out.println("Jaso" + userJaso);
 		 
@@ -1264,6 +1281,7 @@ public class DataAccess {
 			} catch (NullPointerException e) {
 				// TODO Auto-generated catch block
 				db.getTransaction().rollback();
+				throw e;
 			}
 	 }
 	 
