@@ -116,7 +116,7 @@ public class AddErreklamazioBDBlackTest {
         User userJaso = em.find(User.class, "userjaso@ex.com");
         Eskaera esk = em.find(Eskaera.class, eskaeraId);
 
-        assertThrows(IllegalArgumentException.class, 
+        assertThrows(NullPointerException.class, 
             () -> sut.addErreklamazio(userJarri, userJaso, esk, null, 100f, ErrekLarri.TXIKIA));
     }
 
@@ -127,7 +127,7 @@ public class AddErreklamazioBDBlackTest {
         User userJaso = em.find(User.class, "userjaso@ex.com");
         Eskaera esk = em.find(Eskaera.class, eskaeraId);
 
-        assertThrows(IllegalArgumentException.class, 
+        assertThrows(NullPointerException.class, 
             () -> sut.addErreklamazio(userJarri, userJaso, esk, "", 100f, ErrekLarri.TXIKIA));
     }
 
