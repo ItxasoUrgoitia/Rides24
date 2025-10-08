@@ -1235,6 +1235,11 @@ try {
 		    System.out.println("eskSelect: " + eskSelect);
 		    System.out.println("db: " + db);
 
+		    if(sartutakoTxt==null || sartutakoTxt.trim().isEmpty()) {
+		    	System.out.println(">>> sartutakoTxt es NULL <<<");
+		        throw new NullPointerException("Deskribapena ezin da null izan");
+		    }
+		    
 		    if (userJaso == null) {
 		        System.out.println(">>> userJaso es NULL <<<");
 		        throw new NullPointerException("User Jaso ezin da null izan");
@@ -1249,10 +1254,7 @@ try {
 		        throw new NullPointerException("Eskaera ezin da null izan");
 		    }
 		    
-		    if(sartutakoTxt==null || sartutakoTxt.trim().isEmpty()) {
-		    	System.out.println(">>> sartutakoTxt es NULL <<<");
-		        throw new IllegalArgumentException("Deskribapena ezin da null izan");
-		    }
+		    
 
 		    System.out.println(">>> userJarri y userJaso no son null <<<");
 		    System.out.println(">>> eskSelect: " + eskSelect + ", lar: " + lar + " <<<");
