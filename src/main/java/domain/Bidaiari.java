@@ -51,4 +51,10 @@ public class Bidaiari extends User implements Serializable{
 	public ArrayList<Eskaera> getEskaerak() {
         return eskaerak;
     }
+
+	public void setEskaerak(ArrayList<Eskaera> eskaerak) {
+		this.eskaerak = eskaerak;
+	}
+	
+	
 }

@@ -192,6 +192,12 @@ public TestDataAccess()  {
 		return eskaera;
 	}
 
+	public Erreklamazioa existErreklamazio(int id) {
+        
+        return  db.find(Erreklamazioa.class, id);
+        
+}
+
 	public void ezabatuEskaerak() {
 		db.getTransaction().begin();
 		db.createQuery("DELETE FROM Eskaera").executeUpdate();

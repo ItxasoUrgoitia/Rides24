@@ -61,8 +61,11 @@ public class createEskaeraMockBlackTest {
 			Driver driver = new Driver("driver1@gmail.com", "Driver Test");
 			Bidaiari bidaiari = new Bidaiari("Bidaiari Test", "1234", "bidaiari1@gmail.com", "12345678A");
 			Ride ride = new Ride("Hasiera", "Helmuga", java.sql.Date.valueOf("2025-10-10"), 5, 10.0f, driver);
+			bidaiari.setEskaerak(new ArrayList<>());
+			
 			when(db.find(Bidaiari.class, bidaiari.getEmail())).thenReturn(bidaiari);
 			when(db.find(Ride.class, ride.getRideNumber())).thenReturn(ride);
+			
 			when(bidaiari.getEskaerak()).thenReturn(new ArrayList<>());
 			when(ride.getEskaerenList()).thenReturn(new ArrayList<>());
 

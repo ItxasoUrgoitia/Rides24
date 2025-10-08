@@ -1,77 +1,120 @@
 package addErrekTest;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.when;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.mockito.junit.MockitoJUnitRunner;
 
 import dataAccess.DataAccess;
-import domain.*;
+import domain.Bidaiari;
+import domain.Driver;
+import domain.Erreklamazioa;
 import domain.Erreklamazioa.ErrekLarri;
-import testOperations.TestDataAccess;
+import domain.Erreklamazioa.ErrekMota;
+import domain.Eskaera;
+import domain.Movement;
 
-import static org.mockito.Mockito.*;
-import static org.junit.Assert.fail;
-
-@RunWith(MockitoJUnitRunner.class)
 public class AddErreklamazioMockWhiteTest {
 
-    @Mock
-    private TestDataAccess tdaMock; // DB mock
+    static DataAccess sut;
 
     @Mock
-    private Eskaera eskaeraMock;    // Eskaera mock
-
+    protected EntityManagerFactory entityManagerFactory;
     @Mock
-    private Bidaiari bidaiariMock;  // Bidaiari mock
+    protected EntityManager db;
     @Mock
-    private Driver gidariaMock;     // Driver mock
-    @Mock
-    private Bidaiari userJasoMock;  // Bidaiari jasotzailea mock
+    protected EntityTransaction et;
 
-    @InjectMocks
-    private DataAccess sut;         // System under test, inyectado con mocks
-
-    private Integer eskaeraId;
+    protected MockedStatic<Persistence> persistenceMock;
 
     @Before
-    public void setUp() {
+    public void init() {
         MockitoAnnotations.openMocks(this);
+        persistenceMock = Mockito.mockStatic(Persistence.class);
+        persistenceMock.when(() -> Persistence.createEntityManagerFactory(Mockito.any()))
+                .thenReturn(entityManagerFactory);
 
-        // Comportamiento de los mocks
-        when(tdaMock.createDriver("driver@ex.com", "Gidaria")).thenReturn(gidariaMock);
-        when(tdaMock.createBidaiari("Bidaiari", "20", "bidaiari@ex.com", "100f")).thenReturn(bidaiariMock);
-        when(tdaMock.createBidaiari("Erabiltzaile", "25", "userjaso@ex.com", "150f")).thenReturn(userJasoMock);
-        when(tdaMock.createEskaera(any(), anyInt(), any(), any())).thenReturn(eskaeraMock);
-        when(eskaeraMock.getEskaeraNumber()).thenReturn(1);
+        Mockito.doReturn(db).when(entityManagerFactory).createEntityManager();
+        Mockito.doReturn(et).when(db).getTransaction();
 
-        eskaeraId = eskaeraMock.getEskaeraNumber();
+        sut = new DataAccess(db);
+    }
+
+    @After
+    public void tearDown() {
+        persistenceMock.close();
     }
 
     @Test
-    public void testAddErreklamazioBaliozkoBidaiari() {
-        try {
-            sut.addErreklamazio(bidaiariMock, userJasoMock, eskaeraMock, "Testu baliozkoa", 100f, ErrekLarri.TXIKIA);
-        } catch (Exception e) {
-            fail("Ez luke salbuespenik sortu behar kasu baliozkoan");
-        }
+    public void testAddErreklValidoBidaiari() {
+        Driver driver = new Driver("driver@ex.com", "Driver");
+        Bidaiari bidaiari = new Bidaiari("Bidaiari", "1234", "bidaiari@ex.com", "111");
+        Bidaiari userJaso = new Bidaiari("User", "1234", "userjaso@ex.com", "222");
 
-        // Verificar que se llamó al método addAlert o equivalente
-        verify(bidaiariMock, atLeastOnce()).addAlert(any());
+        Eskaera eskaera = new Eskaera();
+        eskaera.setNPlaces(1);
+        eskaera.setBidaiari(bidaiari);
+
+        Erreklamazioa errekl = new Erreklamazioa();
+        errekl.setId(1);
+        errekl.setEskaera(eskaera);
+        errekl.setErrekJarri(bidaiari);
+        errekl.setErrekJaso(userJaso);
+        errekl.setLarri(ErrekLarri.TXIKIA);
+
+        when(db.find(Erreklamazioa.class, 1)).thenReturn(errekl);
+        when(db.find(Driver.class, driver.getEmail())).thenReturn(driver);
+        when(db.find(Bidaiari.class, bidaiari.getEmail())).thenReturn(bidaiari);
+        when(db.find(Bidaiari.class, userJaso.getEmail())).thenReturn(userJaso);
+
+        sut.addErreklamazio(bidaiari, userJaso, eskaera, "Test txosten", 50f, ErrekLarri.TXIKIA);
+        
+        assertEquals(errekl.getLarri(), ErrekLarri.TXIKIA);
+        assertTrue(errekl.getErrekJarri().equals(bidaiari));
+        assertTrue(errekl.getErrekJaso().equals(userJaso));
     }
 
     @Test
-    public void testAddErreklamazioBaliozkoGidaria() {
-        try {
-            sut.addErreklamazio(gidariaMock, userJasoMock, eskaeraMock, "Testu baliozkoa", 100f, ErrekLarri.ERTAINA);
-        } catch (Exception e) {
-            fail("Ez luke salbuespenik sortu behar kasu baliozkoan");
-        }
+    public void testAddErreklDriverBaliozkoa() {
+        Driver driver = new Driver("driver@ex.com", "Driver");
+        Bidaiari bidaiari = new Bidaiari("Bidaiari", "1234", "bidaiari@ex.com", "111");
+        Bidaiari userJaso = new Bidaiari("User", "1234", "userjaso@ex.com", "222");
 
-        // Verificar que se llamó al método addAlert o equivalente
-        verify(gidariaMock, atLeastOnce()).addAlert(any());
+        Eskaera eskaera = new Eskaera();
+        eskaera.setNPlaces(1);
+        eskaera.setBidaiari(bidaiari);
+
+
+        Erreklamazioa errekl = new Erreklamazioa();
+        errekl.setId(2);
+        errekl.setEskaera(eskaera);
+        errekl.setErrekJarri(driver);
+        errekl.setErrekJaso(userJaso);
+        errekl.setLarri(ErrekLarri.ERTAINA);
+
+        when(db.find(Erreklamazioa.class, 2)).thenReturn(errekl);
+        when(db.find(Driver.class, driver.getEmail())).thenReturn(driver);
+        when(db.find(Bidaiari.class, bidaiari.getEmail())).thenReturn(bidaiari);
+        when(db.find(Bidaiari.class, userJaso.getEmail())).thenReturn(userJaso);
+
+        sut.addErreklamazio(driver, userJaso, eskaera, "Test txosten", 100f, ErrekLarri.ERTAINA);
+
+        assertEquals(errekl.getLarri(), ErrekLarri.ERTAINA);
+        assertTrue(errekl.getErrekJarri().equals(driver));
+        assertTrue(errekl.getErrekJaso().equals(userJaso));
     }
 }

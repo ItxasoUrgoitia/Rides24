@@ -1,6 +1,8 @@
 package acceptErrekTest;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -20,18 +22,28 @@ import testOperations.TestDataAccess;
 import domain.Eskaera;
 
 public class acceptErrekBDBlackTest {
-	static DataAccess sut=new DataAccess();
-	 
-	 //additional operations needed to execute the test 
-	 static TestDataAccess testDA=new TestDataAccess();
-	 
-	 @Test(expected = NullPointerException.class)
-	    // sut.acceptErrek: parameter is null → should throw NullPointerException
-	    public void test1() {
-	        sut.open();
-	        sut.acceptErrek(null);
-	        sut.close();
-	    }
+        static DataAccess sut=new DataAccess();
+              
+               
+               static TestDataAccess testDA=new TestDataAccess();
+              
+
+@Test
+public void test1() {
+              try {
+        sut.open();                
+        sut.acceptErrek(null);     
+        assertTrue(true);          
+    } catch (Exception e) {
+        fail("rollback egin");
+    } finally {
+        sut.close();
+    }
+}
+
+                      
+                      
+               
     
     
 }

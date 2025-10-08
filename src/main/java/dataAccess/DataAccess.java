@@ -1014,74 +1014,74 @@ public class DataAccess {
 	}
 	
 	public void acceptErrek(Erreklamazioa selectRk) {
-		db.getTransaction().begin();
-		try {
-			Erreklamazioa erreklDB = db.find(Erreklamazioa.class, selectRk.getId());
-		
-		if(erreklDB.getErrekJaso() instanceof Bidaiari) {
-			//Txikia --> *1,1
-			//Ertaina --> *1,3
-			//Handia --> *1,5
-			//Bidaiaria kendu diruA gidariari gehitu
-			Driver driver = (Driver) erreklDB.getErrekJarri();
-			Driver driverDB = db.find(Driver.class, driver.getEmail());
-			
-			Bidaiari bidaiari = (Bidaiari) erreklDB.getErrekJaso();
-			Bidaiari bidaiariDB = db.find(Bidaiari.class, bidaiari.getEmail());
-			
-			
-			float dirua;
-	/*2*/	if(erreklDB.getLarri().equals(ErrekLarri.TXIKIA)) {
-				dirua = erreklDB.getEskaera().getPrez() * (1.1f);
-			}else if(erreklDB.getLarri().equals(ErrekLarri.ERTAINA)) {
-				dirua = erreklDB.getEskaera().getPrez() * (1.3f);
-			}else {
-				dirua = erreklDB.getEskaera().getPrez() * (1.5f);
-			}
-			bidaiariDB.diruSartuBid((dirua*(-1)));
-			
-			createMov( bidaiariDB,dirua, "-");
-			
-			createAlert(bidaiariDB, AlertMota.DIRUA_ATERA);
-			
-			driverDB.diruSartuDri(dirua);
-			
-			createMov(driverDB, dirua, "+");
-			createAlert(driverDB, AlertMota.DIRUA_SARTU);
-			
-		}else {
-			//Bidaiariari gehitu dirua besteari kendu
-			Driver driver = (Driver) erreklDB.getErrekJaso();
-			Driver driverDB = db.find(Driver.class, driver.getEmail());
-			
-			Bidaiari bidaiari = (Bidaiari) erreklDB.getErrekJarri();
-			Bidaiari bidaiariDB = db.find(Bidaiari.class, bidaiari.getEmail());
-			
-			
-			bidaiariDB.diruSartuBid(erreklDB.getEskaera().getPrez());
-			
-			createMov(bidaiariDB, erreklDB.getEskaera().getPrez(), "+");
-			createAlert(bidaiariDB, AlertMota.DIRUA_SARTU);
-			
-			
-			
-			driverDB.diruSartuDri(erreklDB.getEskaera().getPrez()*(-1));
-			
-			createMov(driverDB,erreklDB.getEskaera().getPrez(), "-");
-			createAlert(driverDB, AlertMota.DIRUA_ATERA);
-			
-		}
-		erreklDB.setMota(ErrekMota.ACCEPTED);
-		
-		createAlert(erreklDB.getErrekJarri(), AlertMota.ERREKLAMAZIOA_ONARTUTA);
-		
-		db.getTransaction().commit();
-		
-		}catch(NullPointerException e ) {
-			db.getTransaction().rollback(); 
-			throw e;
-		}
-	}
+        db.getTransaction().begin();
+try {
+                      Erreklamazioa erreklDB = db.find(Erreklamazioa.class, selectRk.getId());
+        
+        if(erreklDB.getErrekJaso() instanceof Bidaiari) {
+                      //Txikia --> *1,1
+                      //Ertaina --> *1,3
+                      //Handia --> *1,5
+                      //Bidaiaria kendu diruA gidariari gehitu
+                      Driver driver = (Driver) erreklDB.getErrekJarri();
+                      Driver driverDB = db.find(Driver.class, driver.getEmail());
+                      
+                      Bidaiari bidaiari = (Bidaiari) erreklDB.getErrekJaso();
+                      Bidaiari bidaiariDB = db.find(Bidaiari.class, bidaiari.getEmail());
+                      
+                      
+                      float dirua;
+/*2*/    if(erreklDB.getLarri().equals(ErrekLarri.TXIKIA)) {
+                                     dirua = erreklDB.getEskaera().getPrez() * (1.1f);
+                      }else if(erreklDB.getLarri().equals(ErrekLarri.ERTAINA)) {
+                                     dirua = erreklDB.getEskaera().getPrez() * (1.3f);
+                      }else {
+                                     dirua = erreklDB.getEskaera().getPrez() * (1.5f);
+                      }
+                      bidaiariDB.diruSartuBid((dirua*(-1)));
+                      
+                      createMov( bidaiariDB,dirua, "-");
+                      
+                      createAlert(bidaiariDB, AlertMota.DIRUA_ATERA);
+                      
+                      driverDB.diruSartuDri(dirua);
+                      
+                      createMov(driverDB, dirua, "+");
+                      createAlert(driverDB, AlertMota.DIRUA_SARTU);
+                      
+        }else {
+                      //Bidaiariari gehitu dirua besteari kendu
+                      Driver driver = (Driver) erreklDB.getErrekJaso();
+                      Driver driverDB = db.find(Driver.class, driver.getEmail());
+                      
+                      Bidaiari bidaiari = (Bidaiari) erreklDB.getErrekJarri();
+                      Bidaiari bidaiariDB = db.find(Bidaiari.class, bidaiari.getEmail());
+                      
+                      
+                      bidaiariDB.diruSartuBid(erreklDB.getEskaera().getPrez());
+                      
+                      createMov(bidaiariDB, erreklDB.getEskaera().getPrez(), "+");
+                      createAlert(bidaiariDB, AlertMota.DIRUA_SARTU);
+                      
+                      
+                      
+                      driverDB.diruSartuDri(erreklDB.getEskaera().getPrez()*(-1));
+                      
+                      createMov(driverDB,erreklDB.getEskaera().getPrez(), "-");
+                      createAlert(driverDB, AlertMota.DIRUA_ATERA);
+                      
+        }
+        erreklDB.setMota(ErrekMota.ACCEPTED);
+        
+        createAlert(erreklDB.getErrekJarri(), AlertMota.ERREKLAMAZIOA_ONARTUTA);
+        
+        db.getTransaction().commit();
+        
+        }catch(NullPointerException e ) {
+                      db.getTransaction().rollback(); 
+        }
+}
+
 	
 	 public void rejectErrekUser(Erreklamazioa selectRk) {
 		 db.getTransaction().begin();
@@ -1227,63 +1227,66 @@ public class DataAccess {
 
 	 
 	 
-	 public void addErreklamazio(User userJarri, User userJaso, Eskaera eskSelect, String sartutakoTxt, float prez, ErrekLarri lar ) {
-		 if (userJaso == null) {
+		public void addErreklamazio(User userJarri, User userJaso, Eskaera eskSelect, String sartutakoTxt, float prez, ErrekLarri lar) {
+		    System.out.println(">>> ENTRA en addErreklamazio <<<");
+		    System.out.println(">>> Entrando a addErreklamazio <<<");
+		    System.out.println("userJarri: " + userJarri);
+		    System.out.println("userJaso: " + userJaso);
+		    System.out.println("eskSelect: " + eskSelect);
+		    System.out.println("db: " + db);
+
+		    if (userJaso == null) {
+		        System.out.println(">>> userJaso es NULL <<<");
 		        throw new NullPointerException("User Jaso ezin da null izan");
 		    }
-		 
-		 if (userJarri == null) {
+
+		    if (userJarri == null) {
+		        System.out.println(">>> userJarri es NULL <<<");
 		        throw new NullPointerException("User Jarri ezin da null izan");
+		    }
+		    if (eskSelect == null) {
+		        System.out.println(">>> eskSelect es NULL <<<");
+		        throw new NullPointerException("Eskaera ezin da null izan");
+		    }
+		    
+		    if(sartutakoTxt==null || sartutakoTxt.trim().isEmpty()) {
+		    	System.out.println(">>> sartutakoTxt es NULL <<<");
+		        throw new IllegalArgumentException("Deskribapena ezin da null izan");
+		    }
+
+		    System.out.println(">>> userJarri y userJaso no son null <<<");
+		    System.out.println(">>> eskSelect: " + eskSelect + ", lar: " + lar + " <<<");
+
+		    try {
+		        db.getTransaction().begin();
+		        System.out.println(">>> Transacción iniciada <<<");
+
+		        User userJarriDB = db.find(User.class, userJarri.getEmail());
+		        User userJasoDB = db.find(User.class, userJaso.getEmail());
+		        System.out.println(">>> find hechos: jarriDB=" + userJarriDB + ", jasoDB=" + userJasoDB);
+
+		        Erreklamazioa errekJarri;
+		        if (userJarriDB instanceof Bidaiari) {
+		            System.out.println(">>> userJarriDB es Bidaiari <<<");
+		            errekJarri = new Erreklamazioa(userJarriDB, userJasoDB, eskSelect, sartutakoTxt, eskSelect.getPrez());
+		        } else {
+		            System.out.println(">>> userJarriDB es Driver <<<");
+		            errekJarri = new Erreklamazioa(userJarriDB, userJasoDB, eskSelect, sartutakoTxt, eskSelect.getPrez(), lar);
 		        }
-		 if (eskSelect == null) {
-			 	throw new NullPointerException("Eskaera ezin da null izan");
-		 	
-		 }
-		 if (sartutakoTxt == null || sartutakoTxt.trim().isEmpty()) {
-		        throw new IllegalArgumentException("Sartutako testua ezin da hutsik egon");
+
+		        db.persist(errekJarri);
+		        System.out.println(">>> persist llamado correctamente <<<");
+
+		        db.getTransaction().commit();
+		        System.out.println(">>> commit hecho <<<");
+
+		    } catch (Exception e) {
+		        System.out.println(">>> EXCEPCIÓN dentro de addErreklamazio: " + e);
+		        db.getTransaction().rollback();
+		        throw e;
 		    }
-		 if (lar == null) {
-		        throw new NullPointerException("ErrekLarri ezin da null izan");
-		    }
-		 if(prez < 0) {
-			 throw new IllegalArgumentException("Prezioa ezin da negatiboa izan");
-		 }
-		 System.out.println("Jarri" + userJarri);
-		 System.out.println("Jaso" + userJaso);
-		 
-		 try {
-				db.getTransaction().begin();
-				User userJarriDB = db.find(User.class, userJarri.getEmail());
-				User userJasoDB = db.find(User.class, userJaso.getEmail());
-				Erreklamazioa errekJarri;
-			 if (userJarriDB instanceof Bidaiari) {
-				  errekJarri = new Erreklamazioa(userJarriDB, userJasoDB, eskSelect, sartutakoTxt, eskSelect.getPrez());
-			 }else {
-				 if(lar.equals(ErrekLarri.TXIKIA)) {
-					  errekJarri = new Erreklamazioa(userJarriDB, userJasoDB, eskSelect, sartutakoTxt, eskSelect.getPrez(), ErrekLarri.TXIKIA);
-				}else if(lar.equals(ErrekLarri.ERTAINA)) {
-					 errekJarri = new Erreklamazioa(userJarriDB, userJasoDB, eskSelect, sartutakoTxt, eskSelect.getPrez(), ErrekLarri.ERTAINA);
-				}else {
-					 errekJarri = new Erreklamazioa(userJarriDB, userJasoDB, eskSelect, sartutakoTxt, eskSelect.getPrez(), ErrekLarri.HANDIA);
-				}
-			 }
-			 System.out.println(errekJarri);
-			 db.persist(errekJarri);
-			 System.out.println(errekJarri);
-			 Erreklamazioa errek = errekJarri.getErrekJaso().addErrek(errekJarri);
-			 System.out.println("kjfñks");
-			 System.out.println(errekJarri);
-			 
-				createAlert(errek.getErrekJaso(), AlertMota.ERREKLAMATUTA);
-				
-				
-				db.getTransaction().commit();
-			} catch (NullPointerException e) {
-				// TODO Auto-generated catch block
-				db.getTransaction().rollback();
-				throw e;
-			}
-	 }
+		}
+
 	 
 	 public Driver getDriverOfRide(Ride ride) {
 		 db.getTransaction().begin();

@@ -30,157 +30,170 @@ import domain.Eskaera;
 import domain.Movement;
 
 public class acceptErrekMockWhiteTest {
-static DataAccess sut;
-	
-	protected MockedStatic <Persistence> persistenceMock;
+static DataAccess sut; 
+              
+              protected MockedStatic <Persistence> persistenceMock;
 
-	@Mock
-	protected  EntityManagerFactory entityManagerFactory;
-	@Mock
-	protected  EntityManager db;
-	@Mock
+              @Mock
+              protected  EntityManagerFactory entityManagerFactory;
+              @Mock
+              protected  EntityManager db;
+              @Mock
     protected  EntityTransaction  et;
-	@Mock
+              @Mock
     protected BLFacade facade;
 
-	@Before
+              @Before
     public  void init() {
         MockitoAnnotations.openMocks(this);
         persistenceMock = Mockito.mockStatic(Persistence.class);
-		persistenceMock.when(() -> Persistence.createEntityManagerFactory(Mockito.any()))
+                            persistenceMock.when(() -> Persistence.createEntityManagerFactory(Mockito.any()))
         .thenReturn(entityManagerFactory);
         
         Mockito.doReturn(db).when(entityManagerFactory).createEntityManager();
-		Mockito.doReturn(et).when(db).getTransaction();
-	    sut=new DataAccess(db);
+                            Mockito.doReturn(et).when(db).getTransaction();
+                  sut=new DataAccess(db);
 
 
-		
+                            
     }
-	@After
+              @After
     public  void tearDown() {
-		persistenceMock.close();
+                            persistenceMock.close();
 
 
-		
+                            
     }
-	
-	@Test
-	public void test1() {
-	
-	    Driver driver = new Driver("driver1@gmail.com", "Driver Test");
-	    Bidaiari bidaiari = new Bidaiari("Bidaiari Test", "1234", "bidaiari1@gmail.com", "12345678A");
+              //
+              @Test
+              public void test1() {
+              
+                  Driver driver = new Driver("driver1@gmail.com", "Driver Test");
+                  Bidaiari bidaiari = new Bidaiari("Bidaiari Test", "1234", "bidaiari1@gmail.com", "12345678A");
 
-	    Eskaera eskaera = new Eskaera();
-	    eskaera.setPrez(100f);
+                  Eskaera eskaera = new Eskaera();
+                  eskaera.setPrez(100f);
 
-	    Erreklamazioa errekl = new Erreklamazioa();
-	    errekl.setId(1);
-	    errekl.setErrekJarri(driver);
-	    errekl.setErrekJaso(bidaiari);
-	    errekl.setEskaera(eskaera);
-	    errekl.setLarri(ErrekLarri.TXIKIA);
+                  Erreklamazioa errekl = new Erreklamazioa();
+                  errekl.setId(1);
+                  errekl.setErrekJarri(driver);
+                  errekl.setErrekJaso(bidaiari);
+                  errekl.setEskaera(eskaera);
+                  errekl.setLarri(ErrekLarri.TXIKIA);
 
-	    when(db.find(Erreklamazioa.class, 1)).thenReturn(errekl);
-	    when(db.find(Driver.class, driver.getEmail())).thenReturn(driver);
-	    when(db.find(Bidaiari.class, bidaiari.getEmail())).thenReturn(bidaiari);
+                  when(db.find(Erreklamazioa.class, 1)).thenReturn(errekl);
+                  when(db.find(Driver.class, driver.getEmail())).thenReturn(driver);
+                  when(db.find(Bidaiari.class, bidaiari.getEmail())).thenReturn(bidaiari);
 
-	    
-	    sut.acceptErrek(errekl);
+                  
+                  sut.acceptErrek(errekl);
 
-	   
-	    assertEquals(ErrekMota.ACCEPTED, errekl.getMota());
-	    assertTrue(facade.getUserMugimenduak(bidaiari).stream().anyMatch(m -> m.getMota().equals("-")));
-	    assertTrue(facade.getUserMugimenduak(driver).stream().anyMatch(m -> m.getMota().equals("+")));
-	}
-	
-	@Test
-	public void test2() {
-	
-	    Driver driver = new Driver("driver1@gmail.com", "Driver Test");
-	    Bidaiari bidaiari = new Bidaiari("Bidaiari Test", "1234", "bidaiari1@gmail.com", "12345678A");
+                 
+                  assertEquals(ErrekMota.ACCEPTED, errekl.getMota());
+                  
+                  when(facade.getUserMugimenduak(bidaiari)).thenReturn(List.of(new Movement(bidaiari, 100f, "-")));
+        when(facade.getUserMugimenduak(driver)).thenReturn(List.of(new Movement(driver, 100f, "+")));
+                  
+                  assertTrue(facade.getUserMugimenduak(bidaiari).stream().anyMatch(m -> m.getMota().equals("-")));
+                  assertTrue(facade.getUserMugimenduak(driver).stream().anyMatch(m -> m.getMota().equals("+")));
+              }
+              
+              @Test
+              public void test2() {
+              
+                  Driver driver = new Driver("driver1@gmail.com", "Driver Test");
+                  Bidaiari bidaiari = new Bidaiari("Bidaiari Test", "1234", "bidaiari1@gmail.com", "12345678A");
 
-	    Eskaera eskaera = new Eskaera();
-	    eskaera.setPrez(100f);
+                  Eskaera eskaera = new Eskaera();
+                  eskaera.setPrez(100f);
 
-	    Erreklamazioa errekl = new Erreklamazioa();
-	    errekl.setId(2);
-	    errekl.setErrekJarri(driver);
-	    errekl.setErrekJaso(bidaiari);
-	    errekl.setEskaera(eskaera);
-	    errekl.setLarri(ErrekLarri.ERTAINA);
+                  Erreklamazioa errekl = new Erreklamazioa();
+                  errekl.setId(2);
+                  errekl.setErrekJarri(driver);
+                  errekl.setErrekJaso(bidaiari);
+                  errekl.setEskaera(eskaera);
+                  errekl.setLarri(ErrekLarri.ERTAINA);
 
-	    when(db.find(Erreklamazioa.class, 2)).thenReturn(errekl);
-	    when(db.find(Driver.class, driver.getEmail())).thenReturn(driver);
-	    when(db.find(Bidaiari.class, bidaiari.getEmail())).thenReturn(bidaiari);
+                  when(db.find(Erreklamazioa.class, 2)).thenReturn(errekl);
+                  when(db.find(Driver.class, driver.getEmail())).thenReturn(driver);
+                  when(db.find(Bidaiari.class, bidaiari.getEmail())).thenReturn(bidaiari);
 
-	    
-	    sut.acceptErrek(errekl);
+                  
+                  sut.acceptErrek(errekl);
 
-	   
-	    assertEquals(ErrekMota.ACCEPTED, errekl.getMota());
-	    assertTrue(facade.getUserMugimenduak(bidaiari).stream().anyMatch(m -> m.getMota().equals("-")));
-	    assertTrue(facade.getUserMugimenduak(driver).stream().anyMatch(m -> m.getMota().equals("+")));
-	}
-	
-	@Test
-	public void test3() {
-	
-	    Driver driver = new Driver("driver1@gmail.com", "Driver Test");
-	    Bidaiari bidaiari = new Bidaiari("Bidaiari Test", "1234", "bidaiari1@gmail.com", "12345678A");
+                 
+                  assertEquals(ErrekMota.ACCEPTED, errekl.getMota());
+                  
+                  when(facade.getUserMugimenduak(bidaiari)).thenReturn(List.of(new Movement(bidaiari, 100f, "-")));
+        when(facade.getUserMugimenduak(driver)).thenReturn(List.of(new Movement(driver, 100f, "+")));
+                  
+                  assertTrue(facade.getUserMugimenduak(bidaiari).stream().anyMatch(m -> m.getMota().equals("-")));
+                  assertTrue(facade.getUserMugimenduak(driver).stream().anyMatch(m -> m.getMota().equals("+")));
+              }
+              
+              @Test
+              public void test3() {
+              
+                  Driver driver = new Driver("driver1@gmail.com", "Driver Test");
+                  Bidaiari bidaiari = new Bidaiari("Bidaiari Test", "1234", "bidaiari1@gmail.com", "12345678A");
 
-	    Eskaera eskaera = new Eskaera();
-	    eskaera.setPrez(100f);
+                  Eskaera eskaera = new Eskaera();
+                  eskaera.setPrez(100f);
 
-	    Erreklamazioa errekl = new Erreklamazioa();
-	    errekl.setId(3);
-	    errekl.setErrekJarri(driver);
-	    errekl.setErrekJaso(bidaiari);
-	    errekl.setEskaera(eskaera);
-	    errekl.setLarri(ErrekLarri.HANDIA);
+                  Erreklamazioa errekl = new Erreklamazioa();
+                  errekl.setId(3);
+                  errekl.setErrekJarri(driver);
+                  errekl.setErrekJaso(bidaiari);
+                  errekl.setEskaera(eskaera);
+                  errekl.setLarri(ErrekLarri.HANDIA);
 
-	    when(db.find(Erreklamazioa.class, 3)).thenReturn(errekl);
-	    when(db.find(Driver.class, driver.getEmail())).thenReturn(driver);
-	    when(db.find(Bidaiari.class, bidaiari.getEmail())).thenReturn(bidaiari);
+                  when(db.find(Erreklamazioa.class, 3)).thenReturn(errekl);
+                  when(db.find(Driver.class, driver.getEmail())).thenReturn(driver);
+                  when(db.find(Bidaiari.class, bidaiari.getEmail())).thenReturn(bidaiari);
 
-	    
-	    sut.acceptErrek(errekl);
+                  
+                  sut.acceptErrek(errekl);
 
-	   
-	    assertEquals(ErrekMota.ACCEPTED, errekl.getMota());
-	    assertTrue(facade.getUserMugimenduak(bidaiari).stream().anyMatch(m -> m.getMota().equals("-")));
-	    assertTrue(facade.getUserMugimenduak(driver).stream().anyMatch(m -> m.getMota().equals("+")));
-	}
-	
-	@Test
-	public void test4() {
-	
-		 Driver driver = new Driver("driver@gmail.com", "Driver Test");
-	        Bidaiari bidaiari = new Bidaiari("Bidaiari Test", "1234", "bidaiari1@gmail.com", "12345678A");
+                 
+                  assertEquals(ErrekMota.ACCEPTED, errekl.getMota());
+                  
+                  when(facade.getUserMugimenduak(bidaiari)).thenReturn(List.of(new Movement(bidaiari, 100f, "-")));
+        when(facade.getUserMugimenduak(driver)).thenReturn(List.of(new Movement(driver, 100f, "+")));
+        
+        
+                  assertTrue(facade.getUserMugimenduak(bidaiari).stream().anyMatch(m -> m.getMota().equals("-")));
+                  assertTrue(facade.getUserMugimenduak(driver).stream().anyMatch(m -> m.getMota().equals("+")));
+              }
+              
+              @Test
+              public void test4() {
+              
+                            Driver driver = new Driver("driver@gmail.com", "Driver Test");
+                      Bidaiari bidaiari = new Bidaiari("Bidaiari Test", "1234", "bidaiari1@gmail.com", "12345678A");
 
-	        Eskaera eskaera = new Eskaera();
-	        eskaera.setPrez(300f);
+                      Eskaera eskaera = new Eskaera();
+                      eskaera.setPrez(300f);
 
-	        Erreklamazioa errekl = new Erreklamazioa();
-	        errekl.setId(4);
-	        errekl.setErrekJarri(bidaiari);
-	        errekl.setErrekJaso(driver);
-	        errekl.setEskaera(eskaera);
-	        errekl.setLarri(ErrekLarri.TXIKIA); 
+                      Erreklamazioa errekl = new Erreklamazioa();
+                      errekl.setId(4);
+                      errekl.setErrekJarri(bidaiari);
+                      errekl.setErrekJaso(driver);
+                      errekl.setEskaera(eskaera);
+                      errekl.setLarri(ErrekLarri.TXIKIA); 
 
-	        when(db.find(Erreklamazioa.class, 4)).thenReturn(errekl);
-	        when(db.find(Driver.class, driver.getEmail())).thenReturn(driver);
-	        when(db.find(Bidaiari.class, bidaiari.getEmail())).thenReturn(bidaiari);
+                      when(db.find(Erreklamazioa.class, 4)).thenReturn(errekl);
+                      when(db.find(Driver.class, driver.getEmail())).thenReturn(driver);
+                      when(db.find(Bidaiari.class, bidaiari.getEmail())).thenReturn(bidaiari);
 
-	        sut.acceptErrek(errekl);
+                      sut.acceptErrek(errekl);
 
-	        when(facade.getUserMugimenduak(bidaiari)).thenReturn(List.of(new Movement(bidaiari, 300f, "+")));
-	        when(facade.getUserMugimenduak(driver)).thenReturn(List.of(new Movement(driver, 300f, "-")));
+                      when(facade.getUserMugimenduak(bidaiari)).thenReturn(List.of(new Movement(bidaiari, 300f, "+")));
+                      when(facade.getUserMugimenduak(driver)).thenReturn(List.of(new Movement(driver, 300f, "-")));
 
-	        assertTrue(facade.getUserMugimenduak(bidaiari).stream().anyMatch(m -> m.getMota().equals("+")));
-	        assertTrue(facade.getUserMugimenduak(driver).stream().anyMatch(m -> m.getMota().equals("-")));
-	    
-	}
-	
-	
+                      assertTrue(facade.getUserMugimenduak(bidaiari).stream().anyMatch(m -> m.getMota().equals("+")));
+                      assertTrue(facade.getUserMugimenduak(driver).stream().anyMatch(m -> m.getMota().equals("-")));
+                  
+              }
+              
+              
 }

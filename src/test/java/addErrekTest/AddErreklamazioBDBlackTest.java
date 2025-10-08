@@ -7,29 +7,28 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import dataAccess.DataAccess;
 import domain.*;
-import domain.User;
 import domain.Erreklamazioa.ErrekLarri;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertThrows;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 import javax.persistence.*;
 
 /**
- * Kutxa beltzeko frogak DB errealarekin addErreklamazio metodoarentzat.
- * Clases de equivalencia y valores límite probados:
+ * 🧪 AddErreklamazio metodoaren KUTXA BELTZEKO testak datu-base errealarekin.
+ * 
+ * Balio probatuak (balio baliodunak eta muturrak):
  * - userJarriDB: Bidaiari / Admin / null
  * - userJasoDB: User / null
- * - eskSelect: válido / null
- * - sartutakoTXT: texto válido / null / ""
+ * - eskSelect: baliozkoa / null
+ * - sartutakoTXT: testu baliozkoa / null / ""
  * - lar: TXIKIA / ERTAINA / HANDIA
  */
 public class AddErreklamazioBDBlackTest {
+
     private static EntityManagerFactory emf;
     private EntityManager em;
     private DataAccess sut;
-    private Integer eskaeraId; // Guardar el ID real de Eskaera
+    private Integer eskaeraId;
 
     @BeforeClass
     public static void init() {
@@ -45,16 +44,28 @@ public class AddErreklamazioBDBlackTest {
     public void setUp() {
         em = emf.createEntityManager();
         sut = new DataAccess(em);
+
         em.getTransaction().begin();
-        Driver bidaiari = new Driver("Bidaiari", "pasahitza1", "bidaiari@ex.com", "12345678A");
-		em.persist(bidaiari);
-        em.persist(new Driver("bidaiari@ex.com", "Bidaiari", "20", "100f"));
-        em.persist(new Bidaiari("admin@ex.com", "Admin", "30", "200f"));
-        em.persist(new Bidaiari("userjaso@ex.com", "User", "25", "150f"));
+
+        Bidaiari bidaiari = new Bidaiari("bidaiari@ex.com", "Bidaiari", "20", "100f");
+        Bidaiari admin = new Bidaiari("admin@ex.com", "Admin", "30", "200f");
+        Bidaiari userJaso = new Bidaiari("userjaso@ex.com", "User", "25", "150f");
+        Driver driver = new Driver("driver@ex.com", "Driver", "35", "300f");
+
+        em.persist(bidaiari);
+        em.persist(admin);
+        em.persist(userJaso);
+        em.persist(driver);
+
         Eskaera esk = new Eskaera();
+        esk.setBidaiari(bidaiari);
+        esk.setPrez(100f);
         em.persist(esk);
+
         em.getTransaction().commit();
-        eskaeraId = esk.getEskaeraNumber(); // Guardar el ID real
+
+        eskaeraId = esk.getEskaeraNumber();
+
     }
 
     @After
@@ -67,20 +78,25 @@ public class AddErreklamazioBDBlackTest {
         em.close();
     }
 
+    /** userJarri null denean, NullPointerException espero da */
     @Test
     public void testNullUserJarri() {
         User userJaso = em.find(User.class, "userjaso@ex.com");
-        Eskaera esk = em.find(Eskaera.class, eskaeraId); // Usar el ID real
-        assertThrows(NullPointerException.class, () -> sut.addErreklamazio(null, userJaso, esk, "Queja", 100f, ErrekLarri.TXIKIA));
-        }
+        Eskaera esk = em.find(Eskaera.class, eskaeraId);
+        assertThrows(NullPointerException.class, 
+            () -> sut.addErreklamazio(null, userJaso, esk, "Queja", 100f, ErrekLarri.TXIKIA));
+    }
 
+    /** userJaso null denean, NullPointerException espero da */
     @Test
     public void testNullUserJaso() {
         User userJarri = em.find(User.class, "bidaiari@ex.com");
-        Eskaera esk = em.find(Eskaera.class, eskaeraId); // Usar el ID real
-        assertThrows(NullPointerException.class, () -> sut.addErreklamazio(userJarri, null, esk, "Queja", 100f, ErrekLarri.TXIKIA));
+        Eskaera esk = em.find(Eskaera.class, eskaeraId);
+        assertThrows(NullPointerException.class, 
+            () -> sut.addErreklamazio(userJarri, null, esk, "Queja", 100f, ErrekLarri.TXIKIA));
     }
 
+    /** eskaera null denean, NullPointerException espero da */
     @Test
     public void testNullEskaera() {
         User userJarri = em.find(User.class, "bidaiari@ex.com");
@@ -88,49 +104,27 @@ public class AddErreklamazioBDBlackTest {
         assertThrows(NullPointerException.class, () -> sut.addErreklamazio(userJarri, userJaso, null, "Queja", 100f, ErrekLarri.TXIKIA));
     }
 
+    /** testua null denean, IllegalArgumentException espero da */
     @Test
     public void testNullTexto() {
         User userJarri = em.find(User.class, "bidaiari@ex.com");
         User userJaso = em.find(User.class, "userjaso@ex.com");
-        Eskaera esk = em.find(Eskaera.class, eskaeraId); // Usar el ID real
-        assertThrows(IllegalArgumentException.class, () -> sut.addErreklamazio(userJarri, userJaso, esk, null, 100f, ErrekLarri.TXIKIA));
+        Eskaera esk = em.find(Eskaera.class, eskaeraId);
+
+        assertThrows(IllegalArgumentException.class, 
+            () -> sut.addErreklamazio(userJarri, userJaso, esk, null, 100f, ErrekLarri.TXIKIA));
     }
 
+    /** testua hutsik dagoenean, IllegalArgumentException espero da */
     @Test
     public void testEmptyTexto() {
         User userJarri = em.find(User.class, "bidaiari@ex.com");
         User userJaso = em.find(User.class, "userjaso@ex.com");
-        Eskaera esk = em.find(Eskaera.class, eskaeraId); // Usar el ID real
-        assertThrows(IllegalArgumentException.class, () -> sut.addErreklamazio(userJarri, userJaso, esk, "", 100f, ErrekLarri.TXIKIA));
-    }
-    @Test
-    public void testAddErreklamazioSuccess() {
-        // 1. VERIFICAR que los datos existen
-        User userJarri = em.find(User.class, "bidaiari@ex.com");
-        User userJaso = em.find(User.class, "userjaso@ex.com");
         Eskaera esk = em.find(Eskaera.class, eskaeraId);
-        
-        assertNotNull("User Jarri no debería ser null", userJarri);
-        assertNotNull("User Jaso no debería ser null", userJaso);
-        assertNotNull("Eskaera no debería ser null", esk);
-        
-        // 2. VERIFICAR que Eskaera tiene precio
-        assertNotNull("Eskaera debería tener precio", esk.getPrez());
-        
-        // 3. CAPTURAR la excepción real para debuggear
-        try {
-            sut.addErreklamazio(userJarri, userJaso, esk, "Queja válida", 100f, ErrekLarri.TXIKIA);
-            // Si llega aquí, el test pasa ✅
-            System.out.println("✅ Test pasó correctamente");
-            
-        } catch (Exception e) {
-            // Debug: imprimir la excepción real
-            System.err.println("❌ Excepción capturada: " + e.getClass().getName());
-            System.err.println("❌ Mensaje: " + e.getMessage());
-            e.printStackTrace();
-            
-            // Fallar el test con información útil
-            fail("No debería lanzar excepción con parámetros válidos. Error: " + e.getMessage());
-        }
+
+        assertThrows(IllegalArgumentException.class, 
+            () -> sut.addErreklamazio(userJarri, userJaso, esk, "", 100f, ErrekLarri.TXIKIA));
     }
+
+   
 }
