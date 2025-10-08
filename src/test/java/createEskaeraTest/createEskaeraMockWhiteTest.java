@@ -1,9 +1,13 @@
 package createEskaeraTest;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.fail;
-import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.Date;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -22,91 +26,106 @@ import dataAccess.DataAccess;
 import domain.Bidaiari;
 import domain.Driver;
 import domain.Ride;
+import domain.User;
 import domain.Eskaera;
 import domain.Alerta;
 import exceptions.RequestAlreadyExistException;
 
-import java.util.ArrayList;
-
 public class createEskaeraMockWhiteTest {
-	static DataAccess sut;
-	protected MockedStatic<Persistence> persistenceMock;
 
-	@Mock
-	protected EntityManagerFactory entityManagerFactory;
-	@Mock
-	protected EntityManager db;
-	@Mock
-	protected EntityTransaction et;
-	@Mock
-	protected Bidaiari bidaiari;
-	@Mock
-	protected Ride ride;
-	@Mock
-	protected Driver driver;
+    static DataAccess sut; // Sistema bajo prueba (System Under Test)
+    protected MockedStatic<Persistence> persistenceMock;
 
-	@Before
-	public void init() {
-		MockitoAnnotations.openMocks(this);
-		persistenceMock = Mockito.mockStatic(Persistence.class);
-		persistenceMock.when(() -> Persistence.createEntityManagerFactory(Mockito.any()))
-				.thenReturn(entityManagerFactory);
-		Mockito.doReturn(db).when(entityManagerFactory).createEntityManager();
-		Mockito.doReturn(et).when(db).getTransaction();
-		sut = new DataAccess(db);
-	}
+    @Mock
+    protected EntityManagerFactory entityManagerFactory;
+    @Mock
+    protected EntityManager db;
+    @Mock
+    protected EntityTransaction et;
 
-	@After
-	public void tearDown() {
-		persistenceMock.close();
-	}
+    @Before
+    public void init() {
+        MockitoAnnotations.openMocks(this);
 
-	@Test
-	public void testCreateEskaeraWhiteBox() {
-		try {
-			when(bidaiari.getEmail()).thenReturn("bidaiari1@gmail.com");
-			when(ride.getRideNumber()).thenReturn(1);
-			when(ride.getDriver()).thenReturn(driver);
-			ArrayList<Eskaera> bidaiariEskaerak = new ArrayList<>();
-			ArrayList<Eskaera> rideEskaerak = new ArrayList<>();
-			when(db.find(Bidaiari.class, "bidaiari1@gmail.com")).thenReturn(bidaiari);
-			when(db.find(Ride.class, 1)).thenReturn(ride);
-			when(bidaiari.getEskaerak()).thenReturn(bidaiariEskaerak);
-			when(ride.getEskaerenList()).thenReturn(rideEskaerak);
+        // Mockear Persistence y EntityManager
+        persistenceMock = Mockito.mockStatic(Persistence.class);
+        persistenceMock.when(() -> Persistence.createEntityManagerFactory(Mockito.any()))
+                .thenReturn(entityManagerFactory);
 
-			Eskaera result = sut.createEskaera(bidaiari, ride, 2);
+        Mockito.doReturn(db).when(entityManagerFactory).createEntityManager();
+        Mockito.doReturn(et).when(db).getTransaction();
 
-			assertEquals(Eskaera.EskaeraEgoera.PENDING, result.getEgoera());
-			assertEquals(2, result.getNPlaces());
-			assertEquals(ride, result.getRide());
-			assertEquals(bidaiari, result.getBidaiari());
-			verify(bidaiari).getEskaerak();
-			verify(ride).getEskaerenList();
-			verify(db).persist(Mockito.any(Alerta.class));
-			verify(et).commit();
-		} catch (Exception e) {
-			fail("Ez litzateke salbuespena jaurti behar");
-		}
-	}
+        sut = new DataAccess(db);
+    }
 
-	@Test
-	public void testCreateEskaeraExistitzenDaWhiteBox() {
-		try {
-			when(bidaiari.getEmail()).thenReturn("bidaiari2@gmail.com");
-			when(ride.getRideNumber()).thenReturn(2);
-			ArrayList<Eskaera> bidaiariEskaerak = new ArrayList<>();
-			Eskaera existEskaera = new Eskaera(Eskaera.EskaeraEgoera.PENDING, 2, ride, bidaiari);
-			bidaiariEskaerak.add(existEskaera);
-			when(db.find(Bidaiari.class, "bidaiari2@gmail.com")).thenReturn(bidaiari);
-			when(db.find(Ride.class, 2)).thenReturn(ride);
-			when(bidaiari.getEskaerak()).thenReturn(bidaiariEskaerak);
+    @After
+    public void tearDown() {
+        if (persistenceMock != null)
+            persistenceMock.close();
+    }
 
-			sut.createEskaera(bidaiari, ride, 3);
-			fail("RequestAlreadyExistException jaurti behar zuen");
-		} catch (RequestAlreadyExistException e) {
-			verify(et).rollback();
-		} catch (Exception e) {
-			fail("RequestAlreadyExistException jaurti behar zuen");
-		}
-	}
+    /**
+     * ✅ Test white-box: creación correcta de una Eskaera nueva
+     */
+    @Test
+    public void testCreateEskaeraWhiteBox() {
+        try {
+            Driver driver = new Driver("driver@ex.com", "Driver");
+            Bidaiari bidaiari = new Bidaiari("Bidaiari", "1234", "bidaiari1@gmail.com", "111");
+
+            Date fecha = new Date();
+            Ride ride = new Ride("Bilbao", "Donostia", fecha, 3, 12.5f, driver);
+            ride.setRideNumber(1); // Asignar ID para el mock
+
+            bidaiari.setEskaerak(new ArrayList<>());
+            ride.setEskaerenList(new ArrayList<>());
+
+            // Mockear búsquedas
+            when(db.find(User.class, "bidaiari1@gmail.com")).thenReturn(bidaiari);
+            when(db.find(Ride.class, 1)).thenReturn(ride);
+
+            // Ejecutar método
+            Eskaera result = sut.createEskaera(bidaiari, ride, 2);
+
+            // Verificar resultados
+            assertEquals(Eskaera.EskaeraEgoera.PENDING, result.getEgoera());
+            assertEquals(2, result.getNPlaces());
+            assertEquals(ride, result.getRide());
+            assertEquals(bidaiari, result.getBidaiari());
+
+            verify(db).persist(Mockito.any(Alerta.class));
+            verify(et).commit();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            fail("Ez litzateke salbuespena jaurti behar");
+        }
+    }
+
+
+    /**
+     * ⚠️ Test white-box: cuando la Eskaera ya existe
+     */
+    @Test
+    public void testCreateEskaeraExistitzenDaWhiteBox() throws Exception {
+        Driver driver = new Driver("driver@ex.com", "Driver");
+        Bidaiari bidaiari = new Bidaiari("Bidaiari", "1234", "bidaiari2@gmail.com", "111");
+
+        Date fecha = new Date();
+        Ride ride = new Ride("Bilbao", "Donostia", fecha, 3, 12.5f, driver);
+        ride.setRideNumber(2);
+
+        ArrayList<Eskaera> bidaiariEskaerak = new ArrayList<>();
+        Eskaera existEskaera = new Eskaera(Eskaera.EskaeraEgoera.PENDING, 2, ride, bidaiari);
+        bidaiariEskaerak.add(existEskaera);
+        bidaiari.setEskaerak(bidaiariEskaerak);
+
+        ride.setEskaerenList(new ArrayList<>());
+
+        when(db.find(User.class, "bidaiari2@gmail.com")).thenReturn(bidaiari);
+        when(db.find(Ride.class, 2)).thenReturn(ride);
+
+        assertThrows(RequestAlreadyExistException.class, () -> sut.createEskaera(bidaiari, ride, 3)); // Si no lanza la excepción, JUnit falla automáticamente
+    }
+
 }

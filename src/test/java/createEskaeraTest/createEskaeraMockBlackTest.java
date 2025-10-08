@@ -57,30 +57,33 @@ public class createEskaeraMockBlackTest {
 
 	@Test
 	public void testCreateEskaeraReturnsEskaera() {
-		try {
-			Driver driver = new Driver("driver1@gmail.com", "Driver Test");
-			Bidaiari bidaiari = new Bidaiari("Bidaiari Test", "1234", "bidaiari1@gmail.com", "12345678A");
-			Ride ride = new Ride("Hasiera", "Helmuga", java.sql.Date.valueOf("2025-10-10"), 5, 10.0f, driver);
-			bidaiari.setEskaerak(new ArrayList<>());
-			
-			when(db.find(Bidaiari.class, bidaiari.getEmail())).thenReturn(bidaiari);
-			when(db.find(Ride.class, ride.getRideNumber())).thenReturn(ride);
-			
-			when(bidaiari.getEskaerak()).thenReturn(new ArrayList<>());
-			when(ride.getEskaerenList()).thenReturn(new ArrayList<>());
+	    try {
+	        Driver driver = new Driver("driver1@gmail.com", "Driver Test");
+	        Bidaiari bidaiari = new Bidaiari("Bidaiari Test", "1234", "bidaiari1@gmail.com", "12345678A");
+	        Ride ride = new Ride("Hasiera", "Helmuga", java.sql.Date.valueOf("2025-10-10"), 5, 10.0f, driver);
 
-			Eskaera result = sut.createEskaera(bidaiari, ride, 2);
+	        bidaiari.setEskaerak(new ArrayList<>());
+	        ride.setEskaerenList(new ArrayList<>());
 
-			assertEquals(Eskaera.EskaeraEgoera.PENDING, result.getEgoera());
-			assertEquals(2, result.getNPlaces());
-			assertEquals(ride, result.getRide());
-			assertEquals(bidaiari, result.getBidaiari());
-			verify(db).persist(Mockito.any(Alerta.class));
-			verify(et).commit();
-		} catch (Exception e) {
-			fail("Ez litzateke salbuespena jaurti behar");
-		}
+	        when(db.find(Bidaiari.class, bidaiari.getEmail())).thenReturn(bidaiari);
+	        when(db.find(Ride.class, ride.getRideNumber())).thenReturn(ride);
+
+	        Eskaera result = sut.createEskaera(bidaiari, ride, 2);
+
+	        assertEquals(Eskaera.EskaeraEgoera.PENDING, result.getEgoera());
+	        assertEquals(2, result.getNPlaces());
+	        assertEquals(ride, result.getRide());
+	        assertEquals(bidaiari, result.getBidaiari());
+
+	        verify(db).persist(Mockito.any(Alerta.class));
+	        verify(et).commit();
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        fail("Ez litzateke salbuespena jaurti behar: " + e.getMessage());
+	    }
 	}
+
 
 	@Test
 	public void testCreateEskaeraExistitzenDa() {
