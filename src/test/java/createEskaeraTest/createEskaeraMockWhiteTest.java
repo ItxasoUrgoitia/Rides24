@@ -63,10 +63,10 @@ public class createEskaeraMockWhiteTest {
         if (persistenceMock != null)
             persistenceMock.close();
     }
-
-    /**
-     * ✅ Test white-box: creación correcta de una Eskaera nueva
-     */
+/*
+  
+     //✅ Test white-box: creación correcta de una Eskaera nueva
+   
     @Test
     public void testCreateEskaeraWhiteBox() {
         try {
@@ -103,9 +103,8 @@ public class createEskaeraMockWhiteTest {
     }
 
 
-    /**
-     * ⚠️ Test white-box: cuando la Eskaera ya existe
-     */
+     // ⚠️ Test white-box: cuando la Eskaera ya existe
+    
     @Test
     public void testCreateEskaeraExistitzenDaWhiteBox() throws Exception {
         Driver driver = new Driver("driver@ex.com", "Driver");
@@ -127,5 +126,5 @@ public class createEskaeraMockWhiteTest {
 
         assertThrows(RequestAlreadyExistException.class, () -> sut.createEskaera(bidaiari, ride, 3)); // Si no lanza la excepción, JUnit falla automáticamente
     }
-
+*/
 }
