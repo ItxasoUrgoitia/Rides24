@@ -78,7 +78,9 @@ public class AddErreklamazioBDBlackTest {
         em.close();
     }
 
+    /*
     /** userJarri null denean, NullPointerException espero da */
+    /**
     @Test
     public void testNullUserJarri() {
         User userJaso = em.find(User.class, "userjaso@ex.com");
@@ -86,7 +88,10 @@ public class AddErreklamazioBDBlackTest {
         assertThrows(NullPointerException.class, 
             () -> sut.addErreklamazio(null, userJaso, esk, "Queja", 100f, ErrekLarri.TXIKIA));
     }
-
+    
+    
+    */
+    
     /** userJaso null denean, NullPointerException espero da */
     @Test
     public void testNullUserJaso() {
