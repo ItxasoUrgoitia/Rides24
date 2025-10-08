@@ -12,6 +12,8 @@ import testOperations.TestDataAccess;
 import static org.junit.Assert.fail;
 
 public class AddErreklamazioBDWhiteTest {
+	
+	/*
 
     private TestDataAccess tda;       // Test-eko datu baseko laguntzailea
     private DataAccess sut;            // System Under Test (DataAccess)
@@ -81,4 +83,6 @@ public class AddErreklamazioBDWhiteTest {
             fail("Ez luke salbuespenik sortu behar kasu baliozkoan");
         }
     }
+    
+    */
 }

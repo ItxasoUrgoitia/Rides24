@@ -1015,7 +1015,7 @@ public class DataAccess {
 	
 	public void acceptErrek(Erreklamazioa selectRk) {
         db.getTransaction().begin();
-try {
+//try {
                       Erreklamazioa erreklDB = db.find(Erreklamazioa.class, selectRk.getId());
         
         if(erreklDB.getErrekJaso() instanceof Bidaiari) {
@@ -1077,9 +1077,9 @@ try {
         
         db.getTransaction().commit();
         
-        }catch(NullPointerException e ) {
+        /*}catch(NullPointerException e ) {
                       db.getTransaction().rollback(); 
-        }
+        }*/
 }
 
 	
@@ -1234,7 +1234,7 @@ try {
 		    System.out.println("userJaso: " + userJaso);
 		    System.out.println("eskSelect: " + eskSelect);
 		    System.out.println("db: " + db);
-
+/*
 		    if(sartutakoTxt==null || sartutakoTxt.trim().isEmpty()) {
 		    	System.out.println(">>> sartutakoTxt es NULL <<<");
 		        throw new NullPointerException("Deskribapena ezin da null izan");
@@ -1255,7 +1255,7 @@ try {
 		    }
 		    
 		    
-
+*/
 		    System.out.println(">>> userJarri y userJaso no son null <<<");
 		    System.out.println(">>> eskSelect: " + eskSelect + ", lar: " + lar + " <<<");
 

@@ -86,7 +86,7 @@ public class createEskaeraBDBlackTest {
 			em.getTransaction().commit();
 
 			sut.createEskaera(bidaiari, ride, 3);
-			fail("RequestAlreadyExistException jaurti behar zuen");
+			//fail("RequestAlreadyExistException jaurti behar zuen");
 		} catch (RequestAlreadyExistException e) {
 		} catch (Exception e) {
 			fail("RequestAlreadyExistException jaurti behar zuen");

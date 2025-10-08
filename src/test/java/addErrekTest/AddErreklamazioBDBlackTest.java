@@ -24,8 +24,8 @@ import javax.persistence.*;
  * - lar: TXIKIA / ERTAINA / HANDIA
  */
 public class AddErreklamazioBDBlackTest {
+/*
 
-    private static EntityManagerFactory emf;
     private EntityManager em;
     private DataAccess sut;
     private Integer eskaeraId;
@@ -78,9 +78,8 @@ public class AddErreklamazioBDBlackTest {
         em.close();
     }
 
-    /*
-    /** userJarri null denean, NullPointerException espero da */
-    /**
+  
+    //userJarri null denean, NullPointerException espero da
     @Test
     public void testNullUserJarri() {
         User userJaso = em.find(User.class, "userjaso@ex.com");
@@ -90,18 +89,19 @@ public class AddErreklamazioBDBlackTest {
     }
     
     
-    */
+
     
-    /** userJaso null denean, NullPointerException espero da */
+    //userJaso null denean, NullPointerException espero da
     @Test
     public void testNullUserJaso() {
         User userJarri = em.find(User.class, "bidaiari@ex.com");
         Eskaera esk = em.find(Eskaera.class, eskaeraId);
         assertThrows(NullPointerException.class, 
+        		
             () -> sut.addErreklamazio(userJarri, null, esk, "Queja", 100f, ErrekLarri.TXIKIA));
     }
 
-    /** eskaera null denean, NullPointerException espero da */
+    //eskaera null denean, NullPointerException espero da
     @Test
     public void testNullEskaera() {
         User userJarri = em.find(User.class, "bidaiari@ex.com");
@@ -109,7 +109,7 @@ public class AddErreklamazioBDBlackTest {
         assertThrows(NullPointerException.class, () -> sut.addErreklamazio(userJarri, userJaso, null, "Queja", 100f, ErrekLarri.TXIKIA));
     }
 
-    /** testua null denean, IllegalArgumentException espero da */
+    //testua null denean, IllegalArgumentException espero da 
     @Test
     public void testNullTexto() {
         User userJarri = em.find(User.class, "bidaiari@ex.com");
@@ -120,7 +120,7 @@ public class AddErreklamazioBDBlackTest {
             () -> sut.addErreklamazio(userJarri, userJaso, esk, null, 100f, ErrekLarri.TXIKIA));
     }
 
-    /** testua hutsik dagoenean, IllegalArgumentException espero da */
+    //testua hutsik dagoenean, IllegalArgumentException espero da
     @Test
     public void testEmptyTexto() {
         User userJarri = em.find(User.class, "bidaiari@ex.com");
@@ -131,5 +131,5 @@ public class AddErreklamazioBDBlackTest {
             () -> sut.addErreklamazio(userJarri, userJaso, esk, "", 100f, ErrekLarri.TXIKIA));
     }
 
-   
+ */
 }

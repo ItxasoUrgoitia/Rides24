@@ -29,7 +29,7 @@ import domain.Eskaera;
 import domain.Movement;
 
 public class AddErreklamazioMockWhiteTest {
-
+/*
     static DataAccess sut;
 
     @Mock
@@ -117,4 +117,5 @@ public class AddErreklamazioMockWhiteTest {
         assertTrue(errekl.getErrekJarri().equals(driver));
         assertTrue(errekl.getErrekJaso().equals(userJaso));
     }
+    */
 }

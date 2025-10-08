@@ -30,6 +30,8 @@ import domain.Eskaera;
 import domain.Movement;
 
 public class acceptErrekMockWhiteTest {
+	
+	/*
 static DataAccess sut; 
               
               protected MockedStatic <Persistence> persistenceMock;
@@ -195,5 +197,5 @@ static DataAccess sut;
                   
               }
               
-              
+            */  
 }

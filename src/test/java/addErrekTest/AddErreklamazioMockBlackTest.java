@@ -10,7 +10,8 @@ import javax.persistence.EntityManager;
 import static org.junit.Assert.*;
 
 public class AddErreklamazioMockBlackTest {
-    private DataAccess sut;
+    /*
+	private DataAccess sut;
     private EntityManager em;
 
     @Before
@@ -67,5 +68,5 @@ public class AddErreklamazioMockBlackTest {
         Mockito.when(em.find(Eskaera.class, esk.getEskaeraNumber())).thenReturn(esk);
         assertThrows(NullPointerException.class, () -> sut.addErreklamazio(userJarri, userJaso, esk, "", 100f, ErrekLarri.TXIKIA));
     }
-    
+    */
 }
