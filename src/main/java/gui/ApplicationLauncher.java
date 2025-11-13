@@ -9,9 +9,14 @@ import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 
 import configuration.ConfigXML;
+import configuration.UtilDate;
 import dataAccess.DataAccess;
+import domain.Driver;
 import businessLogic.BLFacade;
 import businessLogic.BLFacadeImplementation;
+import businessLogic.BLFactory;
+import businessLogic.DriverTable;
+import businessLogic.ExtendedIterator;
 
 public class ApplicationLauncher { 
 	
@@ -19,7 +24,7 @@ public class ApplicationLauncher {
 	
 	public static void main(String[] args) {
 
-		ConfigXML c=ConfigXML.getInstance();
+	/*	ConfigXML c=ConfigXML.getInstance();
 	
 		System.out.println(c.getLocale());
 		
@@ -33,7 +38,9 @@ public class ApplicationLauncher {
 		
 	   //  Driver driver=new Driver("driver3@gmail.com", "Test Driver", "0","0");
 	    
-	    
+	 **/
+		boolean	isLocal	= true;	
+			
 		MainGUI a=new MainGUI();
 	    //MainGidariGUI a = new MainGidariGUI(driver);
 		a.setVisible(true);
@@ -41,36 +48,50 @@ public class ApplicationLauncher {
 
 		try {
 			
-			BLFacade appFacadeInterface;
 			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
-			
-			if (c.isBusinessLogicLocal()) {
-			
-				DataAccess da= new DataAccess();
-				appFacadeInterface=new BLFacadeImplementation(da);
 
-				
+       
+            //BLFacade appFacadeInterface = BLFactory.createBLFacade();
+			
+			BLFacade	blFacade	=	new	BLFactory().getBusinessLogicFactory(isLocal);
+			
+			
+            MainGUI.setBussinessLogic(blFacade);
+			 
+			
+			MainGUI.setBussinessLogic(blFacade);
+
+			ExtendedIterator<String> i = blFacade.getDepartingCitiesIterator();
+			String c;
+			System.out.println("_____________________");
+			System.out.println("FROM	LAST	TO	FIRST");
+			i.goLast(); // Go to last element
+			while (i.hasPrevious()) {
+				c = i.previous();
+				System.out.println(c);
 			}
+			System.out.println();
+			System.out.println("_____________________");
+			System.out.println("FROM	FIRST	TO	LAST");
+			i.goFirst(); // Go to first element
+			while (i.hasNext()) {
+				c = i.next();
+				System.out.println(c);
+			}	
 			
-			else { //If remote
-				
-				 String serviceName= "http://"+c.getBusinessLogicNode() +":"+ c.getBusinessLogicPort()+"/ws/"+c.getBusinessLogicName()+"?wsdl";
-				 
-				URL url = new URL(serviceName);
-
-		 
-		        //1st argument refers to wsdl document above
-				//2nd argument is service name, refer to wsdl document above
-		        QName qname = new QName("http://businessLogic/", "BLFacadeImplementationService");
-		 
-		        Service service = Service.create(url, qname);
-
-		         appFacadeInterface = service.getPort(BLFacade.class);
-			} 
 			
-			MainGUI.setBussinessLogic(appFacadeInterface);
+			
+			 Driver d = new Driver("eNEKO rUIZ", "1", "d92@gmail.com", "7342S");
+		        // -------------------- RIDES DRIVERRERAKO --------------------
+		        d.addRide("Donostia", "Bilbo", UtilDate.newDate(2025, 1, 6), 4, 8f);
+		        d.addRide("Bilbo", "Donostia", UtilDate.newDate(2025, 2, 15), 4, 10f);
+		        d.addRide("Donostia", "Gasteiz", UtilDate.newDate(2025, 3, 25), 3, 12f);
+		        d.addRide("Bilbo", "Iruña", UtilDate.newDate(2025, 4, 28), 2, 15f);
 
-		
+		      
+		        DriverTable	dt=new	DriverTable(d);
+		        dt.setVisible(true);	
+			
 
 			
 		}catch (Exception e) {

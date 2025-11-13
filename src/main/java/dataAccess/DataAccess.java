@@ -19,6 +19,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
+import businessLogic.ExtendedIterator;
 import configuration.ConfigXML;
 import configuration.UtilDate;
 import domain.Driver;
@@ -63,8 +64,10 @@ public class DataAccess {
 		 * System.out.println("Operation failed"); } }
 		 */
 		open();
-		if (c.isDatabaseInitialized())
+		if (c.isDatabaseInitialized()) {
 			initializeDB();
+			System.out.println("Database initialized");
+		}
 
 		System.out.println("DataAccess created => isDatabaseLocal: " + c.isDatabaseLocal() + " isDatabaseInitialized: "
 				+ c.isDatabaseInitialized());
@@ -113,13 +116,45 @@ public class DataAccess {
 			 
 			 // db.persist(driver1); db.persist(driver2); db.persist(driver3);
 			 
-			Admin admin=new Admin("a@gmail.com", "admin", "0","0");
-			System.out.println("Admin creado" + admin);
-		    db.persist(admin);
-		    System.out.println("añadido" + admin);
-			db.getTransaction().commit();
-			System.out.println("comit" + admin);
-			System.out.println("Db initialized");
+		        int year = today.get(Calendar.YEAR);
+
+		        // -------------------- DRIVERS --------------------
+		        Driver driver1 = new Driver("Aitor Fernandez", "1", "d1@gmail.com", "7342S");
+		        Driver driver2 = new Driver("Maria Lopez", "2", "d2@gmail.com", "1234A");
+		        Driver driver3 = new Driver("Jon Perez", "3", "d3@gmail.com", "5678B");
+
+		        // -------------------- RIDES DRIVER1 --------------------
+		        driver1.addRide("Donostia", "Bilbo", UtilDate.newDate(year, month, 6), 4, 8f);
+		        driver1.addRide("Bilbo", "Donostia", UtilDate.newDate(year, month, 15), 4, 10f);
+		        driver1.addRide("Donostia", "Gasteiz", UtilDate.newDate(year, month, 25), 3, 12f);
+		        driver1.addRide("Bilbo", "Iruña", UtilDate.newDate(year, month, 28), 2, 15f);
+
+		        // -------------------- RIDES DRIVER2 --------------------
+		        driver2.addRide("Iruña", "Bilbo", UtilDate.newDate(year, month, 7), 4, 9f);
+		        driver2.addRide("Gasteiz", "Donostia", UtilDate.newDate(year, month, 16), 3, 11f);
+		        driver2.addRide("Bilbo", "Gasteiz", UtilDate.newDate(year, month, 20), 5, 14f);
+		        driver2.addRide("Bilbo", "Barcelona", UtilDate.newDate(year, month, 30), 2, 20f);
+
+		        // -------------------- RIDES DRIVER3 --------------------
+		        driver3.addRide("Madrid", "Barcelona", UtilDate.newDate(year, month, 5), 4, 25f);
+		        driver3.addRide("Madrid", "Bilbo", UtilDate.newDate(year, month, 10), 3, 22f);
+		        driver3.addRide("Barcelona", "Donostia", UtilDate.newDate(year, month, 18), 4, 18f);
+		        driver3.addRide("Bilbo", "Madrid", UtilDate.newDate(year, month, 26), 2, 20f);
+		        driver3.addRide("Barcelona", "Madrid", UtilDate.newDate(year, month, 22), 4, 25f);
+
+
+		        // -------------------- PERSIST DRIVERS (y sus rides si hay cascade) --------------------
+		        db.persist(driver1);
+		        db.persist(driver2);
+		        db.persist(driver3);
+
+		        // -------------------- ADMIN --------------------
+		        Admin admin = new Admin("a@gmail.com", "admin", "0","0");
+		        db.persist(admin);
+
+		        System.out.println("Database initialized with drivers, rides and admin");
+		        db.getTransaction().commit();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -873,6 +908,7 @@ public class DataAccess {
 	    }
 	}
 
+
 	
 	public User bilatuUserEmail(String email) {
 		User user = db.find(User.class, email);
@@ -1296,4 +1332,29 @@ public class DataAccess {
 		 db.getTransaction().commit();
 		 return rDB.getDriver();
 	 }
+	 
+	 //-------------------------------------------------------------------------------------------
+	
+	 public Driver getDriver(String name) {
+		 db.getTransaction().begin();
+		 Driver d = db.find(Driver.class, name);
+		 db.getTransaction().commit();
+		 return d;
+	 }
+	 
+
+
+		
+		
+
+
+		
+		
+
+		
+
+	 
+	 
+	 
+	 
 }

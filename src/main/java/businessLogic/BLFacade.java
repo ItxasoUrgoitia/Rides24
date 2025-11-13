@@ -127,5 +127,8 @@ public interface BLFacade  {
 	
 	@WebMethod public Driver getDriverOfRide(Ride ride);
 	
+	public ExtendedIterator<String> getDepartingCitiesIterator();
+	
+	public Driver getDriver(String name);
 	
 }

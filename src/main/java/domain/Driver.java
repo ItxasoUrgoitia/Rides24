@@ -150,6 +150,9 @@ public class Driver extends User implements Serializable {
 		super.setDirua(super.getDirua() + diru);
 
 	}
-
+	@Override
+	public String getName() {
+		return super.getName();
+	}
 	
 }

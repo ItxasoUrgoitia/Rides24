@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlAccessorType(XmlAccessType.FIELD)
-@Entity
+//@Entity
 public class Alerta implements Serializable{
 	
 	public enum AlertMota{
